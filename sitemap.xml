@@ -92,13 +92,6 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/connector-framework/developer-handbook/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/connector-framework/diagram-review/</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/connector-framework/diagram-review/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/connector-framework/diagram-review/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/connector-framework/product-flyer/</loc>
         <lastmod>2026-09-17</lastmod>
         <changefreq>daily</changefreq>
@@ -361,13 +354,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/connector-framework/developer-handbook/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/connector-framework/developer-handbook/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/connector-framework/diagram-review/</loc>
-        <lastmod>2026-09-17</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/connector-framework/diagram-review/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/connector-framework/diagram-review/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/connector-framework/product-flyer/</loc>

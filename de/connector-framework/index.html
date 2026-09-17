@@ -1326,34 +1326,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="diagram-review/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Grafikprüfung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1840,7 +1812,6 @@
 </tr>
 </tbody>
 </table>
-<p><a href="diagram-review/">Grafikprüfung und verbindliche Pfeilbedeutung</a> erläutert die Korrekturen an der bereitgestellten Übersichtsgrafik. Die dortigen gerichteten Diagramme präzisieren die vereinfachte Illustration.</p>
 <p><a class="md-button" href="../assets/connector-framework/concept-documents.zip">Web-Ausgabe herunterladen</a></p>
 <p>Das ZIP enthält die deutsche und englische Markdown-Fassung einschließlich Grafiken und Mermaid-Quelltexten. Es enthält keine ursprünglichen Word-Dateien.</p>
 <h2 id="aufbau-auf-einen-blick">Aufbau auf einen Blick<a class="headerlink" href="#aufbau-auf-einen-blick" title="Permanent link">&para;</a></h2>
@@ -1855,7 +1826,6 @@
     G --&gt;|"geprüfte Änderungen"| D[("Mira Fachdaten")]</code></pre>
 <p><strong>Leseregel:</strong> Ein Pfeil zeigt eine benannte Operation oder Datenübergabe. Der Core ist eine logische Softwareschicht, kein zusätzlicher vorgeschriebener Serverdienst. Externe Connectoren schreiben nicht direkt in Mira-Core-Tabellen.</p>
 <h2 id="einordnung-der-dokumente">Einordnung der Dokumente<a class="headerlink" href="#einordnung-der-dokumente" title="Permanent link">&para;</a></h2>
-<p>Die Web-Ausgabe überführt die verfügbaren Inhalte des im August 2026 erarbeiteten Konzepts „FLEET Mira Custom“ und die bereitgestellte Grafik in versionierbare Markdown-Dokumente. Die ursprünglichen drei Word-Dateien standen für diese Übernahme nicht zur Verfügung; diese Seiten sind daher eine <strong>redaktionell überarbeitete Web-Ausgabe</strong>, keine unveränderten DOCX-Originale. Die deutsche und englische Fassung werden gemeinsam gepflegt.</p>
 <p>Die überarbeitete Architektur berücksichtigt die vorhandene gemeinsame Produktlaufzeit. Insbesondere bleiben Basic und Pro bei SQLite mit integriertem Worker, während Enterprise PostgreSQL und den separaten <code>FleetMiraWorker</code> verwendet. Das Expansion-Konzept startet bei Enterprise/Custom; eine Freigabe für weitere Editionen erfordert deren gesonderte Einordnung und Tests.</p>
 <p>FLEET Mira ist als Nachfolgeprodukt vorgesehen. Eine dauerhafte Anbindung an das bisherige Fuhrparksystem gehört nicht zum Zielbild. Beispiele verwenden allgemeine Kategorien wie <strong>Externes System</strong>, <strong>ERP/Buchhaltung</strong> und <strong>Telematik</strong>. Eine gegebenenfalls benötigte einmalige Datenmigration wäre ein gesondertes Vorhaben und kein laufender Connector.</p>
 
