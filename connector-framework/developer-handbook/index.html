@@ -1,0 +1,2506 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User, administrator and integration documentation for FLEET Mira">
+      
+      
+      
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/connector-framework/developer-handbook/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../customer-concept/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../de/connector-framework/developer-handbook/" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Developer handbook - FLEET Mira Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#developer-handbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FLEET Mira Documentation" class="md-header__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Developer handbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../de/connector-framework/developer-handbook/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FLEET Mira Documentation" class="md-nav__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detailed guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detailed guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodata evaluations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver-card analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle-unit analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/deadlines-record-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deadlines and record documents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driving-licence checks and RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle costs and credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-invoice and XRechnung import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost analysis and reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/violation-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Violation dashboard and driver instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Position maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator and integrator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APIs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounting REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounting CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connector Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connector Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer handbook
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer handbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-components-and-new-extension-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing components and new extension points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-layers-and-process-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical layers and process boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expansion-package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expansion Package structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manifest-and-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest and registration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worker-and-process-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker and process protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-contracts-and-integration-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data contracts and Integration Gateway
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-and-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage and ownership
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outbound-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outbound processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inbound-processing-and-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inbound processing and conflicts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-secrets-and-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions, secrets and audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sap-package-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAP package example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-systems-and-telematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External systems and telematics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-installation-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning, installation and recovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-strategy-and-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository strategy and CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-and-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation and acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customer-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-flyer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product flyer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagram-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagram review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/database-schema-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database schema V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph data storage and access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchronous UI and background services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consistent administration UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-installation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise installation guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-components-and-new-extension-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing components and new extension points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-layers-and-process-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical layers and process boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expansion-package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expansion Package structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manifest-and-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest and registration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worker-and-process-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker and process protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-contracts-and-integration-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data contracts and Integration Gateway
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-and-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage and ownership
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outbound-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outbound processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inbound-processing-and-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inbound processing and conflicts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-secrets-and-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions, secrets and audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sap-package-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAP package example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-systems-and-telematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External systems and telematics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-installation-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning, installation and recovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-strategy-and-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository strategy and CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-and-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation and acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="developer-handbook">Developer handbook<a class="headerlink" href="#developer-handbook" title="Permanent link">&para;</a></h1>
+<p>This document describes the target architecture of the <strong>FLEET Mira Expansion Package Framework</strong>. It is a baseline for implementation planning, interface contracts and acceptance testing. A package should connect external systems and customer-specific workflows without creating a customer-specific fork of the Mira product.</p>
+<div class="admonition info">
+<p class="admonition-title">Design status</p>
+<p>Web edition <strong>1.0, 17 September 2026</strong>. Classes, manifests, tables and permissions described here are proposed contracts. Naming them does not imply that they are already implemented. Existing services should be reused, with missing extension points added deliberately.</p>
+</div>
+<h2 id="architecture-decisions">Architecture decisions<a class="headerlink" href="#architecture-decisions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product foundation</td>
+<td>Shared codebase; Custom is an extension and service offering, not a separate Core fork</td>
+</tr>
+<tr>
+<td>User interface</td>
+<td>PySide6 extensions within Mira navigation</td>
+</tr>
+<tr>
+<td>Background processing</td>
+<td>One shared handler in <code>WorkerRuntime</code>; Enterprise hosts it in <code>FleetMiraWorker</code></td>
+</tr>
+<tr>
+<td>Connectors</td>
+<td>Versioned isolated processes controlled by the worker; initially no additional Windows service</td>
+</tr>
+<tr>
+<td>Mira business access</td>
+<td>Integration Gateway, Domain Services and Repositories</td>
+</tr>
+<tr>
+<td>External access</td>
+<td>Only approved package API, file or SQL adapters</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>Separate logical ownership of Core, framework and package data; no vendor-specific Core fields</td>
+</tr>
+<tr>
+<td>Cross-cutting services</td>
+<td>Reuse existing jobs, permissions, audit and secret management</td>
+</tr>
+</tbody>
+</table>
+<h2 id="existing-components-and-new-extension-points">Existing components and new extension points<a class="headerlink" href="#existing-components-and-new-extension-points" title="Permanent link">&para;</a></h2>
+<p>Existing reference points include <code>worker_runtime.py</code>, <code>worker_coordination.py</code>, <code>database_runtime.py</code>, <code>user_management.py</code>, <code>global_audit.py</code>, <code>administration_ui.py</code> and <code>ui_jobs.py</code>. Existing telematics adapters provide operational and integration examples. Their current implementation is not yet a generic Expansion Framework.</p>
+<p>New work includes validated package registration, a manifest contract, a connector process manager, a gateway interface and defined UI extension points. A competing second queue, role or audit system is not intended. Existing import and retry mechanisms must be checked for their actual guarantees before being reused.</p>
+<h2 id="logical-layers-and-process-boundaries">Logical layers and process boundaries<a class="headerlink" href="#logical-layers-and-process-boundaries" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph Client["Enterprise Client"]
+        UI["Core UI and Package UI"]
+        S["Mira Services&lt;br/&gt;Permission check and job submission"]
+        UI --&gt;|"User action"| S
+    end
+    subgraph Server["Server and worker"]
+        Q[("Framework jobs and status")]
+        W["FleetMiraWorker&lt;br/&gt;WorkerRuntime and Expansion Manager"]
+        G["Integration Gateway&lt;br/&gt;Domain Services and Repositories"]
+        D[("Mira Core and package data")]
+        Q --&gt;|"Lease and job"| W
+        W --&gt;|"Validated result"| G
+        G --&gt;|"Transaction"| D
+        W --&gt;|"Progress and result status"| Q
+    end
+    subgraph Package["Separate connector process"]
+        C["Backend Connector&lt;br/&gt;Adapter and mapping"]
+    end
+    E["External system"]
+    S --&gt;|"Store authorised job"| Q
+    Q --&gt;|"Read status"| S
+    W --&gt;|"Job through versioned protocol"| C
+    C --&gt;|"Result or DTO"| W
+    C --&gt;|"API or approved SQL"| E
+    E --&gt;|"Response"| C</code></pre>
+<p><strong>Core</strong> denotes shared libraries and business services. It does not imply an additional central HTTP server. The Enterprise Client may submit jobs to PostgreSQL through existing Mira repositories. Central background effects run exclusively in the worker. The UI receives no external-system credentials.</p>
+<p>The UI Extension runs in the client process; only the Backend Connector runs outside the worker process. Process isolation alone is not a security sandbox. A signed, approved package is still trusted executable code and requires a restricted operating account.</p>
+<h2 id="expansion-package-structure">Expansion Package structure<a class="headerlink" href="#expansion-package-structure" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>expansion-example/
+  manifest.json
+  backend/          Connector, transport, mapping, DTOs
+  ui/               Navigation, settings, mappings, status
+  database/         Versioned package-data migrations
+  workflows/        Job definitions and business rules
+  permissions/      Permission names and translations
+  reports/          Optional reports
+  schemas/          JSON schemas and examples
+  tests/            Contract, mapping and integration tests
+</code></pre></div>
+<p>A package includes only the components it needs. A customer package may depend on a standard package and add rules or screens. Customer rules are not embedded as special cases in the standard connector.</p>
+<h2 id="manifest-and-registration">Manifest and registration<a class="headerlink" href="#manifest-and-registration" title="Permanent link">&para;</a></h2>
+<p>The following manifest is a proposal, not an installable format currently supported by the product:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-sap"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eh-systemhaus e.K."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"expansion_api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"core_compatibility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=1.0,&lt;2.0"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"backend"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"entrypoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"backend/connector.exe"</span><span class="p">,</span><span class="w"> </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"ui"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"entrypoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ui.extension:register"</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"vehicle.pull"</span><span class="p">,</span><span class="w"> </span><span class="s2">"invoice.push"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"example.view"</span><span class="p">,</span><span class="w"> </span><span class="s2">"example.configure"</span><span class="p">,</span><span class="w"> </span><span class="s2">"example.execute"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integration_example"</span><span class="p">,</span><span class="w"> </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Version ranges are examples. The implementation must define binding ranges for Core, SDK, protocol, UI and schema. Installation validates package ID, origin, signature, checksums, dependencies and paths. Paths must remain within the approved package directory; manifest values must not become arbitrarily composed shell commands.</p>
+<p>The registry records installed and active versions, compatibility, schema version, capabilities and error state. Installation, activation and permission are distinct states. An incompatible package remains visible but is not loaded. Each package has one active version per defined installation or tenant.</p>
+<h2 id="ui-integration">UI integration<a class="headerlink" href="#ui-integration" title="Permanent link">&para;</a></h2>
+<p>A UI Extension registers navigation entries, workspace factories and actions through a bounded host interface. The host supplies context, authorisation, translation, regional formatting and service access. A possible interface includes <code>navigation_items()</code>, <code>create_workspace(page_id, context)</code> and <code>register_actions()</code>.</p>
+<p>Integration follows the existing administration and workspace patterns:</p>
+<ul>
+<li>Non-selectable navigation group, selectable workspace and at most one local subtab level.</li>
+<li>Search/filter area, shared action bar, data grid and status area for lists.</li>
+<li>Dedicated record-detail work tabs for substantial editing; reopening focuses the same record.</li>
+<li>Stable technical widget IDs and an empty work-tab area at session start.</li>
+<li>Permission checks in both UI <strong>and</strong> called service; hidden buttons do not authorise an action.</li>
+<li>Network and database work outside the Qt main thread.</li>
+<li>All visible text in the 23 supported application languages; documentation in at least German and English.</li>
+</ul>
+<p>For Enterprise/Custom, navigation could offer “Administration → Integrations → SAP”. Configuration, mappings, jobs and logs become suitable workspaces or a single local subtab level. An additional deep navigation hierarchy is unnecessary.</p>
+<h2 id="worker-and-process-protocol">Worker and process protocol<a class="headerlink" href="#worker-and-process-protocol" title="Permanent link">&para;</a></h2>
+<p>The Expansion Manager handles discovery, compatibility, activation and state. A subordinate connector process host launches approved programs, limits duration and output, and terminates hung processes. Scheduling, retry and job ownership remain in the shared worker runtime.</p>
+<p>Version 1 should evaluate a versioned, framed JSON/NDJSON protocol over standard input/output. <code>stdout</code> contains protocol messages only; bounded, sanitised diagnostics use a separate channel. Messages identify protocol version, package, action, job and correlation. Larger datasets are transferred in bounded batches. Spool files are permitted only when needed, with ACLs, size limits, checksums and expiry.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"job_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-job"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"correlation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-correlation"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-sap"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle.pull"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"checkpoint"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Results distinguish <code>succeeded</code>, <code>retryable_error</code>, <code>validation_error</code> and <code>outcome_unknown</code>. Errors contain stable codes and sanitised messages, never credentials. Subprocess termination, incomplete output or a lost connection after a possible creation must not be treated as a definitely unsuccessful write.</p>
+<h2 id="data-contracts-and-integration-gateway">Data contracts and Integration Gateway<a class="headerlink" href="#data-contracts-and-integration-gateway" title="Permanent link">&para;</a></h2>
+<p>Adapters translate external formats into small versioned DTOs, such as vehicle, person, cost centre or approved invoice line. Business identity, source tenant, external ID, date semantics, required fields and deletion semantics are explicit. Missing, empty and <code>null</code> are not automatically equivalent.</p>
+<pre class="mermaid"><code>flowchart TB
+    A["External response"] --&gt; B["Connector mapping"]
+    B --&gt; C["Versioned DTO"]
+    C --&gt; D["Integration Gateway"]
+    D --&gt; E["Validation and permission"]
+    E --&gt; F["Domain Service"]
+    F --&gt; G["Repository and transaction"]
+    G --&gt; H["Mira business data and audit"]</code></pre>
+<p><strong>Connectors never write directly to Mira Core business tables.</strong> The gateway also defines which objects a package may read. A SQL connector for an external system is different: it may execute explicitly agreed, parameterised SQL operations there.</p>
+<h2 id="storage-and-ownership">Storage and ownership<a class="headerlink" href="#storage-and-ownership" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Owner</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mira Core</td>
+<td>Mira repositories and business logic</td>
+<td>Vehicles, people, costs and documents</td>
+</tr>
+<tr>
+<td>Framework</td>
+<td>Host repositories</td>
+<td>Package versions, technical mappings, checkpoints, jobs and run status</td>
+</tr>
+<tr>
+<td>Package data</td>
+<td>Registered package repositories and migrations</td>
+<td>Required account or workflow mappings</td>
+</tr>
+<tr>
+<td>External system</td>
+<td>Explicit backend adapter</td>
+<td>API requests or approved SQL</td>
+</tr>
+</tbody>
+</table>
+<p>For Enterprise, logical separation into <code>public</code>, <code>integration</code>, <code>integration_&lt;package&gt;</code> or <code>custom_&lt;customer&gt;</code> is proposed. <strong>These are proposed schema names.</strong> Actual migrations must fit the existing database abstraction. New shared repository functions must introduce neither PostgreSQL-specific branches in business code nor direct <code>sqlite3</code> connections. Affected shared functions must produce the same business result on SQLite and PostgreSQL.</p>
+<p>By default the host manages package data through registered repositories too. Direct database access by an isolated connector is unnecessary and is not generally authorised. Required mappings are supplied to the job through controlled interfaces.</p>
+<p>Technical object mappings are unique at least by environment, installation/tenant, external account, package, object type and external ID. A complete payload mirror is not an automatic framework feature. Retention, personal data and required comparison states are defined per package.</p>
+<h2 id="outbound-processing">Outbound processing<a class="headerlink" href="#outbound-processing" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    participant U as User
+    participant M as Mira Service
+    participant DB as Mira Database
+    participant W as FleetMiraWorker
+    participant C as Connector
+    participant X as External system
+    U-&gt;&gt;M: Approve transaction
+    M-&gt;&gt;DB: Business change and outbox in one transaction
+    DB--&gt;&gt;M: Commit
+    W-&gt;&gt;DB: Claim job with lease
+    W-&gt;&gt;C: Job and idempotency key
+    C-&gt;&gt;X: External operation
+    X--&gt;&gt;C: Confirmation and external ID
+    C--&gt;&gt;W: Result
+    W-&gt;&gt;DB: Confirm mapping, status and audit</code></pre>
+<p>HTTP requests occur outside the business transaction. The worker must expect at-least-once delivery. If the target supports idempotency keys, the same key is reused for the same business job. Otherwise the outcome is reconciled before retry. An uncertain creation remains held for review. A local commit and an external HTTP effect are not one atomic transaction.</p>
+<h2 id="inbound-processing-and-conflicts">Inbound processing and conflicts<a class="headerlink" href="#inbound-processing-and-conflicts" title="Permanent link">&para;</a></h2>
+<p>The connector reads all relevant pages, validates the contract and returns DTOs. The host resolves technical identities and applies approved fields in a transaction. A checkpoint advances only after a complete fetch and the defined safe processing state. Fetch completeness and successful business application are reported separately.</p>
+<p>Delta filters are permitted only if they include later updates to old records. Otherwise periodic full reconciliation is required. Registration plate, date or description alone do not justify an automatic merge. An existing external ID and explicit mapping take precedence; ambiguous matches enter the review queue.</p>
+<p>System ownership is defined per field. Locally changed imported fields are compared with the last confirmed write state. A conflict must remain visible rather than disappear through silent overwriting.</p>
+<h2 id="permissions-secrets-and-audit">Permissions, secrets and audit<a class="headerlink" href="#permissions-secrets-and-audit" title="Permanent link">&para;</a></h2>
+<p>Package permissions join existing role management, for example view, configure, map, execute and approve. The worker rechecks package activation, action and job origin. External connections, secrets and target credentials remain on the worker side; client configurations contain references only.</p>
+<p>Audit records relate the user or system actor, package version, action, object, result and correlation ID. Tokens, passwords and complete personal payloads do not belong in technical logs. Package installation, migration, permission changes and manual conflict decisions are also traceable.</p>
+<p>A central status view shows the last successful run, oldest open job, pending reviews and data freshness. Retries use bounded backoff and <code>Retry-After</code> where applicable. Data errors and missing business mappings require correction rather than endless automatic retry.</p>
+<h2 id="sap-package-example">SAP package example<a class="headerlink" href="#sap-package-example" title="Permanent link">&para;</a></h2>
+<p>A SAP package may include connection setup, account/cost-centre mappings, approval, export status and reports. Valid rules map a cost type to company code, account, tax code and, where applicable, profit centre. This is a business mapping with validity dates and review status, not uncontrolled text conversion.</p>
+<pre class="mermaid"><code>flowchart TB
+    A["Review invoice"] --&gt; B["Assign vehicle and cost type"]
+    B --&gt; C["Validate SAP coding"]
+    C --&gt; D["Approve"]
+    D --&gt; E["Outbox"]
+    E --&gt; F["Worker and SAP Connector"]
+    F --&gt; G["SAP confirmation"]</code></pre>
+<p>SAP illustrates package architecture here; it does not imply an already available connector or a particular SAP API.</p>
+<h2 id="external-systems-and-telematics">External systems and telematics<a class="headerlink" href="#external-systems-and-telematics" title="Permanent link">&para;</a></h2>
+<p>FLEET Mira is the successor product. The framework extends Mira and connects external business systems; ongoing synchronisation with the previous fleet system is not planned. Any required one-time migration belongs to a separate migration project.</p>
+<pre class="mermaid"><code>flowchart TB
+    UI["Mira Package UI"] --&gt;|"Validated request"| Q["Mira job storage"]
+    Q --&gt;|"Lease and job"| W["FleetMiraWorker"]
+    W --&gt;|"Job"| P["Backend Connector"]
+    P --&gt;|"Approved API / SQL"| E["External system or telematics"]
+    E --&gt;|"Response"| P
+    P --&gt;|"DTO and technical status"| W
+    W --&gt;|"Validate and apply"| G["Mira Integration Gateway"]
+    G --&gt;|"Business logic and repository"| D[("Mira business data")]</code></pre>
+<p>Each concrete package needs a confirmed interface contract covering authentication, required fields, date semantics, pagination and update behaviour. Choosing API, file or direct SQL concerns the external target system, not a bypass into Mira Core tables.</p>
+<p>The following rules apply:</p>
+<ul>
+<li>Reconcile only explicitly agreed, semantically matching fields. Do not automatically add vendor-specific information as new Core fields.</li>
+<li>New records are possible when identity, required fields and system ownership are confirmed.</li>
+<li>Keep technical mappings, checksums and errors separate from business data. Do not retain mirrored payloads without a justified package contract.</li>
+<li>Define data ownership and local editing per field. External statuses must not trigger local completion without agreed rules.</li>
+<li>Configure schedules and data freshness per system. Without a reliable change filter, use complete reconciliation to capture updates to older records too.</li>
+<li>External writes require clear retry and reconciliation rules. Resolve uncertain creation outcomes before writing again.</li>
+<li>A SQL adapter uses fixed approved table/column names, bound parameters, restricted permissions and local transactions.</li>
+<li>HTTP effects, external SQL transactions and Mira transactions are not automatically atomic. Failure boundaries and restart recovery belong to the package contract.</li>
+</ul>
+<p>Implementation uses existing Mira host facilities for operation, scheduling, jobs and monitoring. An additional independent scheduler or Windows service is not planned.</p>
+<h2 id="versioning-installation-and-recovery">Versioning, installation and recovery<a class="headerlink" href="#versioning-installation-and-recovery" title="Permanent link">&para;</a></h2>
+<p>Core, Expansion API, package, UI and schema have separate versions. A package is validated and installed into a versioned directory, then migrated and activated under control. Running jobs finish or stop at a confirmed checkpoint before switching. New jobs start only with a consistent backend/UI/schema combination.</p>
+<pre class="mermaid"><code>flowchart TB
+    A["Install package"] --&gt; B["Check signature and compatibility"]
+    B --&gt; C["Check backup and migration"]
+    C --&gt; D["Run migration"]
+    D --&gt; E["Activate and smoke-test"]
+    E --&gt; F["Monitor"]
+    F --&gt; G["Prepare update"]
+    G --&gt; B
+    E --&gt;|"Failure"| R["Deactivate and apply verified restore"]</code></pre>
+<p>Replacing an executable is not sufficient rollback after an incompatible data migration. Recovery requires backward-compatible schema or a verified backup/restore procedure. Program files are read-only; mutable configuration and state remain separate. UI bundles load only from approved packages, not arbitrary user-writable Python paths.</p>
+<h2 id="repository-strategy-and-cicd">Repository strategy and CI/CD<a class="headerlink" href="#repository-strategy-and-cicd" title="Permanent link">&para;</a></h2>
+<p>Mira Core retains host integration and shared business logic. A separate expansion repository may group SDK, protocol, schemas, testkit and standard packages. Customer packages may have private repositories. Separation is useful only when versioning and contract checks are reproducible; this document does not create those repositories.</p>
+<p>The pipeline checks manifests, dependencies, package boundaries, unit/contract tests, migrations, UI compatibility and absence of secrets. It builds versioned artefacts, produces checksums, signs Windows components for release and tests installation, update and recovery. A release references tested Core, SDK, schema and package versions.</p>
+<h2 id="implementation-and-acceptance">Implementation and acceptance<a class="headerlink" href="#implementation-and-acceptance" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Review the existing architecture and binding package contracts; define the Enterprise pilot and field ownership.</li>
+<li>Implement minimal registration and package validation; integrate a test package without external writes.</li>
+<li>Add a shared worker handler, process protocol, leases and error classes.</li>
+<li>Implement the gateway and technical mappings with transaction/conflict checks.</li>
+<li>Integrate the UI Extension with existing navigation, permissions and translations.</li>
+<li>Integrate the first external-system package using a confirmed contract and isolated test environment.</li>
+<li>Demonstrate pilot operation, restart recovery, update and restore before production approval.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Acceptance test</th>
+<th>Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Incompatible or modified package</td>
+<td>No activation; understandable error status</td>
+</tr>
+<tr>
+<td>Missing permission</td>
+<td>Action rejected on the service side too</td>
+</tr>
+<tr>
+<td>Repeated job</td>
+<td>No additional external or local creation</td>
+</tr>
+<tr>
+<td>Two workers</td>
+<td>Exclusive lease; a former owner cannot continue writing</td>
+</tr>
+<tr>
+<td>Crash after possible commit</td>
+<td>Uncertain outcome remains held and is reconciled</td>
+</tr>
+<tr>
+<td>Local field change</td>
+<td>Visible conflict; no silent loss</td>
+</tr>
+<tr>
+<td>API limit or expired token</td>
+<td>Bounded recovery without secrets in logs</td>
+</tr>
+<tr>
+<td>Version change</td>
+<td>Tested combination; traceable migration and restore</td>
+</tr>
+<tr>
+<td>UI and languages</td>
+<td>Shared navigation rules, stable IDs, complete translations</td>
+</tr>
+<tr>
+<td>Shared database function</td>
+<td>Same business result on SQLite and PostgreSQL</td>
+</tr>
+</tbody>
+</table>
+<p>This document extends the documentation, not the application's delivered capabilities. General architecture rules and the <a href="../diagram-review/">diagram review</a> remain binding during implementation.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/image-lightbox.js"></script>
+      
+    
+  </body>
+</html>

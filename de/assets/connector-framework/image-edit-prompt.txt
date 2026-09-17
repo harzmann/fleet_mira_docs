@@ -1,0 +1,23 @@
+Edit the attached FLEET Mira Expansion Package Framework infographic. Preserve the design, overall layout, branding and components. Latest binding product change: FLEET Mira is the successor product. There is NO connection to Fleet IM or FLEETFUHRPARK at all. Generic external systems replace specific providers. In the right-hand External systems box, show EXACTLY these four entries, with neutral appropriate icons:
+"ERP / Accounting"
+"External system"
+"Telematics"
+"Other APIs"
+Remove EVERY occurrence of FLEETFUHRPARK, Fleet IM, IM-System, AFC, CourierIO, Webfleet and GPS-Server from the entire graphic. Retain SAP only in the bottom illustrative invoice workflow (the user did not prohibit SAP there). External system heading is "External systems".
+Arrow precision: the left green return path labelled "Validate and apply" STARTS at bottom-left of Worker (x876,y414), drops to y445 and goes left to x723, up to the bottom of Mira Services (x723,y414). It has only ONE arrowhead, at the Mira Services destination. There must be NO upward arrowhead at Worker on that left return path. Right green return path "Result / DTO" STARTS at Backend Connector bottom (x1138,y414), drops to y457, goes left to x960 then up to Worker bottom (x960,y414), with ONE arrowhead at Worker. No green return path touches the two grey database lines at x693 and x920. All lines meet box borders, no detached stubs. Preserve existing outbound arrows and grey database arrows. All spelling exact.
+Keep concept status, no assertion of existing product availability. Final clean high-resolution infographic.
+
+FINAL LAYOUT REFINEMENT
+
+Final minimal infographic edit: Preserve ALL text, branding, generic external-system entries, colors and main top-row arrows. Remove ONLY the two green dashed result-return paths below the Mira Services / Worker / Connector boxes. They are currently detached and confusing. Do not redraw any connector path in this lower lane.
+Instead, place a small clear rectangular note in the empty area below Backend Connector and External systems, to the RIGHT of the grey Worker database arrow. The note contains exactly three lines:
+"Result hand-off"
+"Connector → Worker → Mira Services"
+"Business updates through the Integration Gateway"
+This is a standalone explanatory note, NOT connected by any arrow to the main boxes or database. Its width must fit within the right part of the architecture area. Leave the two straight grey database arrows (Mira Services to database, Worker to database) unchanged and unobstructed. Keep the top-row green Request via queue and Job arrows and both violet API/SQL and Response arrows.
+Keep all system labels generic (ERP/Accounting, External system, Telematics, Other APIs). Do not introduce named legacy systems or named telematics/claims vendors. In the German edition, ensure left database compartment is titled "Core-Daten", not merely Stammdaten. Do not modify any other part.
+
+OUTPUT EDITIONS
+
+German edition: all captions are German. Result note: Ergebnisrückgabe / Connector → Worker → Mira Services / Fachliche Übernahme über das Gateway.
+English edition: all captions are English. Result note: Result hand-off / Connector → Worker → Mira Services / Business updates through the Integration Gateway.

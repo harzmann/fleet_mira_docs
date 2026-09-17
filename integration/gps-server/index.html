@@ -16,7 +16,7 @@
         <link rel="prev" href="../drivercard-parser/">
       
       
-        <link rel="next" href="../../architecture/database-schema-v2/">
+        <link rel="next" href="../../connector-framework/">
       
       
         
@@ -1253,7 +1253,7 @@
   <span class="md-ellipsis">
     
   
-    Architecture
+    Connector Framework
   
 
     
@@ -1266,6 +1266,205 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connector Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/developer-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer handbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/customer-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/product-flyer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product flyer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/diagram-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagram review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1414,10 +1613,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -1435,8 +1634,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1771,7 +1970,7 @@
 <p>The vehicle record's <strong>Positions</strong> tab globally sorts tachograph and telematics evidence and provides a source filter. With <strong>Tachograph</strong> selected, <strong>Refresh</strong> only reloads the local database. With <strong>All</strong> or <strong>Telematics</strong>, it starts a targeted position catch-up for the assigned vehicle and selected period; Enterprise hands the same request to FleetMiraWorker. Retrieval and storage progress is visible in the global status bar. Evidence from different sources remains separate even when time and coordinates match. Without the licence feature or <code>telematics.read</code>, the list contains tachograph data only.</p>
 <p>The GPS-server.net web interface is not embedded. GPS-server.net excludes embedding its map in its <a href="https://docs.gps-server.net/FAQ/FAQ.html">FAQ</a>. FLEET Mira therefore uses locally synchronised data and the native map, preserving permissions, retention and Enterprise worker boundaries.</p>
 <p>On the Enterprise worker server, the key is requested securely without a command-line argument or log output:</p>
-<div class="highlight"><pre><span></span><code><span class="n">FLEET-Mira</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-telematics-secret-action</span> <span class="nb">set </span><span class="p">-</span><span class="n">-telematics-credential-ref</span> <span class="s2">&quot;&lt;connection-id&gt;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">FLEET-Mira</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-telematics-secret-action</span> <span class="nb">set </span><span class="p">-</span><span class="n">-telematics-credential-ref</span> <span class="s2">"&lt;connection-id&gt;"</span>
 </code></pre></div>
 <p>Use <code>status</code> to check provisioning and <code>remove</code> to delete the key. The Windows service does not need to be reinstalled afterwards.</p>
 <h2 id="synchronisation-and-odometers">Synchronisation and odometers<a class="headerlink" href="#synchronisation-and-odometers" title="Permanent link">&para;</a></h2>

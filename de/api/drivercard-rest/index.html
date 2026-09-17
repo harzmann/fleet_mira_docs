@@ -1269,7 +1269,7 @@
   <span class="md-ellipsis">
     
   
-    Architektur
+    Connector Framework
   
 
     
@@ -1282,6 +1282,205 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connector Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework-Übersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/developer-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entwicklerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/customer-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktbeschreibung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/product-flyer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktflyer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/diagram-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafikprüfung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architektur
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1430,10 +1629,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -1451,8 +1650,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1869,14 +2068,14 @@
 <div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/health</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">127.0.0.1:5055</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="s2">&quot;drivercard-rest&quot;</span><span class="p">,</span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="s2">&quot;available&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="nt">"service"</span><span class="p">:</span><span class="s2">"drivercard-rest"</span><span class="p">,</span><span class="nt">"database"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="5-fahrerkarte-parsen">5. Fahrerkarte parsen<a class="headerlink" href="#5-fahrerkarte-parsen" title="Permanent link">&para;</a></h2>
 <p><code>POST /api/drivercard/parse</code> akzeptiert JSON. Der Web-Preload verwendet Base64; lokale Archivpfade erscheinen nicht in der Browser-URL.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C_20250715_0615_Demo_1000000000000001.DDD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;content_base64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BASE64_DATEN&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;archive_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;optionale-stabile-id&quot;</span>
+<span class="w">  </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C_20250715_0615_Demo_1000000000000001.DDD"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"content_base64"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BASE64_DATEN"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"archive_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"optionale-stabile-id"</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Die Antwort nennt Import/Archiv, Fahrer-/Kartenmetadaten, Aktivitätszeitraum und Parserwarnungen. Binärinput, Signaturen und Zertifikate werden nicht zurückgegeben. Identische Inhalte sind per Hash idempotent.</p>
