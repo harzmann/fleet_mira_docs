@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/einvoice-import/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/guide/einvoice-import/">
       
       
         <link rel="prev" href="../leasing-contracts/">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -925,6 +925,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1552,6 +1580,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1751,6 +1807,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop accounting operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1892,7 +1976,7 @@
 <h1 id="importing-e-invoices-and-xrechnung">Importing e-invoices and XRechnung<a class="headerlink" href="#importing-e-invoices-and-xrechnung" title="Permanent link">&para;</a></h1>
 <p>The guided importer processes UBL Invoice, UBL Credit Note, CII and hybrid PDF with embedded invoice XML. It reads the file safely, validates its structure and runs the bundled KoSIT validator. Nothing is written to the ledger until <strong>Create foreign-invoice draft</strong> is selected.</p>
 <h2 id="read-and-validate-the-file">Read and validate the file<a class="headerlink" href="#read-and-validate-the-file" title="Permanent link">&para;</a></h2>
-<p>Open <strong>Fleet &gt; Import XRechnung</strong>, select an XML or PDF, or drop it onto the foreign-invoice list. Each file enters a queue. <strong>Inspect</strong> determines syntax, profile, Customization ID, hashes and available components.</p>
+<p>Open <strong>Fleet &gt; Import XRechnung</strong>, select an XML or PDF, or drop it onto the supplier-invoice list. This entry point opens the common maximised document review. The file appears at the top with local/AI state, progress and XRechnung state; <strong>Validate XRechnung</strong> determines syntax, profile, Customization ID, hashes and available components. The PDF or XML remains visible on the left while header, tax and positions are reviewed in the supplier-invoice form on the right.</p>
 <p><img alt="File and validation" src="../../assets/screenshots/xinvoice-validation.png" /></p>
 <p>Invalid documents are rejected without creating a draft. The KoSIT report remains available in the session and can be exported. Warnings require a business review; the summary identifies validator version and error/warning counts.</p>
 <h2 id="verify-invoice-data">Verify invoice data<a class="headerlink" href="#verify-invoice-data" title="Permanent link">&para;</a></h2>
@@ -1912,7 +1996,7 @@
 <p><img alt="KoSIT validation report" src="../../assets/screenshots/xinvoice-kosit-report.png" /></p>
 <p><strong>Invoice XML</strong> shows the structured source and <strong>KoSIT report</strong> the validation details. Hybrid PDF adds a <strong>PDF document</strong> tab. Preview uses an isolated temporary profile and never replaces the byte-identical original.</p>
 <h2 id="create-the-foreign-invoice-draft">Create the foreign-invoice draft<a class="headerlink" href="#create-the-foreign-invoice-draft" title="Permanent link">&para;</a></h2>
-<p>Choose <strong>Create foreign-invoice draft</strong> after validation, supplier, assignments and totals are complete. FLEET Mira atomically creates the draft, source lines and assignments and stores original, XML and validation report in the local financial archive. Failure leaves no partial invoice. An already imported source hash opens the existing invoice instead of creating a duplicate.</p>
+<p>Choose <strong>Save as draft</strong> or <strong>Accept as verified</strong> after validation, supplier, assignments and totals are complete. FLEET Mira atomically creates the invoice, source reference, assignments and locally verified original. Failure leaves no partial invoice. An already imported source hash is handled as a possible duplicate.</p>
 <p>Open the resulting invoice tab, check its status bar, e-invoice data and originals, and complete the normal verification and booking workflow. Import requires <code>finance.manage</code> and the Pro <strong>E-invoice import</strong> feature; verification and booking additionally require <code>finance.verify</code> and <code>finance.book</code>.</p>
 <h2 id="common-problems">Common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h2>
 <table>
@@ -2007,7 +2091,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       

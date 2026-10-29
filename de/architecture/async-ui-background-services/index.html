@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/async-ui-background-services/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/architecture/async-ui-background-services/">
       
       
         <link rel="prev" href="../tachograph-data-storage/">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -788,6 +788,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1522,6 +1550,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#44-lebensdauer-gemeinsamer-tabellencontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Lebensdauer gemeinsamer Tabellencontroller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-kontrollierte-utc-zeit-in-ui-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Kontrollierte UTC-Zeit in UI-Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1656,6 +1706,34 @@
     
   
     Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Architektur
   
 
     
@@ -1868,6 +1946,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Faktura betreiben
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1990,6 +2096,28 @@
     <span class="md-ellipsis">
       
         4.3 Ergebnis- und Fortschrittsmodell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-lebensdauer-gemeinsamer-tabellencontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Lebensdauer gemeinsamer Tabellencontroller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-kontrollierte-utc-zeit-in-ui-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Kontrollierte UTC-Zeit in UI-Tests
       
     </span>
   </a>
@@ -2274,14 +2402,21 @@
     View-&gt;&gt;View: Modell/Widgets im Hauptthread aktualisieren</code></pre>
 <h3 id="43-ergebnis-und-fortschrittsmodell">4.3 Ergebnis- und Fortschrittsmodell<a class="headerlink" href="#43-ergebnis-und-fortschrittsmodell" title="Permanent link">&para;</a></h3>
 <p><code>JobProgress</code> kann Text, Phase sowie <code>current/total</code> melden. <code>JobResult</code> enthält Wert, Request-ID, Jobname, Laufzeit und Metadaten. Der Controller protokolliert Wartezeit, Workerzeit, Phasenzeiten, Recordanzahl und Cachetreffer. Worker dürfen ausschließlich threadunabhängige Werte zurückgeben: Listen, Dictionaries, unveränderliche DTOs, Bytes oder Skalare. <code>QObject</code>, Modelle und Widgets dürfen den Thread nicht wechseln.</p>
+<h3 id="44-lebensdauer-gemeinsamer-tabellencontroller">4.4 Lebensdauer gemeinsamer Tabellencontroller<a class="headerlink" href="#44-lebensdauer-gemeinsamer-tabellencontroller" title="Permanent link">&para;</a></h3>
+<p><code>UserTableStateController</code> ist ein Qt-Kind seiner Tabellen- oder Baumansicht; sein Timer ist wiederum ein Kind des Controllers. Der Controller ermittelt seine Ansicht über <code>parent()</code> und hält keine zusätzliche Python-Rückreferenz auf die Ansicht. Die vorhandene <code>_user_table_state_controller</code>-Referenz an der Ansicht bleibt für gemeinsame Bindung und Wiederverwendung erhalten.</p>
+<p>Eine Ansicht mit Qt-Elternobjekt bleibt bis zur Freigabe dieses Besitzers gültig. Nach dessen Freigabe sind Ansicht, Controller und Timer ungültig; der Ereignisfilter und der Profilwechsel müssen diesen Zustand sicher behandeln. Eine elternlose Ansicht soll beim Wegfall der letzten Nutzreferenz im Qt-Hauptthread freigegeben werden und nicht erst durch eine spätere zyklische Sammlung in einem Worker.</p>
+<p>Die beiden Lebenszyklusregressionen prüfen native Freigabe und Qt-Elternleben ohne Datenbank oder Worker. Nur der kurze Unit-Vergleich der unmittelbaren Freigabe sichert und restauriert den bisherigen automatischen GC-Zustand; die Anwendung verändert ihre GC-Policy nicht. Diese Prüfung identifiziert kein konkretes Objekt eines früheren Hangs und ersetzt keinen unveränderten Kontext- oder vollständigen Testlauf.</p>
+<h3 id="45-kontrollierte-utc-zeit-in-ui-tests">4.5 Kontrollierte UTC-Zeit in UI-Tests<a class="headerlink" href="#45-kontrollierte-utc-zeit-in-ui-tests" title="Permanent link">&para;</a></h3>
+<p>Zeitabhängige UI-Tests müssen Testdaten und fachliche Auswertung auf denselben kontrollierten Kalendertag beziehen. Der Verkehrsverstoß-Fristtest prüft die UTC-Zeitpunkte <code>2026-10-05T23:59:59+00:00</code> und <code>2026-10-06T00:00:01+00:00</code>; sein Fälligkeitsdatum wird aus dem jeweiligen UTC-Zeitpunkt abgeleitet. Dadurch kann die lokale Tagesgrenze der Testumgebung die erwartete Fristbewertung nicht verändern.</p>
+<p>Der Test ersetzt mit <code>monkeypatch</code> ausschließlich die <code>datetime</code>-Bindung in <code>fleet_management</code>; die Bindung wird nach jedem Testfall wiederhergestellt. Produktionszeitberechnung, die 17 fachlichen Assertions und die bisherigen Wartefristen von fünf Sekunden bleiben unverändert. Der Zeitgeber ersetzt weder die echte Repositoryauswertung noch die asynchrone UI-Aktualisierung.</p>
 <h2 id="5-datenbankarbeit-in-workern">5. Datenbankarbeit in Workern<a class="headerlink" href="#5-datenbankarbeit-in-workern" title="Permanent link">&para;</a></h2>
 <p>Jeder Worker öffnet seine SQLite-Verbindung selbst über die gemeinsame Runtime-Factory. Verbindungen werden niemals vom UI-Thread an Worker weitergereicht. Runtime-Repositories verwenden <code>ensure_schema=False</code>; DDL und Datenmigrationen gehören ausschließlich in den Start-Bootstrap.</p>
 <p>Empfohlenes Muster:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">report</span><span class="p">):</span>
     <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
     <span class="n">repo</span> <span class="o">=</span> <span class="n">VehicleUnitRepository</span><span class="p">(</span><span class="n">db_path</span><span class="p">,</span> <span class="n">ensure_schema</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">report</span><span class="p">(</span><span class="n">JobProgress</span><span class="p">(</span><span class="s2">"Kalibrierungen werden geladen"</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">"query"</span><span class="p">))</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">list_vehicle_facts</span><span class="p">(</span><span class="s2">"ddd_vu_calibration"</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">date_from</span><span class="p">,</span> <span class="n">date_to</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+    <span class="n">report</span><span class="p">(</span><span class="n">JobProgress</span><span class="p">(</span><span class="s2">&quot;Kalibrierungen werden geladen&quot;</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;query&quot;</span><span class="p">))</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">list_vehicle_facts</span><span class="p">(</span><span class="s2">&quot;ddd_vu_calibration&quot;</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">date_from</span><span class="p">,</span> <span class="n">date_to</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
     <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
     <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
 </code></pre></div>
@@ -2458,7 +2593,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

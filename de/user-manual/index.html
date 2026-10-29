@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/user-manual/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/user-manual/">
       
       
         <link rel="prev" href="../product-overview/">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1217,6 +1217,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1844,6 +1872,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Architektur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2030,6 +2086,34 @@
     
   
     Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Faktura betreiben
   
 
     
@@ -2476,9 +2560,15 @@
 
 
 <h1 id="benutzerhandbuch">Benutzerhandbuch<a class="headerlink" href="#benutzerhandbuch" title="Permanent link">&para;</a></h1>
+<p>Die <a href="../guide/workshop-management/">Werkstatt-Anleitung</a> beschreibt Aufträge, Artikel, Lager, Einkauf und Ausgangsfaktura in Pro und Enterprise. Für Archiv, externe Sicherung und Wiederherstellung gilt das <a href="../operations/workshop-accounting/">Betriebskonzept der Werkstatt-Faktura</a>.</p>
 <h2 id="detaillierte-fachkapitel">Detaillierte Fachkapitel<a class="headerlink" href="#detaillierte-fachkapitel" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../guide/tachodata-overviews/">Tachodaten-Auswertung Personal und Fuhrpark</a></li>
+<li>
+<p><a href="../architecture/action-ribbons/">Einheitliche Aktionsleisten und Formularaktionen</a></p>
+</li>
+<li>
+<p><a href="../guide/tachodata-overviews/">Tachodaten-Auswertung Personal und Fuhrpark</a></p>
+</li>
 <li><a href="../guide/drivercard-analysis/">Fahrerkarten-Auswertung – alle Tabs</a></li>
 <li><a href="../guide/vehicle-unit-analysis/">Massenspeicher-Auswertung – alle Tabs</a></li>
 <li><a href="../guide/deadlines-record-documents/">Fälligkeiten und Akten-Dokumente</a></li>
@@ -2493,6 +2583,7 @@
 <p>Diese Kapitel verwenden eine ausschließlich temporär erzeugte, anonymisierte Kopie der Entwicklungsdatenbank. Aktivitäten, Zeitangaben, Beträge und freigegebene Koordinaten bleiben fachlich repräsentativ. Fahrernamen, Geburtstage, Kartenidentitäten, Kennzeichen und FIN werden deterministisch durch erkennbare Demonstrationswerte ersetzt.</p>
 <h2 id="edition-und-verarbeitungsmodell">Edition und Verarbeitungsmodell<a class="headerlink" href="#edition-und-verarbeitungsmodell" title="Permanent link">&para;</a></h2>
 <p>Basic und Pro verwenden eine lokale SQLite-Datenbank und verarbeiten Hintergrundaufgaben in der Anwendung. Enterprise verwendet ausschließlich PostgreSQL. Der Client stellt zentrale Arbeit in die Datenbankwarteschlange; der eigenständige Dienst <code>FleetMiraWorker</code> führt Importe, Benachrichtigungen, Sicherungen und weitere geplante Aufgaben aus. Derselbe Bedienablauf erzeugt damit dasselbe fachliche Ergebnis, Enterprise-Aufträge können jedoch nach dem Schließen des Clientfensters weiterlaufen.</p>
+<p>Die Lizenzverwaltung öffnen Sie über <strong>Hilfe → Lizenzierung</strong>. Dieser Menüeintrag und die Titel der Lizenzdialoge folgen der angemeldeten Benutzersprache; die Region beeinflusst ihre Bezeichnung nicht. Eine Änderung der Sprache aktiviert keine Lizenz und ersetzt keine Online-Aktivierung.</p>
 <h2 id="1-anmeldung-und-arbeitsbereich">1. Anmeldung und Arbeitsbereich<a class="headerlink" href="#1-anmeldung-und-arbeitsbereich" title="Permanent link">&para;</a></h2>
 <p>Starten Sie FLEET Mira über die installierte Verknüpfung. Der Splash-Screen bleibt während der Startinitialisierung und der anfänglichen Arbeitsbereichsladevorgänge sichtbar. Erst nachdem deren UI-Callbacks vollständig abgearbeitet sind, wird er innerhalb desselben Render-Zyklus nahtlos durch die dann sofort bedienbare Anmeldung ersetzt. Eine neue Installation verwendet einmalig <code>admin</code> / <code>admin</code> und verlangt anschließend ein sicheres neues Kennwort. Wenn ein Administrator Single Sign-on eingerichtet und Ihr Konto vorab zugeordnet hat, verwenden Sie stattdessen <strong>Mit Microsoft anmelden</strong> oder <strong>Mit Google anmelden</strong>. <strong>Microsoft Entra ID SSO ist derzeit Beta und noch nicht mit einem realen Kundenmandanten Ende-zu-Ende validiert.</strong> Verwenden Sie bis zur kundenspezifischen Abnahme den lokalen Login als Rückfallmöglichkeit und wenden Sie sich bei Problemen an Ihren Administrator. Einrichtung und Fehlerbehebung beschreibt das <a href="../administrator-integration-guide/#single-sign-on-mit-microsoft-entra-id-und-google">Administratoren- und Integratorenhandbuch</a>.</p>
 <p><img alt="Splash-Screen von FLEET Mira" src="../assets/screenshots/splash.png" />
@@ -2513,6 +2604,7 @@
 <li>Rechtsklick auf eine Datenzeile öffnet fachliche Aktionen; zuerst wird immer die Zeile unter dem Mauszeiger markiert.</li>
 <li>Markierte Zeilen verwenden dunkelblauen Hintergrund und weiße Schrift und bleiben trotz Statusfarben lesbar.</li>
 </ul>
+<p>Spaltenbreite, Reihenfolge, Sichtbarkeit und Sortierung gehören zum persönlichen Tabellenlayout. Beim Benutzerwechsel bleiben die zuletzt tatsächlich geänderten Einstellungen erhalten; eine unveränderte weitere Ansicht derselben Tabelle überschreibt sie nicht. <strong>Standardlayout wiederherstellen</strong> entfernt das gespeicherte Layout, bis Sie erneut eine Spalte ändern. Das Schließen des Kontextmenüs ohne Auswahl verändert nichts. Die Menübeschriftung folgt Ihrer Benutzersprache.</p>
 <h2 id="2-dashboard">2. Dashboard<a class="headerlink" href="#2-dashboard" title="Permanent link">&para;</a></h2>
 <p>Die sechs Kacheln führen direkt zu gefilterten Arbeitsbereichen:</p>
 <p><img alt="Dashboard von FLEET Mira mit anonymisierten Demonstrationsdaten" src="../assets/screenshots/dashboard.png" />
@@ -2775,7 +2867,7 @@
     F --&gt; G[FiBu-Export per REST oder CSV/ZIP]</code></pre>
 <p>Die Statuszeile vergleicht Gesamtbrutto, Splitbetrag und Differenz. Null ist grün; jede Centabweichung rot und sperrt die Prüfung. Rechnungspositionen übernehmen Belegdatum als Beleg-/Gültigkeitsdatum und sind immer variabel. Gebuchte Datensätze sind unveränderlich; Korrekturen erfolgen per Storno oder verknüpfter Gutschrift.</p>
 <h3 id="leasingvertrage">Leasingverträge<a class="headerlink" href="#leasingvertrage" title="Permanent link">&para;</a></h3>
-<p>Unter <strong>Fuhrpark → Leasingverträge</strong> verwalten Sie Vertragsdaten, faktorbasierte Vorkalkulation, separat maßgebliche Vertragsrate, Zahlungsplan, Dokumente und verknüpfte Istkosten. Einzelheiten zu Faktorformeln, M-Daten-Fahrleistung und den drei Leasingberichten enthält <a href="../guide/leasing-contracts/">Leasingverträge</a>.</p>
+<p>Unter <strong>Fuhrpark → Leasingverträge</strong> verwalten Sie Vertragsdaten, faktorbasierte Vorkalkulation, Zahlungsplan, Dokumente, Dauerrechnungen und verknüpfte Istkosten. Die Anlage erfolgt manuell oder in Pro/Enterprise dokumentgestützt über XRechnung, PDF-Text, OCR, lokales ML und den optionalen KI-Connector; alle Vorschläge müssen ausdrücklich geprüft und bestätigt werden. Einzelheiten zu den Workflows, Faktorformeln, M-Daten-Fahrleistung und den drei Leasingberichten enthält <a href="../guide/leasing-contracts/">Leasingverträge</a>.</p>
 <p><img alt="Leasingverträge mit anonymisierten Demodaten" src="../assets/screenshots/lease-contracts.png" />
 <em>Abbildung: Filterbare Leasingvertragsübersicht aus der anonymisierten Demodatenbank.</em></p>
 <h3 id="erechnungxrechnung">E‑Rechnung/XRechnung<a class="headerlink" href="#erechnungxrechnung" title="Permanent link">&para;</a></h3>
@@ -2825,6 +2917,7 @@
 </tbody>
 </table>
 <p>Für Wiederherstellung und Betrieb siehe <a href="../administrator-integration-guide/">Administratoren- und Integratorenhandbuch</a>.</p>
+<p>Die bereichsübergreifende Vereinheitlichung der Aktionsleisten und Funktionsicons ist im <a href="../guide/ui-rollout-report/">UI-Rolloutbericht</a> mit allen abgedeckten Programmpunkten dokumentiert.</p>
 
 
 
@@ -2887,7 +2980,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       

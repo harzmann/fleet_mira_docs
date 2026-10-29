@@ -346,6 +346,17 @@
   },
   {
     "language": "de",
+    "feature": "lease-contract-new",
+    "file": "lease-contract-new.png",
+    "source_profile": "isolated-anonymized-lease-intake",
+    "captured_on": "2026-08-07",
+    "anonymized": true,
+    "section": "leasing",
+    "tab": "manual-entry",
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
     "feature": "lease-contract-overview",
     "file": "lease-contract-overview.png",
     "source_profile": "anonymized-development-copy",
@@ -364,6 +375,28 @@
     "anonymized": true,
     "section": "leasing",
     "tab": "contracts",
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "lease-document-review",
+    "file": "lease-document-review.png",
+    "source_profile": "isolated-anonymized-lease-intake",
+    "captured_on": "2026-08-10",
+    "anonymized": true,
+    "section": "leasing",
+    "tab": "visual-review",
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "lease-document-evidence",
+    "file": "lease-document-evidence.png",
+    "source_profile": "isolated-anonymized-lease-intake",
+    "captured_on": "2026-08-10",
+    "anonymized": true,
+    "section": "leasing",
+    "tab": "evidence-candidate",
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
   {
@@ -1367,6 +1400,17 @@
   },
   {
     "language": "en",
+    "feature": "lease-contract-new",
+    "file": "lease-contract-new.png",
+    "source_profile": "isolated-anonymized-lease-intake",
+    "captured_on": "2026-08-07",
+    "anonymized": true,
+    "section": "leasing",
+    "tab": "manual-entry",
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
     "feature": "lease-contract-overview",
     "file": "lease-contract-overview.png",
     "source_profile": "anonymized-development-copy",
@@ -1385,6 +1429,28 @@
     "anonymized": true,
     "section": "leasing",
     "tab": "contracts",
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "lease-document-review",
+    "file": "lease-document-review.png",
+    "source_profile": "isolated-anonymized-lease-intake",
+    "captured_on": "2026-08-10",
+    "anonymized": true,
+    "section": "leasing",
+    "tab": "visual-review",
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "lease-document-evidence",
+    "file": "lease-document-evidence.png",
+    "source_profile": "isolated-anonymized-lease-intake",
+    "captured_on": "2026-08-10",
+    "anonymized": true,
+    "section": "leasing",
+    "tab": "evidence-candidate",
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
   {

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/traffic-offence-management/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/guide/traffic-offence-management/">
       
       
         <link rel="prev" href="../position-maps/">
       
       
-        <link rel="next" href="../../administrator-integration-guide/">
+        <link rel="next" href="../workshop-management/">
       
       
         
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -892,6 +892,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1519,6 +1547,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1718,6 +1774,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop accounting operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1826,6 +1910,24 @@
 <h1 id="traffic-offence-management">Traffic-offence management<a class="headerlink" href="#traffic-offence-management" title="Permanent link">&para;</a></h1>
 <p>This module supports fleet managers with the administrative processing of German traffic offences. It does not replace legal or privacy advice and makes no automatic decision about guilt, liability or the driver.</p>
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<p>The following diagram shows the regular workflow and its possible return paths. Driver, guilt, liability and legal decisions are never made automatically; proposals and responses must be reviewed and confirmed by an authorised user.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["1. Intake&lt;br/&gt;Upload, watched import folder or IMAP"] --&gt; B["2. Capture&lt;br/&gt;Archive the original, review OCR and AI proposals&lt;br/&gt;Create a case or assign the document"]
+    B --&gt; C["3. Driver assignment&lt;br/&gt;Evaluate tachograph data, telematics, dispatch and default driver"]
+    C --&gt; D{"Suitable driver identified?"}
+    D --&gt;|"No"| E["Assign driver manually&lt;br/&gt;Record a reason"]
+    D --&gt;|"Yes"| F{"Accept the proposal?"}
+    F --&gt;|"No"| G["Select a different driver&lt;br/&gt;Explain the deviation"]
+    F --&gt;|"Yes"| H["Confirm driver"]
+    E --&gt; H
+    G --&gt; H
+    H --&gt; I["4. Driver enquiry&lt;br/&gt;Send portal link and fillable PDF by email&lt;br/&gt;Review the driver's response"]
+    I --&gt; J{"Next processing step?"}
+    J --&gt;|"Continue driver identification"| C
+    J --&gt;|"Prepare authority response"| K["5. Response to the authority&lt;br/&gt;Create the response from reviewed information"]
+    K --&gt; L["Send the response manually"]
+    L --&gt; M["Record dispatch"]
+    M --&gt; N["6. Closure&lt;br/&gt;Check open items and close the case with an audit trail"]</code></pre>
 <p>While the <strong>Traffic offences</strong> workspace is open, it refreshes the review inbox and case overview from the database every 15 seconds. Selection and scroll position are preserved, and newly added review items are announced in the action row. Refreshing stops completely when the tab is switched away from or closed. The UI never triggers its own IMAP poll; it only displays results already imported by the worker.</p>
 <p>Authority documents are accepted by upload, a watched import folder or a dedicated IMAP mailbox. Original files and messages are retained unchanged with a SHA-256 checksum. Text PDFs are read locally; images and scans can be processed with a locally installed Tesseract service. When a document creates a <strong>new case</strong>, its document type and date, authority, reference, registration, offence time and location, vehicle and response deadline must all be confirmed regardless of document type. When a document is assigned to an <strong>existing case</strong>, the review shows only the assignment, the required document date and the optional response deadline; the other case fields are hidden and are not requested again.</p>
 <p>Once confirmed, the review-inbox item is immutable. <strong>View</strong> or a double-click opens the already linked case and cannot create a second case or assign the original to another case.</p>
@@ -1914,7 +2016,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       

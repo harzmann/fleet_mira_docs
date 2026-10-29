@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/foreign-invoices/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/guide/foreign-invoices/">
       
       
         <link rel="prev" href="../vehicle-costs/">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -633,6 +633,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#capture-from-a-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture from a document
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#header-and-supplier" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -912,6 +923,34 @@
     
   
     Traffic-offence management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop management
   
 
     
@@ -1552,6 +1591,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1751,6 +1818,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop accounting operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1783,6 +1878,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#capture-from-a-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture from a document
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#header-and-supplier" class="md-nav__link">
@@ -1891,7 +1997,31 @@
 
 <h1 id="foreign-invoices">Foreign invoices<a class="headerlink" href="#foreign-invoices" title="Permanent link">&para;</a></h1>
 <p>Double-click a foreign invoice to open its own work tab. The status strip shows workflow, validity, local document and export states plus net/gross total, allocated amount and difference. Green means an exact cent-level match; red blocks verification.</p>
+<h2 id="capture-from-a-document">Capture from a document<a class="headerlink" href="#capture-from-a-document" title="Permanent link">&para;</a></h2>
+<p>In Pro and Enterprise, <strong>From document</strong> is available beside <strong>New</strong>. PDF, image, XML and hybrid PDF files open the same maximised review screen as document-assisted lease creation. The original, page controls, zoom and evidence locations are on the left; the familiar supplier-invoice form, tax rows, positions and recurring-invoice amount periods remain editable on the right. The document table shows local analysis, latest AI analysis, XRechnung state, progress and errors for each file.</p>
+<p>Focusing a candidate automatically opens the correct document and page. Blue is a preview; only <strong>Apply</strong> or the candidate checkbox accepts the value and its concrete evidence location. Unique candidates may be preselected transiently. Ambiguous candidates remain open until the user accepts one or confirms a manual value. Cancelling discards the technical session and all temporary documents.</p>
+<p>Dates, numbers, percentages and monetary amounts use the signed-in user's region in the form, candidate list and hints; ISO dates, integer cents and basis points remain unchanged internally. A wheel gesture over a date, selection or numeric editor scrolls the form and does not change the field value.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["Supplier invoices"] --&gt; B{"Entry point"}
+    B --&gt;|"New"| C["Manual invoice form"]
+    B --&gt;|"From document"| D["PDF, image, XML or hybrid PDF"]
+    B --&gt;|"Import XRechnung"| D
+    D --&gt; E["PDF text, OCR or structured invoice data"]
+    E --&gt; F["Optional consented AI analysis"]
+    F --&gt; G["Review document and evidence on the left"]
+    G --&gt; H["Confirm header, tax and positions on the right"]
+    H --&gt; I{"Invoice kind"}
+    I --&gt;|"Single"| J["Assign position to one vehicle"]
+    I --&gt;|"Collective"| K["Allocate positions across vehicles"]
+    I --&gt;|"Recurring"| L["Review amount periods and components"]
+    J --&gt; M{"Finish"}
+    K --&gt; M
+    L --&gt; M
+    M --&gt;|"Minimum data available"| N["Save as draft"]
+    M --&gt;|"Complete and exact"| O["Accept as verified"]</code></pre>
+<p><strong>Import XRechnung</strong> remains visible as a separate entry point but uses this same review workspace and starts with structured validation. Valid XML totals and tax rows are authoritative; OCR and AI never replace them silently.</p>
 <h2 id="header-and-supplier">Header and supplier<a class="headerlink" href="#header-and-supplier" title="Permanent link">&para;</a></h2>
+<p>The saved invoice record refreshes status labels, totals and dates from its loaded data using the current language and region. Completing document-assisted capture stops session timers, closes preview and removes its temporary preview copy. A saved original remains in the financial archive; declining discard keeps capture open.</p>
 <p>Under <strong>Fleet &gt; Foreign invoices &gt; New</strong>, enter supplier, document type, invoice kind, number and date, delivery/validity period and payment terms. In the manual tax table, enter the taxable base for every VAT rate; FLEET Mira calculates read-only net, VAT and gross totals with commercial cent rounding. A 19% row is preselected and additional rates including 0% are supported. A credit or cancellation also references its original invoice.</p>
 <p><img alt="Foreign-invoice supplier" src="../../assets/screenshots/foreign-invoice-supplier.png" /></p>
 <p>The <strong>Supplier</strong> tab shows master data and e-invoice identifiers used for the document. <strong>Document data</strong> also shows dates, the VAT rate or complete tax breakdown, and net, VAT and gross totals.</p>
@@ -1906,7 +2036,8 @@
 <p><img alt="Imported e-invoice data" src="../../assets/screenshots/foreign-invoice-einvoice.png" /></p>
 <p>For structured imports this tab shows syntax, profile, validator, errors/warnings and every source line with its allocation count. Original, XML and KoSIT report remain separate verified document roles. See <a href="../einvoice-import/">Importing e-invoices and XRechnung</a>.</p>
 <h2 id="document-analysis">Document analysis<a class="headerlink" href="#document-analysis" title="Permanent link">&para;</a></h2>
-<p>Image PDFs and scans are analysed locally first using embedded text or Tesseract OCR. Rules and confirmed historical assignments provide review-only supplier, vehicle and lease-contract suggestions. Cloud analysis through an Azure or Vertex provider configured under <strong>Administration &gt; AI connector</strong> requires explicit consent for each document. The original, hash, result, model, confidence and evidence remain traceable together; no assignment is confirmed automatically.</p>
+<p>Image PDFs and scans are analysed locally first using embedded text or the bundled PDFium/Tesseract OCR runtime. Rules and confirmed historical assignments provide review-only supplier, vehicle and lease-contract suggestions. Cloud analysis through an Azure or Vertex provider configured under <strong>Administration &gt; AI connector</strong> requires explicit consent for each document. The original, hash, result, model, confidence and evidence remain traceable together; no assignment is confirmed automatically. If the OCR runtime or language model is unexpectedly unavailable, the analysis ends with a technical failure and is never stored as an apparently successful empty suggestion.</p>
+<p>A recurring invoice may be saved without a contract assignment and linked later. An unambiguously recognised active lease contract is only proposed and must be confirmed explicitly. The direct <strong>Recurring invoice from document</strong> action in an active lease file instead fixes vehicle, supplier and contract and stores the verified invoice and assignment together.</p>
 <h2 id="verify-book-and-correct">Verify, book and correct<a class="headerlink" href="#verify-book-and-correct" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Complete header and positions in <strong>Draft</strong>.</li>
@@ -2010,7 +2141,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       

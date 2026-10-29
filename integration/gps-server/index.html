@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/integration/gps-server/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/integration/gps-server/">
       
       
         <link rel="prev" href="../drivercard-parser/">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -775,6 +775,34 @@
     
   
     Traffic-offence management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop management
   
 
     
@@ -1558,6 +1586,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1757,6 +1813,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop accounting operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1942,7 +2026,7 @@
 <p>The vehicle record's <strong>Positions</strong> tab globally sorts tachograph and telematics evidence and provides a source filter. With <strong>Tachograph</strong> selected, <strong>Refresh</strong> only reloads the local database. With <strong>All</strong> or <strong>Telematics</strong>, it starts a targeted position catch-up for the assigned vehicle and selected period; Enterprise hands the same request to FleetMiraWorker. Retrieval and storage progress is visible in the global status bar. Evidence from different sources remains separate even when time and coordinates match. Without the licence feature or <code>telematics.read</code>, the list contains tachograph data only.</p>
 <p>The GPS-server.net web interface is not embedded. GPS-server.net excludes embedding its map in its <a href="https://docs.gps-server.net/FAQ/FAQ.html">FAQ</a>. FLEET Mira therefore uses locally synchronised data and the native map, preserving permissions, retention and Enterprise worker boundaries.</p>
 <p>On the Enterprise worker server, the key is requested securely without a command-line argument or log output:</p>
-<div class="highlight"><pre><span></span><code><span class="n">FLEET-Mira</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-telematics-secret-action</span> <span class="nb">set </span><span class="p">-</span><span class="n">-telematics-credential-ref</span> <span class="s2">"&lt;connection-id&gt;"</span>
+<div class="highlight"><pre><span></span><code><span class="n">FLEET-Mira</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-telematics-secret-action</span> <span class="nb">set </span><span class="p">-</span><span class="n">-telematics-credential-ref</span> <span class="s2">&quot;&lt;connection-id&gt;&quot;</span>
 </code></pre></div>
 <p>Use <code>status</code> to check provisioning and <code>remove</code> to delete the key. The Windows service does not need to be reinstalled afterwards.</p>
 <h2 id="synchronisation-and-odometers">Synchronisation and odometers<a class="headerlink" href="#synchronisation-and-odometers" title="Permanent link">&para;</a></h2>
@@ -2038,7 +2122,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       

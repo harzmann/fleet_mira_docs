@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/gps-server/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/integration/gps-server/">
       
       
         <link rel="prev" href="../drivercard-parser/">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -775,6 +775,34 @@
     
   
     Verkehrsverstöße-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Management
   
 
     
@@ -1558,6 +1586,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Architektur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1757,6 +1813,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Faktura betreiben
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1942,7 +2026,7 @@
 <p>Der Fahrzeugakten-Reiter <strong>Positionen</strong> sortiert Tachograf- und Telematiknachweise gemeinsam nach Zeitpunkt und bietet einen Quellenfilter. <strong>Aktualisieren</strong> liest bei Quelle <strong>Tachograf</strong> nur die lokale Datenbank neu. Bei <strong>Alle</strong> oder <strong>Telematik</strong> startet die Schaltfläche für ein aktiv zugeordnetes Fahrzeug einen gezielten Positions-Catch-up im gewählten Zeitraum; Enterprise übergibt denselben Auftrag an FleetMiraWorker. Abruf und Speicherung erscheinen mit Datensatzfortschritt in der globalen Statusleiste. Punkte verschiedener Quellen bleiben getrennte Nachweise, auch wenn Zeit und Koordinaten übereinstimmen. Ohne Lizenz oder <code>telematics.read</code> werden ausschließlich Tachografdaten angezeigt.</p>
 <p>Die GPS-server.net-Weboberfläche wird nicht eingebettet. GPS-server.net schließt die Einbettung der eigenen Karte in seiner <a href="https://docs.gps-server.net/FAQ/FAQ.html">FAQ</a> aus. FLEET Mira verwendet deshalb die lokal synchronisierten Daten und die native Karte; dadurch bleiben Berechtigungen, Retention und Enterprise-Workergrenzen wirksam.</p>
 <p>Auf dem Enterprise-Worker-Server wird der Schlüssel ohne Kommandozeilenargument und ohne Protokollausgabe sicher abgefragt:</p>
-<div class="highlight"><pre><span></span><code><span class="n">FLEET-Mira</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-telematics-secret-action</span> <span class="nb">set </span><span class="p">-</span><span class="n">-telematics-credential-ref</span> <span class="s2">"&lt;Verbindungs-ID&gt;"</span>
+<div class="highlight"><pre><span></span><code><span class="n">FLEET-Mira</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-telematics-secret-action</span> <span class="nb">set </span><span class="p">-</span><span class="n">-telematics-credential-ref</span> <span class="s2">&quot;&lt;Verbindungs-ID&gt;&quot;</span>
 </code></pre></div>
 <p>Mit <code>status</code> kann der Provisionierungszustand geprüft und mit <code>remove</code> der Schlüssel entfernt werden. Der Windows-Dienst muss danach nicht neu installiert werden.</p>
 <h2 id="synchronisierung-und-kilometerstande">Synchronisierung und Kilometerstände<a class="headerlink" href="#synchronisierung-und-kilometerstande" title="Permanent link">&para;</a></h2>
@@ -2038,7 +2122,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

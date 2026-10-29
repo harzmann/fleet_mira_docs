@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/einvoice-import/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/guide/einvoice-import/">
       
       
         <link rel="prev" href="../leasing-contracts/">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -925,6 +925,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1552,6 +1580,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Architektur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1751,6 +1807,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Faktura betreiben
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1892,7 +1976,7 @@
 <h1 id="erechnung-und-xrechnung-importieren">E‑Rechnung und XRechnung importieren<a class="headerlink" href="#erechnung-und-xrechnung-importieren" title="Permanent link">&para;</a></h1>
 <p>Der geführte Import verarbeitet UBL Invoice, UBL Credit Note, CII und Hybrid-PDF mit eingebettetem Rechnungs-XML. Die Datei wird vor der Übernahme sicher gelesen, strukturell geprüft und mit dem gebündelten KoSIT-Validator bewertet. Erst <strong>Als Fremdrechnung übernehmen</strong> schreibt einen neuen Entwurf.</p>
 <h2 id="datei-einlesen-und-validieren">Datei einlesen und validieren<a class="headerlink" href="#datei-einlesen-und-validieren" title="Permanent link">&para;</a></h2>
-<p>Öffnen Sie <strong>Fuhrpark &gt; XRechnung importieren</strong>, wählen Sie eine XML- oder PDF-Datei oder ziehen Sie sie in die Fremdrechnungsliste. Jede Datei erscheint in einer Warteschlange. <strong>Prüfen</strong> ermittelt Syntax, Profil, Customization-ID, Hashwerte und vorhandene Bestandteile.</p>
+<p>Öffnen Sie <strong>Fuhrpark &gt; XRechnung importieren</strong>, wählen Sie eine XML- oder PDF-Datei oder ziehen Sie sie in die Fremdrechnungsliste. Der Einstieg öffnet die gemeinsame maximierte Dokumentprüfung. Die Datei erscheint oben mit lokalem/KI-Status, Fortschritt und XRechnungsstatus; <strong>XRechnung prüfen</strong> ermittelt Syntax, Profil, Customization-ID, Hashwerte und vorhandene Bestandteile. Links bleibt das PDF beziehungsweise XML sichtbar, rechts werden Kopf, Steuer und Positionen im Fremdrechnungsformular geprüft.</p>
 <p><img alt="Datei und Validierung" src="../../assets/screenshots/xinvoice-validation.png" /></p>
 <p>Fehlerhafte Dokumente werden abgelehnt und nicht übernommen. Der KoSIT-Bericht bleibt in der Sitzung sichtbar und kann exportiert werden. Warnungen müssen fachlich bewertet werden; die Zusammenfassung nennt Validatorversion sowie Fehler- und Warnungsanzahl.</p>
 <h2 id="rechnungsdaten-prufen">Rechnungsdaten prüfen<a class="headerlink" href="#rechnungsdaten-prufen" title="Permanent link">&para;</a></h2>
@@ -1912,7 +1996,7 @@
 <p><img alt="KoSIT-Prüfbericht" src="../../assets/screenshots/xinvoice-kosit-report.png" /></p>
 <p><strong>Rechnungs-XML</strong> zeigt die strukturierte Quelle, <strong>KoSIT-Prüfbericht</strong> die Validierungsdetails. Bei einer Hybrid-PDF wird zusätzlich <strong>PDF-Beleg</strong> eingeblendet. Vorschauen verwenden ein abgeschottetes temporäres Profil; sie ersetzen niemals das bytegenaue Original.</p>
 <h2 id="als-fremdrechnung-ubernehmen">Als Fremdrechnung übernehmen<a class="headerlink" href="#als-fremdrechnung-ubernehmen" title="Permanent link">&para;</a></h2>
-<p>Wählen Sie <strong>Als Fremdrechnung übernehmen</strong>, sobald Validierung, Lieferant, Positionen und Summen vollständig sind. FLEET Mira legt atomar den Fremdrechnungsentwurf, die Quellzeilen und Zuordnungen sowie Original, strukturiertes XML und Prüfbericht im lokalen Finanzarchiv an. Bei einem Fehler wird kein Teilentwurf zurückgelassen. Ein bereits importierter Originalhash führt zur vorhandenen Rechnung statt zu einer Dublette.</p>
+<p>Wählen Sie <strong>Als Entwurf speichern</strong> oder <strong>Geprüft übernehmen</strong>, sobald Validierung, Lieferant, Positionen und Summen vollständig sind. FLEET Mira legt Fremdrechnung, Quellbezug, Zuordnungen und lokal verifiziertes Original atomar an. Bei einem Fehler wird kein Teilentwurf zurückgelassen. Ein bereits importierter Originalhash wird als mögliche Dublette behandelt.</p>
 <p>Öffnen Sie danach den Rechnungsarbeitstab, prüfen Sie Statuszeile, E‑Rechnungsdaten und Originalbelege und führen Sie den normalen Prüf- und Buchungsworkflow aus. Der Import benötigt <code>finance.manage</code> und die Pro-Funktion <strong>E‑Rechnungsimport</strong>; Prüfen und Buchen benötigen zusätzlich <code>finance.verify</code> beziehungsweise <code>finance.book</code>.</p>
 <h2 id="typische-fehler">Typische Fehler<a class="headerlink" href="#typische-fehler" title="Permanent link">&para;</a></h2>
 <table>
@@ -2007,7 +2091,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

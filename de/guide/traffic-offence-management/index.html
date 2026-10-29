@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/traffic-offence-management/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/guide/traffic-offence-management/">
       
       
         <link rel="prev" href="../position-maps/">
       
       
-        <link rel="next" href="../../administrator-integration-guide/">
+        <link rel="next" href="../workshop-management/">
       
       
         
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -892,6 +892,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1519,6 +1547,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Architektur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1718,6 +1774,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Faktura betreiben
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1826,6 +1910,24 @@
 <h1 id="verkehrsverstoe-verwalten">Verkehrsverstöße verwalten<a class="headerlink" href="#verkehrsverstoe-verwalten" title="Permanent link">&para;</a></h1>
 <p>Das Modul unterstützt Fuhrparkverantwortliche bei der administrativen Bearbeitung deutscher Verkehrsverstöße. Es ersetzt keine Rechts- oder Datenschutzberatung und trifft keine automatische Schuld-, Haftungs- oder Fahrerentscheidung.</p>
 <h2 id="ablauf">Ablauf<a class="headerlink" href="#ablauf" title="Permanent link">&para;</a></h2>
+<p>Das folgende Schaubild zeigt den regulären Bearbeitungsweg und die möglichen Rücksprünge. Fahrer-, Schuld-, Haftungs- oder Rechtsentscheidungen werden dabei nicht automatisch getroffen; Vorschläge und Antworten müssen von einem berechtigten Benutzer geprüft und bestätigt werden.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["1. Eingang&lt;br/&gt;Upload, Importordner oder IMAP"] --&gt; B["2. Erfassung&lt;br/&gt;Original archivieren, OCR- und KI-Vorschläge prüfen&lt;br/&gt;Vorgang anlegen oder Dokument zuordnen"]
+    B --&gt; C["3. Fahrerzuordnung&lt;br/&gt;Tachodaten, Telematik, Disposition und Standardfahrer auswerten"]
+    C --&gt; D{"Geeigneten Fahrer ermittelt?"}
+    D --&gt;|"Nein"| E["Fahrer manuell zuweisen&lt;br/&gt;Begründung erfassen"]
+    D --&gt;|"Ja"| F{"Vorschlag übernehmen?"}
+    F --&gt;|"Nein"| G["Anderen Fahrer auswählen&lt;br/&gt;Abweichung begründen"]
+    F --&gt;|"Ja"| H["Fahrer bestätigen"]
+    E --&gt; H
+    G --&gt; H
+    H --&gt; I["4. Befragung&lt;br/&gt;Portal-Link und ausfüllbares PDF per E-Mail senden&lt;br/&gt;Fahrerantwort prüfen"]
+    I --&gt; J{"Nächster Bearbeitungsschritt?"}
+    J --&gt;|"Weitere Fahrerermittlung"| C
+    J --&gt;|"Behördenantwort vorbereiten"| K["5. Antwort an die Behörde&lt;br/&gt;Antwortschreiben aus geprüften Angaben erzeugen"]
+    K --&gt; L["Antwort manuell versenden"]
+    L --&gt; M["Versand dokumentieren"]
+    M --&gt; N["6. Abschluss&lt;br/&gt;Offene Punkte prüfen und Vorgang revisionsfähig abschließen"]</code></pre>
 <p>Der geöffnete Arbeitstab <strong>Verkehrsverstöße</strong> aktualisiert Prüfeingang und Vorgangsübersicht alle 15 Sekunden aus der Datenbank. Auswahl und Scrollposition bleiben erhalten; neu hinzugekommene Prüfeingänge werden in der Aktionszeile angekündigt. Beim Wechseln oder Schließen des Tabs stoppt die Aktualisierung vollständig. Die Oberfläche löst dabei keinen eigenen IMAP-Abruf aus, sondern zeigt ausschließlich die vom Worker bereits übernommenen Ergebnisse.</p>
 <p>Behördendokumente werden per Upload, über einen überwachten Importordner oder ein dediziertes IMAP-Postfach übernommen. Originaldateien und E-Mails bleiben unverändert mit SHA-256-Prüfsumme erhalten. Text-PDFs werden lokal ausgelesen; Bilder und Scans können mit lokal installiertem Tesseract verarbeitet werden. Wird aus einem Dokument ein <strong>neuer Vorgang</strong> erzeugt, sind unabhängig von der Dokumentart Dokumentart, Dokumentdatum, Behörde, Aktenzeichen, Kennzeichen, Tatzeitpunkt, Tatort, Fahrzeug und Antwortfrist vollständig zu bestätigen. Wird das Dokument einem <strong>bestehenden Vorgang</strong> zugeordnet, zeigt die Prüfung neben der Zuordnung nur das verpflichtende Dokumentdatum und die optionale Antwortfrist; die übrigen Vorgangsfelder werden ausgeblendet und nicht erneut abgefragt.</p>
 <p>Nach der Bestätigung ist der Prüfeingang unveränderlich. <strong>Anzeigen</strong> beziehungsweise ein Doppelklick öffnet den bereits zugeordneten Vorgang und kann weder einen zweiten Vorgang erzeugen noch das Original einem anderen Vorgang zuordnen.</p>
@@ -1914,7 +2016,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

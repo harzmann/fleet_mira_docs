@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/connector-framework/developer-handbook/">
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/connector-framework/developer-handbook/">
       
       
         <link rel="prev" href="../">
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -775,6 +775,34 @@
     
   
     Traffic-offence management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop management
   
 
     
@@ -1651,6 +1679,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1837,6 +1893,34 @@
     
   
     Traffic-offence administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop accounting operations
   
 
     
@@ -2184,17 +2268,17 @@
 <h2 id="manifest-and-registration">Manifest and registration<a class="headerlink" href="#manifest-and-registration" title="Permanent link">&para;</a></h2>
 <p>The following manifest is a proposal, not an installable format currently supported by the product:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-sap"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eh-systemhaus e.K."</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"expansion_api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"core_compatibility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=1.0,&lt;2.0"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"backend"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"entrypoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"backend/connector.exe"</span><span class="p">,</span><span class="w"> </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">},</span>
-<span class="w">  </span><span class="nt">"ui"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"entrypoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ui.extension:register"</span><span class="p">},</span>
-<span class="w">  </span><span class="nt">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"vehicle.pull"</span><span class="p">,</span><span class="w"> </span><span class="s2">"invoice.push"</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"example.view"</span><span class="p">,</span><span class="w"> </span><span class="s2">"example.configure"</span><span class="p">,</span><span class="w"> </span><span class="s2">"example.execute"</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integration_example"</span><span class="p">,</span><span class="w"> </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
-<span class="w">  </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example-sap&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vendor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eh-systemhaus e.K.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expansion_api&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;core_compatibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt;=1.0,&lt;2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;backend&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;entrypoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;backend/connector.exe&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;ui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;entrypoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ui.extension:register&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;vehicle.pull&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;invoice.push&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;example.view&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;example.configure&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;example.execute&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integration_example&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Version ranges are examples. The implementation must define binding ranges for Core, SDK, protocol, UI and schema. Installation validates package ID, origin, signature, checksums, dependencies and paths. Paths must remain within the approved package directory; manifest values must not become arbitrarily composed shell commands.</p>
@@ -2216,12 +2300,12 @@
 <p>The Expansion Manager handles discovery, compatibility, activation and state. A subordinate connector process host launches approved programs, limits duration and output, and terminates hung processes. Scheduling, retry and job ownership remain in the shared worker runtime.</p>
 <p>Version 1 should evaluate a versioned, framed JSON/NDJSON protocol over standard input/output. <code>stdout</code> contains protocol messages only; bounded, sanitised diagnostics use a separate channel. Messages identify protocol version, package, action, job and correlation. Larger datasets are transferred in bounded batches. Spool files are permitted only when needed, with ACLs, size limits, checksums and expiry.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"job_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-job"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"correlation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-correlation"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-sap"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle.pull"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"checkpoint"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">  </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;job_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example-job&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example-correlation&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;package&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example-sap&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vehicle.pull&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;checkpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Results distinguish <code>succeeded</code>, <code>retryable_error</code>, <code>validation_error</code> and <code>outcome_unknown</code>. Errors contain stable codes and sanitised messages, never credentials. Subprocess termination, incomplete output or a lost connection after a possible creation must not be treated as a definitely unsuccessful write.</p>
@@ -2469,7 +2553,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       
