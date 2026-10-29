@@ -43,13 +43,6 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/api/drivercard-rest/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/architecture/action-ribbons/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/architecture/action-ribbons/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/architecture/action-ribbons/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/architecture/administration-ui/</loc>
         <lastmod>2026-10-29</lastmod>
         <changefreq>daily</changefreq>
@@ -76,13 +69,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/architecture/tachograph-data-storage/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/architecture/tachograph-data-storage/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/architecture/workshop-management/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/architecture/workshop-management/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/architecture/workshop-management/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/connector-framework/</loc>
@@ -190,13 +176,6 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/guide/traffic-offence-management/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/guide/ui-rollout-report/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/guide/ui-rollout-report/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/guide/ui-rollout-report/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/guide/vehicle-costs/</loc>
         <lastmod>2026-10-29</lastmod>
         <changefreq>daily</changefreq>
@@ -216,13 +195,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/guide/violation-dashboard/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/guide/violation-dashboard/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/guide/workshop-management/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/guide/workshop-management/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/guide/workshop-management/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/integration/accounting-csv-zip/</loc>
@@ -281,13 +253,6 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/operations/traffic-offence-administration/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/operations/workshop-accounting/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/operations/workshop-accounting/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/operations/workshop-accounting/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/marketing/dtco-kategorietexte-fleet-mira/</loc>
         <lastmod>2026-10-29</lastmod>
         <changefreq>daily</changefreq>
@@ -342,13 +307,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/api/drivercard-rest/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/de/architecture/action-ribbons/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/architecture/action-ribbons/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/architecture/action-ribbons/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/de/architecture/administration-ui/</loc>
         <lastmod>2026-10-29</lastmod>
         <changefreq>daily</changefreq>
@@ -375,13 +333,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/architecture/tachograph-data-storage/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/architecture/tachograph-data-storage/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/de/architecture/workshop-management/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/architecture/workshop-management/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/architecture/workshop-management/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/de/connector-framework/</loc>
@@ -489,13 +440,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/guide/traffic-offence-management/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/de/guide/ui-rollout-report/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/guide/ui-rollout-report/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/guide/ui-rollout-report/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/de/guide/vehicle-costs/</loc>
         <lastmod>2026-10-29</lastmod>
         <changefreq>daily</changefreq>
@@ -515,13 +459,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/guide/violation-dashboard/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/guide/violation-dashboard/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/de/guide/workshop-management/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/guide/workshop-management/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/guide/workshop-management/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/fleet_mira_docs/de/integration/accounting-csv-zip/</loc>
@@ -578,12 +515,5 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/operations/traffic-offence-administration/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/operations/traffic-offence-administration/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/fleet_mira_docs/de/operations/workshop-accounting/</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/fleet_mira_docs/de/operations/workshop-accounting/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/fleet_mira_docs/operations/workshop-accounting/"/>
     </url>
 </urlset>

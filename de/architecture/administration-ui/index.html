@@ -16,7 +16,7 @@
         <link rel="prev" href="../async-ui-background-services/">
       
       
-        <link rel="next" href="../workshop-management/">
+        <link rel="next" href="../../operations/cloud-backup-restore/">
       
       
         
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -35,10 +35,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -788,34 +788,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1455,34 +1427,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Architektur
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1682,34 +1626,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operations/workshop-accounting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Faktura betreiben
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1753,7 +1669,6 @@
 
 
 <h1 id="einheitliches-administrations-ui">Einheitliches Administrations-UI<a class="headerlink" href="#einheitliches-administrations-ui" title="Permanent link">&para;</a></h1>
-<p>Die gemeinsame grafische Darstellung, das Überlaufmenü und die Formularzustände sind im <a href="../action-ribbons/">Aktionsleistenvertrag</a> beschrieben.</p>
 <p>Die Administrationsseiten verwenden einen gemeinsamen strukturellen Vertrag aus <code>administration_ui.py</code>. Fachlogik, Berechtigungen und Editionstrennung bleiben davon unabhängig. Wie im Fuhrpark-Management steht links eine IconNavbar mit Funktionsgruppen als Parent-Knoten und den Administrationsseiten als Child-Knoten. Ein Child öffnet rechts einen schließbaren und verschiebbaren Arbeitstab. Bereits geöffnete Seiten werden fokussiert und nicht dupliziert; eine neue Anmeldung startet mit leerer Arbeitsfläche.</p>
 <table>
 <thead>
@@ -1783,7 +1698,6 @@
 </table>
 <p>Administration und Fuhrpark verwenden dieselbe rekursive Kontextmenülogik. Aufklappbare Knoten bieten die festen Paare <strong>Menüpunkt ausklappen/einklappen</strong>, <strong>Gruppe ausklappen/einklappen</strong> und <strong>Alles ausklappen/einklappen</strong>. Ein Leaf bietet Gruppe und Alles; die freie Fläche nur Alles. Nicht anwendbare Aktionen bleiben sichtbar und sind deaktiviert. Gruppe wirkt immer auf den vollständigen Teilbaum des obersten Parent-Knotens. Expansion und Splitterbreite werden benutzerbezogen gespeichert.</p>
 <p>Gruppen- und Seitentitel, Tooltips, Kontextmenüs, offene Arbeitstabs, fachliche Untertabs und Pro-Kennzeichnungen werden gemeinsam in der Sprache des angemeldeten Benutzers aktualisiert. Vor der Anmeldung gilt Englisch. Die Region ändert ausschließlich Datums-, Zahlen-, Währungs- und ähnliche Formate, nicht die Navigationstexte. Der gespeicherte Seitenschlüssel <code>navigation/admin</code> bleibt kompatibel, öffnet beim Sitzungsstart aber keine Seite automatisch. Nicht zugängliche Seiten sind als Child deaktiviert, ausdrücklich lizenzverborgene Seiten bleiben unsichtbar und Gruppen ohne zugängliche Seite bleiben sichtbar, aber deaktiviert.</p>
-<p>Tabellen- und Baumansichten verwenden stabile logische Spaltenkennungen und den gemeinsamen benutzerbezogenen UI-State-Store für SQLite und PostgreSQL. Beim Profilwechsel werden ausschließlich ausstehende Änderungen in ihrer Bearbeitungsreihenfolge im bisherigen Profil gespeichert. Unveränderte Parallelansichten desselben Schlüssels dürfen dessen Zustand nicht überschreiben. Explizites Speichern und Zurücksetzen verwerfen ältere ausstehende Änderungen desselben Schlüssels, erhalten aber spätere Änderungen. Änderungen vor der Anmeldung oder ohne gültiges Modell werden verworfen. Das Spaltenmenü markiert nur eine tatsächlich geänderte Sichtbarkeit als Änderung; Abbrechen und Zurücksetzen erzeugen keine verzögerte Wiederherstellung eines alten Layouts. Seine Zurücksetzen-Aktion verwendet den bestehenden geprüften Übersetzungsschlüssel in allen 23 Sprachen.</p>
 <p>Jede Seite wird als Listenverwaltung, Einstellungsformular, Betriebs-/Statusseite, Nur-Lesen-Seite oder Tab-Container gekennzeichnet. Listen zeigen Beschreibung, Filter, Aktionsleiste, Datentabelle und Status in dieser Reihenfolge. Formulare gliedern zusammengehörige Felder in benannte Abschnitte und halten den Formularfuß außerhalb scrollbarer Inhalte sichtbar.</p>
 <p>In Aktionsleisten stehen <strong>Neu</strong>, <strong>Öffnen/Bearbeiten</strong>, <strong>Duplizieren</strong>, fachliche Aktionen und destruktive Aktionen links. <strong>Aktualisieren</strong> steht immer rechts. In Formularfüßen steht <strong>Speichern/Übernehmen</strong> immer ganz rechts. Destruktive Aktionen werden technisch markiert, objektspezifisch bezeichnet und bei Datenänderungen bestätigt.</p>
 <p>Auswahlabhängige Aktionen sind ohne passenden Datensatz deaktiviert. Ein Doppelklick führt dieselbe Öffnen- oder Bearbeiten-Aktion wie die zugehörige Schaltfläche aus. Seiten, Abschnitte, Aktionsleisten, Formularfüße, wichtige Tabellen und Aktionen besitzen stabile technische Widget-IDs für Tests und Enterprise-Abnahme.</p>
@@ -1847,10 +1761,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

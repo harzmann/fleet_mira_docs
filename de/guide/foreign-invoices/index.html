@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -35,10 +35,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -633,17 +633,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aus-dokument-erfassen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Aus Dokument erfassen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#rechnungskopf-und-lieferant" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -923,34 +912,6 @@
     
   
     Verkehrsverstöße-Management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Management
   
 
     
@@ -1591,34 +1552,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Architektur
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1818,34 +1751,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operations/workshop-accounting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Faktura betreiben
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1878,17 +1783,6 @@
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#aus-dokument-erfassen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Aus Dokument erfassen
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#rechnungskopf-und-lieferant" class="md-nav__link">
@@ -1997,31 +1891,7 @@
 
 <h1 id="fremdrechnungen">Fremdrechnungen<a class="headerlink" href="#fremdrechnungen" title="Permanent link">&para;</a></h1>
 <p>Eine Fremdrechnung wird per Doppelklick als eigener Arbeitstab geöffnet. Die Statuszeile zeigt Workflow, Gültigkeit, lokalen Beleg- und Exportstatus sowie Gesamt netto/brutto, Splitbetrag und Differenz. Grün bedeutet centgenauen Ausgleich; Rot blockiert die Prüfung.</p>
-<h2 id="aus-dokument-erfassen">Aus Dokument erfassen<a class="headerlink" href="#aus-dokument-erfassen" title="Permanent link">&para;</a></h2>
-<p>Neben <strong>Neu</strong> steht in Pro und Enterprise <strong>Aus Dokument</strong> zur Verfügung. PDF, Bild, XML und Hybrid-PDF öffnen dieselbe maximierte Prüfmaske wie die dokumentgestützte Leasinganlage. Links erscheinen Original, Seitensteuerung, Zoom und Fundstellen; rechts bleiben das bekannte Fremdrechnungsformular, Steuerzeilen, Positionen und bei einer Dauerrechnung die Betragsphasen vollständig bearbeitbar. Die Dokumenttabelle zeigt lokale Analyse, letzte KI-Analyse, XRechnungsstatus, Fortschritt und Fehler getrennt je Datei.</p>
-<p>Ein fokussierter Kandidat wechselt automatisch zum richtigen Dokument und zur richtigen Seite. Blau kennzeichnet die Vorschau; erst <strong>Übernehmen</strong> oder die Kandidaten-Checkbox übernimmt Wert und konkrete Fundstelle. Eindeutige Treffer können transient vorausgewählt sein. Mehrdeutige Treffer bleiben offen, bis der Benutzer sie bestätigt oder einen manuellen Wert übernimmt. Abbrechen verwirft die technische Sitzung einschließlich temporärer Dokumente vollständig.</p>
-<p>Datumswerte, Zahlen, Prozentsätze und Geldbeträge werden im Formular, in der Trefferliste und in den Hinweisen nach den Regionseinstellungen des angemeldeten Benutzers dargestellt; intern bleiben ISO-Datum, Integer-Cent und Basispunkte erhalten. Das Mausrad scrollt über Datums-, Auswahl- und Zahlenfeldern den Formularbereich und verändert dabei keinen Feldwert.</p>
-<pre class="mermaid"><code>flowchart TD
-    A["Fremdrechnungen"] --&gt; B{"Einstieg"}
-    B --&gt;|"Neu"| C["Manuelles Rechnungsformular"]
-    B --&gt;|"Aus Dokument"| D["PDF, Bild, XML oder Hybrid-PDF"]
-    B --&gt;|"XRechnung importieren"| D
-    D --&gt; E["PDF-Text, OCR oder strukturierte Rechnungsdaten"]
-    E --&gt; F["Optional freigegebene KI-Analyse"]
-    F --&gt; G["Dokument links und Fundstellen prüfen"]
-    G --&gt; H["Kopf, Steuer und Positionen rechts bestätigen"]
-    H --&gt; I{"Rechnungsart"}
-    I --&gt;|"Einzelrechnung"| J["Position einem Fahrzeug zuordnen"]
-    I --&gt;|"Sammelrechnung"| K["Positionen auf Fahrzeuge verteilen"]
-    I --&gt;|"Dauerrechnung"| L["Betragsphasen und Komponenten prüfen"]
-    J --&gt; M{"Abschluss"}
-    K --&gt; M
-    L --&gt; M
-    M --&gt;|"Mindestdaten vorhanden"| N["Als Entwurf speichern"]
-    M --&gt;|"Vollständig und centgenau"| O["Geprüft übernehmen"]</code></pre>
-<p><strong>XRechnung importieren</strong> bleibt als eigener Einstieg sichtbar, verwendet aber denselben Prüfbereich und startet mit der strukturierten Validierung. Valide XML-Beträge und Steuerzeilen haben Vorrang; OCR und KI dürfen sie nicht stillschweigend ersetzen.</p>
 <h2 id="rechnungskopf-und-lieferant">Rechnungskopf und Lieferant<a class="headerlink" href="#rechnungskopf-und-lieferant" title="Permanent link">&para;</a></h2>
-<p>Die gespeicherte Rechnungsakte aktualisiert Statusbeschriftungen, Summen und Datumsangaben aus ihren geladenen Daten in der aktuellen Sprache und Region. Beim Beenden der dokumentgestützten Erfassung werden Sitzungstimer und Vorschau geschlossen und die temporäre Vorschaukopie entfernt. Ein gespeicherter Originalbeleg bleibt im Finanzarchiv erhalten; ein abgelehntes Verwerfen lässt die Erfassung geöffnet.</p>
 <p>Legen Sie unter <strong>Fuhrpark &gt; Fremdrechnungen &gt; Neu</strong> den Lieferanten, Dokumentart, Rechnungsart, Belegnummer und -datum, Liefer-/Gültigkeitszeitraum und Zahlungsziel an. In der manuellen Steuertabelle erfassen Sie je Steuersatz die Bemessungsgrundlage; Netto-, Umsatzsteuer- und Bruttosumme berechnet FLEET Mira schreibgeschützt mit kaufmännischer Cent-Rundung. Ein Satz von 19 % ist vorbelegt, weitere Sätze einschließlich 0 % sind möglich. Bei Gutschrift oder Storno wählen Sie zusätzlich den Bezug zur Ursprungsrechnung.</p>
 <p><img alt="Lieferant einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-supplier.png" /></p>
 <p>Der Tab <strong>Lieferant</strong> zeigt die zum Beleg verwendeten Stamm- und E‑Rechnungskennungen. Die Gruppe <strong>Belegdaten</strong> ergänzt Belegnummer, Datumswerte, Steuersatz beziehungsweise Steueraufschlüsselung sowie Netto-, Umsatzsteuer- und Bruttosumme.</p>
@@ -2036,8 +1906,7 @@
 <p><img alt="Importierte E‑Rechnungsdaten" src="../../assets/screenshots/foreign-invoice-einvoice.png" /></p>
 <p>Bei einem strukturierten Import zeigt dieser Tab Syntax, Profil, Validator, Fehler/Warnungen und alle Quellzeilen samt Anzahl ihrer Zuordnungen. Original, strukturiertes XML und KoSIT-Bericht bleiben als getrennte, verifizierte Dokumentrollen erhalten. Der geführte Import ist in <a href="../einvoice-import/">E‑Rechnung und XRechnung importieren</a> beschrieben.</p>
 <h2 id="beleganalyse">Beleganalyse<a class="headerlink" href="#beleganalyse" title="Permanent link">&para;</a></h2>
-<p>Bildhafte PDFs und Scans werden zunächst lokal über eingebetteten Text beziehungsweise die mitgelieferte PDFium-/Tesseract-OCR analysiert. Regeln und bestätigte historische Zuordnungen liefern ausschließlich Vorschläge für Lieferant, Fahrzeug und Leasingvertrag. Eine Cloudanalyse über den unter <strong>Administration &gt; KI-Connector</strong> konfigurierten Azure- oder Vertex-Provider benötigt für jedes Dokument eine ausdrückliche Zustimmung. Original, Hash, Ergebnis, Modell, Konfidenz und Fundstellen bleiben gemeinsam nachvollziehbar; keine Zuordnung wird automatisch bestätigt. Fehlen OCR-Laufzeit oder Sprachmodell wider Erwarten, wird die Analyse mit einem technischen Fehler beendet und nicht mehr als scheinbar erfolgreicher leerer Vorschlag gespeichert.</p>
-<p>Eine Dauerrechnung kann ohne Vertragszuordnung gespeichert und später verbunden werden. Ist ein aktiver Leasingvertrag eindeutig erkannt, wird er nur vorgeschlagen. Die Zuordnung muss ausdrücklich bestätigt werden. Der direkte Einstieg <strong>Dauerrechnung aus Dokument</strong> in einer aktiven Leasingakte fixiert dagegen Fahrzeug, Lieferant und Vertrag und speichert geprüfte Rechnung und Zuordnung gemeinsam.</p>
+<p>Bildhafte PDFs und Scans werden zunächst lokal über eingebetteten Text beziehungsweise Tesseract-OCR analysiert. Regeln und bestätigte historische Zuordnungen liefern ausschließlich Vorschläge für Lieferant, Fahrzeug und Leasingvertrag. Eine Cloudanalyse über den unter <strong>Administration &gt; KI-Connector</strong> konfigurierten Azure- oder Vertex-Provider benötigt für jedes Dokument eine ausdrückliche Zustimmung. Original, Hash, Ergebnis, Modell, Konfidenz und Fundstellen bleiben gemeinsam nachvollziehbar; keine Zuordnung wird automatisch bestätigt.</p>
 <h2 id="prufen-buchen-und-korrigieren">Prüfen, buchen und korrigieren<a class="headerlink" href="#prufen-buchen-und-korrigieren" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Kopf und Positionen im Status <strong>Entwurf</strong> vollständig erfassen.</li>
@@ -2138,10 +2007,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

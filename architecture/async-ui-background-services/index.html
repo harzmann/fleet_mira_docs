@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -35,10 +35,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -788,34 +788,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1497,34 +1469,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. UiJobController">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#44-shared-table-controller-lifetime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.4 Shared table-controller lifetime
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#45-controlled-utc-time-in-ui-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5 Controlled UTC time in UI tests
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1606,34 +1550,6 @@
     
   
     Consistent administration UI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop architecture
   
 
     
@@ -1846,34 +1762,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operations/workshop-accounting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop accounting operations
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1948,34 +1836,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. UiJobController">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#44-shared-table-controller-lifetime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.4 Shared table-controller lifetime
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#45-controlled-utc-time-in-ui-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5 Controlled UTC time in UI tests
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2124,20 +1984,13 @@
     Controller-&gt;&gt;Controller: validate key, generation and token
     Controller--&gt;&gt;View: emit only current result
     View-&gt;&gt;View: update model in Qt thread</code></pre>
-<h3 id="44-shared-table-controller-lifetime">4.4 Shared table-controller lifetime<a class="headerlink" href="#44-shared-table-controller-lifetime" title="Permanent link">&para;</a></h3>
-<p><code>UserTableStateController</code> is a Qt child of its table or tree view; its timer is a child of the controller. The controller obtains its view through <code>parent()</code> and retains no additional reverse Python reference to the view. The existing <code>_user_table_state_controller</code> reference on the view remains available for shared binding and reuse.</p>
-<p>A view with a Qt parent remains valid until that owner is released. Afterwards the view, controller and timer are invalid; the event filter and profile switch must handle this state safely. An unparented view should be released on the Qt main thread when its last user reference disappears, rather than through later cyclic collection in a worker.</p>
-<p>The two lifetime regressions check native release and Qt parent ownership without a database or worker. Only the short unit comparison of immediate release saves and restores the previous automatic GC state; the application does not change its GC policy. This check identifies no specific object from an earlier hang and does not replace an unchanged context or full test run.</p>
-<h3 id="45-controlled-utc-time-in-ui-tests">4.5 Controlled UTC time in UI tests<a class="headerlink" href="#45-controlled-utc-time-in-ui-tests" title="Permanent link">&para;</a></h3>
-<p>Time-dependent UI tests must use the same controlled calendar day for test data and business evaluation. The traffic-offence deadline test covers the UTC instants <code>2026-10-05T23:59:59+00:00</code> and <code>2026-10-06T00:00:01+00:00</code>; its due date is derived from each UTC instant. The test environment's local day boundary therefore cannot change the expected deadline evaluation.</p>
-<p>The test uses <code>monkeypatch</code> to replace only the <code>datetime</code> binding in <code>fleet_management</code>; the binding is restored after each case. Production time calculations, all 17 business assertions and the existing five-second waits remain unchanged. The controlled clock replaces neither real repository evaluation nor asynchronous UI refresh.</p>
 <h2 id="5-worker-database-pattern">5. Worker database pattern<a class="headerlink" href="#5-worker-database-pattern" title="Permanent link">&para;</a></h2>
 <p>Every worker opens and closes its own connection through the shared runtime factory. Connections are never passed from the UI thread. Schema changes belong to startup bootstrap only.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">report</span><span class="p">):</span>
     <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
     <span class="n">repo</span> <span class="o">=</span> <span class="n">VehicleUnitRepository</span><span class="p">(</span><span class="n">db_path</span><span class="p">,</span> <span class="n">ensure_schema</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">report</span><span class="p">(</span><span class="n">JobProgress</span><span class="p">(</span><span class="s2">&quot;Loading calibrations&quot;</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;query&quot;</span><span class="p">))</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">list_vehicle_facts</span><span class="p">(</span><span class="s2">&quot;ddd_vu_calibration&quot;</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+    <span class="n">report</span><span class="p">(</span><span class="n">JobProgress</span><span class="p">(</span><span class="s2">"Loading calibrations"</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">"query"</span><span class="p">))</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">list_vehicle_facts</span><span class="p">(</span><span class="s2">"ddd_vu_calibration"</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
     <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
     <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
 </code></pre></div>
@@ -2245,10 +2098,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       

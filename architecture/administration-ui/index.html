@@ -16,7 +16,7 @@
         <link rel="prev" href="../async-ui-background-services/">
       
       
-        <link rel="next" href="../workshop-management/">
+        <link rel="next" href="../../operations/cloud-backup-restore/">
       
       
         
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -35,10 +35,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -788,34 +788,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1455,34 +1427,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1682,34 +1626,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operations/workshop-accounting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop accounting operations
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1753,7 +1669,6 @@
 
 
 <h1 id="consistent-administration-ui">Consistent administration UI<a class="headerlink" href="#consistent-administration-ui" title="Permanent link">&para;</a></h1>
-<p>The shared graphical presentation, overflow menu and form edit states are specified in the <a href="../action-ribbons/">action ribbon contract</a>.</p>
 <p>Administration pages use the shared structural contract from <code>administration_ui.py</code>. Business logic, permissions, and edition separation remain independent of this presentation contract. As in Fleet Management, an IconNavbar on the left shows functional groups as parent nodes and Administration pages as child nodes. A child opens one closable and movable work tab on the right. An already open page is focused instead of duplicated, and a new login starts with an empty workspace.</p>
 <table>
 <thead>
@@ -1783,7 +1698,6 @@
 </table>
 <p>Administration and Fleet Management use the same recursive context-menu behavior. Expandable nodes show the fixed pairs <strong>Expand/Collapse item</strong>, <strong>Expand/Collapse group</strong>, and <strong>Expand/Collapse all</strong>. A leaf shows group and all; empty space only shows all. Actions that do not apply remain visible and disabled. Group actions always affect the complete subtree of the top-level parent. Expansion and splitter width are stored per user.</p>
 <p>Group and page titles, tooltips, context menus, open work tabs, functional subtabs, and Pro badges are translated together into the authenticated user's language. English is used before authentication. Region changes only date, number, currency, and similar formatting, never navigation labels. The persisted <code>navigation/admin</code> page key remains compatible but does not automatically open a page at session start. Inaccessible pages remain visible as disabled children, explicitly licence-hidden pages remain hidden, and groups without an accessible page remain visible but disabled.</p>
-<p>Table and tree views use stable logical column identifiers and the shared per-user UI-state store for SQLite and PostgreSQL. On a profile change, only pending edits are saved to the previous profile in their edit order. Unchanged parallel views sharing a key must not overwrite its state. Explicit saves and resets discard older pending changes of that key while retaining later edits. Changes made before authentication or without a valid model are discarded. The column menu marks only an actual visibility choice as an edit; cancellation and reset cannot cause a delayed restoration of an older layout. Its reset action uses the existing reviewed translation key in all 23 languages.</p>
 <p>Each page is marked as list management, settings form, operational/status, read-only, or tab container. List pages show introduction, filters, action bar, data grid, and status in that order. Forms organize related fields in named sections and keep their form footer visible outside scrollable content.</p>
 <p>Action bars place <strong>Create</strong>, <strong>Open/Edit</strong>, <strong>Duplicate</strong>, workflow actions, and destructive actions on the left. <strong>Refresh</strong> is always on the right. Form footers always place <strong>Save/Apply</strong> at the far right. Destructive actions are technically marked, use object-specific labels, and require confirmation when they change data.</p>
 <p>Selection-dependent actions are disabled without an applicable record. Double-click performs the same open or edit operation as the corresponding button. Pages, sections, action bars, form footers, important grids, and actions have stable technical widget IDs for tests and Enterprise acceptance.</p>
@@ -1847,10 +1761,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       

@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -35,10 +35,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -775,34 +775,6 @@
     
   
     Verkehrsverstöße-Management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Management
   
 
     
@@ -1602,34 +1574,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Architektur
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1816,34 +1760,6 @@
     
   
     Verkehrsverstöße administrieren
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operations/workshop-accounting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Werkstatt-Faktura betreiben
   
 
     
@@ -2124,14 +2040,14 @@
 <div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/health</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">127.0.0.1:5055</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="s2">&quot;drivercard-rest&quot;</span><span class="p">,</span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="s2">&quot;available&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="nt">"service"</span><span class="p">:</span><span class="s2">"drivercard-rest"</span><span class="p">,</span><span class="nt">"database"</span><span class="p">:</span><span class="s2">"available"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="5-fahrerkarte-parsen">5. Fahrerkarte parsen<a class="headerlink" href="#5-fahrerkarte-parsen" title="Permanent link">&para;</a></h2>
 <p><code>POST /api/drivercard/parse</code> akzeptiert JSON. Der Web-Preload verwendet Base64; lokale Archivpfade erscheinen nicht in der Browser-URL.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C_20250715_0615_Demo_1000000000000001.DDD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;content_base64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BASE64_DATEN&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;archive_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;optionale-stabile-id&quot;</span>
+<span class="w">  </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C_20250715_0615_Demo_1000000000000001.DDD"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"content_base64"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BASE64_DATEN"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"archive_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"optionale-stabile-id"</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Die Antwort nennt Import/Archiv, Fahrer-/Kartenmetadaten, Aktivitätszeitraum und Parserwarnungen. Binärinput, Signaturen und Zertifikate werden nicht zurückgegeben. Identische Inhalte sind per Hash idempotent.</p>
@@ -2249,10 +2165,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

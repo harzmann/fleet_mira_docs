@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -35,10 +35,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1217,34 +1217,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guide/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1872,34 +1844,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../architecture/workshop-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2086,34 +2030,6 @@
     
   
     Traffic-offence administration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../operations/workshop-accounting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workshop accounting operations
   
 
     
@@ -2560,15 +2476,9 @@
 
 
 <h1 id="user-manual">User manual<a class="headerlink" href="#user-manual" title="Permanent link">&para;</a></h1>
-<p>The <a href="../guide/workshop-management/">workshop guide</a> covers orders, articles, inventory, purchasing and outgoing invoicing in Pro and Enterprise. Follow <a href="../operations/workshop-accounting/">workshop accounting operations</a> for archiving, external backup and recovery.</p>
 <h2 id="detailed-business-guides">Detailed business guides<a class="headerlink" href="#detailed-business-guides" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><a href="../architecture/action-ribbons/">Consistent action ribbons and form actions</a></p>
-</li>
-<li>
-<p><a href="../guide/tachodata-overviews/">Personnel and fleet tachodata evaluations</a></p>
-</li>
+<li><a href="../guide/tachodata-overviews/">Personnel and fleet tachodata evaluations</a></li>
 <li><a href="../guide/drivercard-analysis/">Driver-card analysis – every tab</a></li>
 <li><a href="../guide/vehicle-unit-analysis/">Vehicle-unit analysis – every tab</a></li>
 <li><a href="../guide/deadlines-record-documents/">Deadlines and record documents</a></li>
@@ -2583,7 +2493,6 @@
 <p>These guides use a temporary anonymised copy of the development database. Activities, timestamps, amounts and approved coordinates remain representative. Driver names, dates of birth, card identities, registrations and VINs are replaced deterministically with recognisable demonstration values.</p>
 <h2 id="edition-and-processing-model">Edition and processing model<a class="headerlink" href="#edition-and-processing-model" title="Permanent link">&para;</a></h2>
 <p>Basic and Pro use a local SQLite database and process background tasks in the application. Enterprise uses PostgreSQL exclusively. Its client places central work in the database queue; the independent <code>FleetMiraWorker</code> service performs imports, notifications, backup and other scheduled work. The same user workflow therefore produces the same business result, but Enterprise jobs may continue after the client window is closed.</p>
-<p>Open licence management through <strong>Help → Licensing</strong>. This menu entry and the licence dialog titles follow the signed-in user's language; the region does not change their wording. Changing the language does not activate a licence or replace online activation.</p>
 <h2 id="1-sign-in-and-workspace">1. Sign-in and workspace<a class="headerlink" href="#1-sign-in-and-workspace" title="Permanent link">&para;</a></h2>
 <p>Start FLEET Mira from the installed shortcut. The splash screen remains visible throughout startup initialization and the initial workspace load wave. Only after its UI callbacks have completed is the splash seamlessly replaced, within the same render cycle, by the immediately interactive sign-in dialog. A new installation uses <code>admin</code> / <code>admin</code> once and forces a secure replacement password. If an administrator has configured SSO and pre-assigned your account, select <strong>Sign in with Microsoft</strong> or <strong>Sign in with Google</strong> instead. <strong>Microsoft Entra ID SSO is currently beta and has not yet been validated end-to-end with a real customer tenant.</strong> Keep local sign-in available as a fallback until customer-specific acceptance is complete and contact your administrator if sign-in fails. Setup and troubleshooting are covered by the <a href="../administrator-integration-guide/#single-sign-on-with-microsoft-entra-id-and-google">Administrator and integrator guide</a>.</p>
 <p><img alt="FLEET Mira splash screen" src="../assets/screenshots/splash.png" />
@@ -2604,7 +2513,6 @@
 <li>Right-click a data row for object-specific actions. The row under the pointer is selected first.</li>
 <li>Selected rows use a dark-blue background and white text, overriding status colours for readability.</li>
 </ul>
-<p>Column width, order, visibility and sorting belong to your personal table layout. When users change, the most recent actual edits are retained; another unchanged view of the same table cannot overwrite them. <strong>Restore default layout</strong> removes the saved layout until you change a column again. Closing the context menu without a selection changes nothing. Menu captions follow your user language.</p>
 <h2 id="2-dashboard">2. Dashboard<a class="headerlink" href="#2-dashboard" title="Permanent link">&para;</a></h2>
 <p>The six photo-backed cards provide direct navigation:</p>
 <p><img alt="FLEET Mira dashboard with anonymised demonstration data" src="../assets/screenshots/dashboard.png" />
@@ -2873,7 +2781,7 @@
     F --&gt; G[REST or CSV/ZIP accounting export]</code></pre>
 <p>The status row compares gross invoice amount, split amount and difference. Zero difference is green; any cent difference is red and blocks verification. Invoice-bound positions inherit the invoice date for document/valid-from/valid-to and are always variable. Booked data is immutable; corrections use cancellation or linked credits.</p>
 <h3 id="lease-contracts">Lease contracts<a class="headerlink" href="#lease-contracts" title="Permanent link">&para;</a></h3>
-<p>Use <strong>Fleet → Lease contracts</strong> to manage contract data, factor-based pre-calculation, payment schedule, documents, recurring invoices and linked actual costs. Creation is manual or, in Pro/Enterprise, document-assisted through XInvoice, PDF text, OCR, local ML and the optional AI connector; every proposal requires explicit review and confirmation. <a href="../guide/leasing-contracts/">Lease contracts</a> explains the workflows, factor formulas, M-data mileage evidence and all three leasing reports.</p>
+<p>Use <strong>Fleet → Lease contracts</strong> to manage contract data, factor-based pre-calculation, the independently authoritative contract rate, payment schedule, documents and linked actual costs. <a href="../guide/leasing-contracts/">Lease contracts</a> explains the factor formulas, M-data mileage evidence and all three leasing reports.</p>
 <p><img alt="Lease contracts with anonymised demo data" src="../assets/screenshots/lease-contracts.png" />
 <em>Figure: Filterable lease-contract overview from the anonymised demo database.</em></p>
 <h3 id="e-invoicexrechnung">E-invoice/XRechnung<a class="headerlink" href="#e-invoicexrechnung" title="Permanent link">&para;</a></h3>
@@ -2923,7 +2831,6 @@
 </tbody>
 </table>
 <p>For administrator-level recovery, continue with the <a href="../administrator-integration-guide/">Administrator and integrator guide</a>.</p>
-<p>Application-wide action-bar and function-icon standardization is documented in the <a href="../guide/ui-rollout-report/">UI rollout report</a>, including every covered program point.</p>
 
 
 
@@ -2983,10 +2890,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../javascripts/image-lightbox.js"></script>
       
