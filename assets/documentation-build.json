@@ -5,6 +5,8 @@
   "application_source_dirty": true,
   "application_version": "1.1.0-beta9",
   "enterprise_build": "R3",
-  "screenshot_manifest_sha256": "9473dcff622724e4ba34b3928df7e631c96599068a088e98b157a50d5a837ce6",
-  "screenshots": 274
+  "screenshot_manifest_sha256": "3bcabb0eb4cee7a3223e60508f52fa30fa59eda88a66f3670230db3a52b51dc7",
+  "screenshots": 274,
+  "manifest_hash_encoding": "Exact Git blob bytes after LF normalization",
+  "metadata_corrected_at_utc": "2026-11-08T14:17:16.434507+00:00"
 }
