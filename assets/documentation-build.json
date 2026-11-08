@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-11-08T14:11:46.413265+00:00",
+  "documentation_source_commit": "074557c80ffedcdf3ed934ab616d18597503225f",
+  "application_source_commit": "73464613dfad8a3f99a5d270e2afc9c95142e392",
+  "application_source_dirty": true,
+  "application_version": "1.1.0-beta9",
+  "enterprise_build": "R3",
+  "screenshot_manifest_sha256": "9473dcff622724e4ba34b3928df7e631c96599068a088e98b157a50d5a837ce6",
+  "screenshots": 274
+}

@@ -1,0 +1,2950 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+      
+      
+      
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/api/fleet-mira-api-service/">
+      
+      
+        <link rel="prev" href="../../administrator-integration-guide/">
+      
+      
+        <link rel="next" href="../drivercard-rest/">
+      
+      
+        
+          <link rel="alternate" href="../../../api/fleet-mira-api-service/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FleetMiraApi-Dienst - FLEET Mira Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fleetmiraapi-dienst" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FleetMiraApi-Dienst
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../api/fleet-mira-api-service/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Dokumentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktübersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detaillierte Anleitungen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detaillierte Anleitungen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/material3-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material-3-Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodaten-Auswertungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrerkarten-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/deadlines-record-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fälligkeiten und Akten-Dokumente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/violation-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verstoß-Dashboard und Fahrerbelehrungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Berichts-Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Enterprise
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enterprise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beschreibung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enterprise/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-installation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation und Einrichtung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enterprise/tenants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mandanten einrichten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Lizenzierung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enterprise/services-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dienste und Health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schnittstellen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FleetMiraApi-Dienst
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FleetMiraApi-Dienst
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#funktion-zweck-und-einsatzgebiet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funktion, Zweck und Einsatzgebiet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funktionsweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funktionsweise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voraussetzungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voraussetzungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netzwerk-und-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Netzwerk und Firewall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-und-einrichtung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation und Einrichtung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#einrichtung-in-der-admin-oberflache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Einrichtung in der Admin-Oberfläche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Einrichtung in der Admin-Oberfläche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-konfiguration-speichern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API-Konfiguration speichern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-dienst-und-api-instanz-kontrollieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows-Dienst und API-Instanz kontrollieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benutzergebundene-api-zugange-einrichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzergebundene API-Zugänge einrichten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protokolle-zur-fehlersuche-verwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protokolle zur Fehlersuche verwenden
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zertifikatsvertrauen-auf-clients-einrichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zertifikatsvertrauen auf Clients einrichten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleet-mira-health-im-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fleet Mira Health im Browser
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fleet Mira Health im Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-leistung-und-fleet-mira-datenbestand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL: Leistung und Fleet-Mira-Datenbestand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geschutzte-protokolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geschützte Protokolle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offentlicher-erreichbarkeitstest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Öffentlicher Erreichbarkeitstest
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Öffentlicher Erreichbarkeitstest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnose-ohne-laufenden-api-dienst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnose ohne laufenden API-Dienst
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrolle-protokolle-und-fehlersuche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kontrolle, Protokolle und Fehlersuche
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geräte-REST-API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-fleet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobiler Fuhrpark und Historien
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrationen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrationen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographen-Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connector Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connector Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework-Übersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/developer-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entwicklerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/customer-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktbeschreibung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/product-flyer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktflyer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architektur
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/database-schema-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datenbankschema V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Architektur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/enterprise-tenants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Tenantkonzept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Betrieb
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Faktura betreiben
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#funktion-zweck-und-einsatzgebiet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funktion, Zweck und Einsatzgebiet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funktionsweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funktionsweise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voraussetzungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voraussetzungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netzwerk-und-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Netzwerk und Firewall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-und-einrichtung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation und Einrichtung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#einrichtung-in-der-admin-oberflache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Einrichtung in der Admin-Oberfläche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Einrichtung in der Admin-Oberfläche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-konfiguration-speichern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API-Konfiguration speichern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-dienst-und-api-instanz-kontrollieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows-Dienst und API-Instanz kontrollieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benutzergebundene-api-zugange-einrichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzergebundene API-Zugänge einrichten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protokolle-zur-fehlersuche-verwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protokolle zur Fehlersuche verwenden
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zertifikatsvertrauen-auf-clients-einrichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zertifikatsvertrauen auf Clients einrichten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleet-mira-health-im-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fleet Mira Health im Browser
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fleet Mira Health im Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-leistung-und-fleet-mira-datenbestand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL: Leistung und Fleet-Mira-Datenbestand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geschutzte-protokolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geschützte Protokolle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offentlicher-erreichbarkeitstest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Öffentlicher Erreichbarkeitstest
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Öffentlicher Erreichbarkeitstest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagnose-ohne-laufenden-api-dienst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnose ohne laufenden API-Dienst
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrolle-protokolle-und-fehlersuche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kontrolle, Protokolle und Fehlersuche
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fleetmiraapi-dienst">FleetMiraApi-Dienst<a class="headerlink" href="#fleetmiraapi-dienst" title="Permanent link">&para;</a></h1>
+<p><strong>FleetMiraApi stellt die FLEET-Mira-Schnittstellen als eigenständigen HTTPS-Dienst auf dem Enterprise-Server bereit.</strong> Mobile Apps und freigegebene Integrationen erreichen damit eine feste Serveradresse, auch wenn kein Desktop-Client geöffnet ist.</p>
+<div class="admonition info">
+<p class="admonition-title">Implementierungs- und Lieferstand</p>
+<p>Diese Seite beschreibt den neuen Entwicklungsstand für 1.1.0-beta9. Ein älteres Setup enthält die Komponente noch nicht automatisch. Das eingesetzte Setup muss <code>FleetMiraApi</code> ausdrücklich enthalten. Quelltests, installierte Serverabnahme und Android-Gerätetest sind getrennte Nachweise.</p>
+</div>
+<h2 id="funktion-zweck-und-einsatzgebiet">Funktion, Zweck und Einsatzgebiet<a class="headerlink" href="#funktion-zweck-und-einsatzgebiet" title="Permanent link">&para;</a></h2>
+<p>Das Modul übernimmt das HTTP-Hosting der vorhandenen mobilen, Geräte-, Fahrer- und Telematik-APIs sowie des eingerichteten Verstoßportals. Die gemeinsame Fachlogik und PostgreSQL-Datenbank bleiben erhalten. Es ist für Android-/spätere iOS-Apps, kundeneigene Integrationen und zentrale Netzwerkzugriffe bestimmt.</p>
+<p><code>FleetMiraApi</code> prüft HTTPS, Hostnamen, Token, Scopes, Benutzerrechte und Lizenzfreigaben. Kurze Fachzugriffe beantwortet es direkt; mobile Imports und andere zentrale Hintergrundaufgaben verarbeitet weiterhin <code>FleetMiraWorker</code>. Der API-Dienst ersetzt weder PostgreSQL noch den Worker oder Archivdienst. Der FiBu-Export ist weiterhin eine ausgehende Verbindung und kein neuer API-Empfänger.</p>
+<p>Die lokale Fahrer-API des Desktops behält ihre Loopback-Sitzung. Zentraler Fahrerzugriff verwendet eigene Integrationstokens und ausdrückliche globale Datenfreigabe. Basic und Pro behalten ihre bisherige lokale SQLite-/Worker-Zusammensetzung; der eigenständige Serverdienst gehört zu Enterprise.</p>
+<h2 id="funktionsweise">Funktionsweise<a class="headerlink" href="#funktionsweise" title="Permanent link">&para;</a></h2>
+<p><img alt="Architektur des FleetMiraApi-Dienstes" src="../../assets/diagrams/fleet-mira-api-service.svg" /></p>
+<details class="example">
+<summary>Mermaid-Quelle des Diagramms</summary>
+<pre class="mermaid"><code>flowchart TB
+    Mobile["DTCO-Android-App"] --&gt;|"HTTPS"| API["FleetMiraApi"]
+    Integration["Freigegebene Integration"] --&gt;|"HTTPS"| API
+    Browser["Browser: /health"] --&gt;|"HTTPS"| API
+    API --&gt; DB[("PostgreSQL: Daten und Aufträge")]
+    API --&gt; Logs["Umlaufendes Dienstprotokoll"]
+    Admin["Enterprise-Administration"] --&gt; DB
+    DB --&gt; Worker["FleetMiraWorker: Aufträge mit Leases"]
+    Worker --&gt; Processing["Import und Hintergrundverarbeitung"]</code></pre>
+</details>
+<p>API, Worker und PostgreSQL können auf demselben Server installiert werden. Sie bleiben getrennte Prozesse und Dienste. Bei einer späteren Verteilung müssen Aufnahmespeicher, Portalgeheimnisse und Zertifikatsdateien an den jeweiligen Hosts passend bereitgestellt werden.</p>
+<p>Für die Android-Anmeldung öffnet die App einen geschützten Browser-Tab, erhält nach Anmeldung einen einmaligen Code und tauscht ihn mit S256-PKCE gegen Tokens aus. Zugangstokens gelten 15 Minuten; Refresh-Tokens erneuern sie innerhalb einer maximal 30-tägigen App-Sitzung. Integrationstokens werden unter Administration benutzergebunden mit Scopes und Gültigkeit ausgestellt. Näheres beschreibt die <a href="../../operations/api-service/">Betriebsanleitung</a>.</p>
+<h2 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Voraussetzung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Betriebssystem</td>
+<td>Eine vom Enterprise-Setup unterstützte x64-Windows-/Windows-Server-Installation; der Installer setzt mindestens Windows-Version 10.0 voraus. Den tatsächlich verwendeten Serverstand installiert abnehmen.</td>
+</tr>
+<tr>
+<td>Installation</td>
+<td>Enterprise-Applikationssetup mit Komponente <code>api</code>; lokale Administratorrechte für Installation und Windows-Dienstverwaltung.</td>
+</tr>
+<tr>
+<td>Datenbank</td>
+<td>Erreichbares PostgreSQL mit aktuellem Mira-Schema, Anwendungszugang und vorgesehener TLS-Konfiguration. Das serverseitige Setup verwendet PostgreSQL 17; die reguläre Schemamigration benötigt das Wartungskonto.</td>
+</tr>
+<tr>
+<td>Hintergrundverarbeitung</td>
+<td><code>FleetMiraWorker</code> mit derselben Enterprise-Datenbank für Imports und zentrale Jobs; bei Archivfunktionen zusätzlich der eingerichtete <code>FleetMiraArchive</code>-Dienst.</td>
+</tr>
+<tr>
+<td>Lizenz und Benutzer</td>
+<td>Gültiger zentraler Enterprise-Nachweis mit API-Freigabe; aktive Benutzer mit den jeweils erforderlichen Fachrechten. Administration benötigt <code>users.manage</code> und <code>settings.manage</code>.</td>
+</tr>
+<tr>
+<td>HTTPS und DNS</td>
+<td>Stabiler DNS-Name, dazu passendes gültiges Serverzertifikat samt Kette und privatem Schlüssel; die Clients müssen der CA vertrauen.</td>
+</tr>
+<tr>
+<td>Speicher</td>
+<td>Geschütztes beschreibbares Log- und mobiles Aufnahmeverzeichnis. Standardmäßig bis zu 1 GiB Logbudget, zusätzlich Platz für Uploads, temporäre Dateien und fachliche Archive. Uploads sind auf 128 MiB je Anfrage begrenzt.</td>
+</tr>
+<tr>
+<td>Ressourcen</td>
+<td>CPU-/RAM- und I/O-Bedarf zusätzlich zu PostgreSQL und Worker anhand der tatsächlichen Parallelität bemessen. Quelltests begründen keine verbindliche Last- oder Hardwarefreigabe.</td>
+</tr>
+<tr>
+<td>Softwaremodule</td>
+<td>Das vollständige Windows-Paket bündelt die Python-Laufzeit, <code>pywin32</code>, Flask, Cheroot mit TLS, PostgreSQL-Treiber und die gemeinsamen Fachmodule. Für das installierte Paket ist keine gesonderte Python-Installation erforderlich. Optional wird <code>zeroconf</code> für lokale Diensterkennung verwendet.</td>
+</tr>
+</tbody>
+</table>
+<p>Der Dienst verwendet <code>NT SERVICE\FleetMiraApi</code>. Das Setup richtet Autostart und Wiederanlauf nach Fehlern ein. Das Konto benötigt Lesezugriff auf seine Konfiguration und TLS-Dateien sowie Änderungszugriff auf seine Logs und den mobilen Aufnahmespeicher. Private Lizenz-/Sicherungsschlüssel des Workers werden dem API-Dienst nicht übertragen.</p>
+<h2 id="netzwerk-und-firewall">Netzwerk und Firewall<a class="headerlink" href="#netzwerk-und-firewall" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Richtung</th>
+<th>Verbindung</th>
+<th>Freigabe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eingehend zum API-Server</td>
+<td>TCP 8443 als Einrichtungsstandard oder der ausdrücklich konfigurierte API-Port</td>
+<td>Nur für die benötigten Clientnetze beziehungsweise den vorgesehenen VPN-/Netzzugang.</td>
+</tr>
+<tr>
+<td>API/Worker/Enterprise-Clients zur Datenbank</td>
+<td>TCP 5432 oder der konfigurierte PostgreSQL-Port</td>
+<td>Nur zwischen den berechtigten Anwendungshosts und PostgreSQL; keine öffentliche Datenbankfreigabe.</td>
+</tr>
+<tr>
+<td>Optional im lokalen Netz</td>
+<td>DNS-SD/mDNS, UDP 5353</td>
+<td>Nur bei aktivierter lokaler Servererkennung; ersetzt weder HTTPS noch Anmeldung und wird meist nicht über Netzgrenzen geroutet.</td>
+</tr>
+<tr>
+<td>Ausgehend nach Bedarf</td>
+<td>DNS, Zeitsynchronisation und die ausdrücklich benötigten Geräte-/Fremdsystemziele</td>
+<td>Nach vorhandener Betriebsrichtlinie; Lizenzprüfung und ausgehende Hintergrundkonnektoren bleiben im Worker.</td>
+</tr>
+</tbody>
+</table>
+<p>Das Setup öffnet keinen API-Port automatisch. Beispiel für eine eng begrenzte Windows-Firewallregel, in einer administrativen PowerShell auszuführen und an das eigene Netz anzupassen:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">New-NetFirewallRule</span> <span class="n">-Name</span> <span class="s2">&quot;FleetMiraApi-HTTPS&quot;</span> <span class="p">`</span>
+  <span class="n">-DisplayName</span> <span class="s2">&quot;Fleet Mira API HTTPS&quot;</span> <span class="p">`</span>
+  <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-LocalPort</span> <span class="n">8443</span> <span class="p">`</span>
+  <span class="n">-Profile</span> <span class="n">Domain</span><span class="p">,</span><span class="n">Private</span> <span class="n">-RemoteAddress</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">24</span>
+</code></pre></div>
+<p><code>192.168.10.0/24</code> ist ein Beispielnetz. Bei anderem Port müssen Regel, Dienstkonfiguration und Clientadresse zusammenpassen. Für einen Rückbau nur die eigene Regel entfernen: <code>Remove-NetFirewallRule -Name "FleetMiraApi-HTTPS"</code>. Zertifikatswarnungen nicht durch Abschalten der Prüfung umgehen. Ein vorgeschalteter Proxy benötigt eine separat freigegebene TLS-/Vertrauenskonfiguration; beliebige <code>X-Forwarded-*</code>-Header werden nicht als HTTPS-Nachweis akzeptiert.</p>
+<h2 id="installation-und-einrichtung">Installation und Einrichtung<a class="headerlink" href="#installation-und-einrichtung" title="Permanent link">&para;</a></h2>
+<p>Vor einem Update alle Änderungen in den auf diesem Server geöffneten Mira-Clients speichern und die Clients beenden. Ein Client in einer anderen Windows-Sitzung kann den Austausch der Programmdateien blockieren. Nach einem abgebrochenen Setup immer Installationskennung und Dienstzustände kontrollieren; eine gültige Kennungsdatei wird beim neuen Upgradepfad bis zum tatsächlichen Dateiaustausch erhalten.</p>
+<ol>
+<li>Datenbank und Konfiguration sichern und die allgemeinen <a href="../../operations/enterprise-installation-guide/">Enterprise-Voraussetzungen</a> erfüllen. Ein Setup verwenden, das den neuen API-Dienst tatsächlich enthält.</li>
+<li>Im serverseitigen Setup die Komponente <strong>Fleet Mira API Windows service</strong> auswählen; für gemeinsame Installation zusätzlich Worker und gegebenenfalls Client wählen. Bei unbeaufsichtigter Installation entspricht dies beispielsweise <code>/COMPONENTS=client,worker,api</code>; Datenbankzugänge werden über die geschützte <code>/MIRACONFIG</code>-Datei bereitgestellt, nicht als Kennwort im Prozessargument.</li>
+<li>Die reguläre PostgreSQL-Schemaaktualisierung durchführen. Der API-Dienst darf bei einem PostgreSQL-Fehler niemals eine SQLite-Datenbank anlegen oder verwenden.</li>
+<li>Zertifikat und Schlüssel auf dem API-Server bereitstellen. DNS-Namen, Zertifikatgültigkeit und Leserechte des Dienstkontos prüfen.</li>
+<li>Im Enterprise-Client unter Administration → Kommunikation und Integrationen <strong>API-Konfiguration</strong> öffnen. Zum Beispiel <code>https://fleet.example.internal:8443</code>, passende Bind-Adresse, Port 8443 und die serverseitigen Zertifikats-/Schlüsselpfade eintragen. Loggrenzen und erlaubte Android-Scopes prüfen und speichern.</li>
+<li><strong>API-Dienst</strong> öffnen, die passende Instanz wählen und <strong>Neu laden</strong> ausführen. Ohne Konfiguration bleibt der Dienst <code>UNCONFIGURED</code>; ein laufender Windows-Dienst allein beweist daher keinen geöffneten HTTPS-Port.</li>
+<li>Die benötigte Firewallregel einrichten und den folgenden Browser-Funktionstest von einem vorgesehenen Clientnetz aus ausführen.</li>
+<li>Unter <strong>API-Zugänge</strong> Integrationstokens mit Benutzerzuordnung, Audience, Scopes und Gültigkeit anlegen oder die DTCO-App am gespeicherten Serverziel per Browseranmeldung verbinden. Tokens gehören weder in URLs noch in Bildschirmfotos oder Supportprotokolle.</li>
+</ol>
+<p>Vorhandene aktivierte mobile/Telematik-Konfigurationen können beim ersten Start übernommen werden. Bestehende Zusatzports bleiben als Kompatibilitätslistener erhalten. Herkunftsdateien werden nicht gelöscht. Details zu Übernahme, Rechtevergabe, Widerruf und Rückbau stehen in der <a href="../../operations/api-service/">Betriebsanleitung</a>.</p>
+<h2 id="einrichtung-in-der-admin-oberflache">Einrichtung in der Admin-Oberfläche<a class="headerlink" href="#einrichtung-in-der-admin-oberflache" title="Permanent link">&para;</a></h2>
+<p>Die Admin-Oberfläche ist Teil des <strong>Enterprise-Clients</strong>, kein öffentliches Web-Dashboard. Mit einem berechtigten Benutzer anmelden, <strong>Administration → Kommunikation und Integrationen</strong> aufklappen und den gewünschten Arbeitsbereich öffnen. Zu Beginn einer Sitzung ist die Arbeitsfläche leer; die Navigationsauswahl öffnet den jeweiligen Tab. Die folgenden Screenshots zeigen die tatsächlichen Anwendungskomponenten mit isolierten PostgreSQL-Beispieldaten. Servernamen, Pfade und Freigaben an die eigene Installation anpassen. Abbildungen lassen sich durch Anklicken in voller Auflösung öffnen.</p>
+<h3 id="api-konfiguration-speichern">API-Konfiguration speichern<a class="headerlink" href="#api-konfiguration-speichern" title="Permanent link">&para;</a></h3>
+<p><a href="../../assets/screenshots/api-service/configuration.png"><img alt="API-Konfiguration mit HTTPS-Adresse, TLS-Dateien und Loggrenzen" src="../../assets/screenshots/api-service/configuration.png" /></a></p>
+<ul>
+<li><strong>URL:</strong> die von Clients erreichbare HTTPS-Adresse einschließlich Port, etwa <code>https://fleet.example.internal:8443</code>.</li>
+<li><strong>Server:</strong> lokale Bind-Adresse. <code>0.0.0.0</code> bindet alle IPv4-Schnittstellen; die Firewall begrenzt den Zugriff auf die freigegebenen Netze.</li>
+<li><strong>Port:</strong> muss zu URL und Firewall passen; im Beispiel 8443.</li>
+<li><strong>Zertifikat / Privater Schlüssel:</strong> absolute Dateipfade <strong>auf dem API-Server</strong>. Die Zertifikatsdatei enthält die erforderliche Zertifikatskette. Der private Schlüssel bleibt auf dem Server und wird nicht an Clients verteilt.</li>
+<li><strong>Protokolle:</strong> Aufbewahrung in Tagen, Dateigröße und Gesamtbudget in MiB. Die Beispielwerte sind 30 Tage, 50 MiB und 1024 MiB.</li>
+<li><strong>Berechtigungen / dtco-android:</strong> zulässige Scopes für die browsergestützte App-Anmeldung. Nur benötigte Rechte aktivieren; die aktuellen Benutzerrechte begrenzen den Zugriff zusätzlich.</li>
+</ul>
+<p><strong>Speichern</strong> schreibt die zentrale PostgreSQL-Konfiguration. Anschließend unter <strong>API-Dienst</strong> die Instanz auswählen und <strong>Neu laden</strong> ausführen. <strong>Verwerfen</strong> lädt die gespeicherten Werte erneut. Bei Zertifikatswechsel auch Dateirechte, Kette und Gültigkeit prüfen. Nach dem Speichern akzeptiert die Hostprüfung den Host der eingetragenen URL; alternative Clientadressen nicht ungeprüft voraussetzen.</p>
+<h3 id="windows-dienst-und-api-instanz-kontrollieren">Windows-Dienst und API-Instanz kontrollieren<a class="headerlink" href="#windows-dienst-und-api-instanz-kontrollieren" title="Permanent link">&para;</a></h3>
+<p><a href="../../assets/screenshots/api-service/status.png"><img alt="Admin-Arbeitsbereich API-Dienst mit Instanzauswahl und Diagnose" src="../../assets/screenshots/api-service/status.png" /></a></p>
+<p>Der Windows-Dienst heißt <strong>FleetMiraApi</strong> und startet automatisch. Auf dem Server lässt er sich in <code>services.msc</code> oder über die lokale Verknüpfung <strong>FLEET Mira API</strong> kontrollieren. Die zentrale Seite <strong>API-Dienst</strong> zeigt die gemeldete Instanz und ihren letzten Heartbeat. Ein alter Heartbeat ist kein Nachweis eines weiterhin laufenden Prozesses.</p>
+<table>
+<thead>
+<tr>
+<th>Aktion / Anzeige</th>
+<th>Verwendung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aktualisieren</strong></td>
+<td>Instanzen und zuletzt gemeldeten Zustand aus PostgreSQL laden.</td>
+</tr>
+<tr>
+<td><strong>Diagnose</strong></td>
+<td>Einen Diagnoseauftrag an die ausgewählte laufende Instanz senden.</td>
+</tr>
+<tr>
+<td><strong>RUNNING / listener_alive</strong></td>
+<td>Der Listener war beim letzten Heartbeat aktiv. Zusätzlich den HTTPS-Funktionstest durchführen.</td>
+</tr>
+<tr>
+<td><strong>UNCONFIGURED</strong></td>
+<td>Konfiguration oder TLS-Einrichtung fehlt; ein laufender Windows-Dienst kann dabei noch keinen HTTPS-Listener haben.</td>
+</tr>
+<tr>
+<td><strong>licensed / logging_available</strong></td>
+<td>Gemeldete Betriebsfreigabe und Verfügbarkeit der Protokollierung prüfen.</td>
+</tr>
+<tr>
+<td><strong>API pausieren / API fortsetzen</strong></td>
+<td>Fachzugriffe vorübergehend aussetzen beziehungsweise wieder freigeben. Der öffentliche Prozessnachweis unter /health/live ist kein Fachbereitschaftstest.</td>
+</tr>
+<tr>
+<td><strong>DEBUG (15 min)</strong></td>
+<td>Für eine begrenzte Fehlersuche zusätzliche technische Protokollierung aktivieren.</td>
+</tr>
+<tr>
+<td><strong>Neu laden</strong></td>
+<td>Gespeicherte Konfiguration erneut einlesen; anschließend Heartbeat und HTTPS prüfen.</td>
+</tr>
+</tbody>
+</table>
+<p>Die Aktionen werden als zentrale Aufträge bearbeitet. Bei gestopptem Dienst oder ausgefallener Datenbank die lokale Konsole beziehungsweise Windows-Dienstverwaltung verwenden. Ein fehlender Listener wird nicht durch eine erfolgreiche Datenbankabfrage ersetzt.</p>
+<h3 id="benutzergebundene-api-zugange-einrichten">Benutzergebundene API-Zugänge einrichten<a class="headerlink" href="#benutzergebundene-api-zugange-einrichten" title="Permanent link">&para;</a></h3>
+<p><a href="../../assets/screenshots/api-service/tokens.png"><img alt="API-Zugänge mit Besitzer, Scopes, Ablaufdatum und Status" src="../../assets/screenshots/api-service/tokens.png" /></a></p>
+<p>Unter <strong>API-Zugänge → Token erstellen</strong> den aktiven Besitzer, eine aussagekräftige Bezeichnung, den passenden API-Typ (<code>mobile</code>, <code>devices</code>, <code>telematics</code> oder <code>drivercard</code>), die erforderlichen Scopes und eine Gültigkeit von 1 bis 365 Tagen wählen. Kunden-IDs beziehungsweise <strong>Alle Kunden</strong> nur entsprechend der vorgesehenen fachlichen Freigabe setzen; mobile Tokens verwenden keine Kundeneingrenzung über dieses Feld. Telematik benötigt die ausdrückliche globale Freigabe.</p>
+<p><a href="../../assets/screenshots/api-service/token-create.png"><img alt="Dialog zum Anlegen eines Tokens ohne Anzeige eines Tokengeheimnisses" src="../../assets/screenshots/api-service/token-create.png" /></a></p>
+<p>Nach dem Anlegen wird das Tokengeheimnis <strong>einmalig</strong> angezeigt. Sicher an die vorgesehene Integration übergeben und dort als Geheimnis speichern; nicht in URLs, Dokumentation oder Screenshots übernehmen. Die Liste zeigt Metadaten und kann durchsucht werden. Zum Entziehen den Zugang auswählen, <strong>Token widerrufen</strong> anklicken und bestätigen. Bestehende Tokens werden dadurch nicht verlängert oder erneuert.</p>
+<p>Für die <strong>DTCO-Android-App</strong> ist die browsergestützte Anmeldung der reguläre Weg: Serveradresse in der App wählen, Browseranmeldung starten und mit dem vorgesehenen Mira-Benutzer anmelden. Die App erhält ihre Tokens automatisch über den PKCE-Codeaustausch und verwaltet deren Erneuerung. Ein manuell kopiertes Integrationstoken ist dafür nicht erforderlich. Android-Scopes, aktive Benutzerrechte und die zulässige Rücksprungadresse müssen zur eingerichteten App passen.</p>
+<h3 id="protokolle-zur-fehlersuche-verwenden">Protokolle zur Fehlersuche verwenden<a class="headerlink" href="#protokolle-zur-fehlersuche-verwenden" title="Permanent link">&para;</a></h3>
+<p><a href="../../assets/screenshots/api-service/logs.png"><img alt="API-Protokolle mit Instanzauswahl, Suche, Schweregrad und Export" src="../../assets/screenshots/api-service/logs.png" /></a></p>
+<p>Unter <strong>Protokolle</strong> die Instanz auswählen und <strong>Aktualisieren</strong> verwenden. <strong>Automatisch aktualisieren</strong> lädt während der sichtbaren Seite regelmäßig neue bereinigte Zeilen. Suche und Schweregradfilter schränken die Anzeige ein; <strong>Exportieren</strong> speichert die angezeigten Zeilen als JSON Lines. Zunächst Zeitpunkt, HTTP-Status und technischen Ereigniscode mit dem gemeldeten Fehler abgleichen, bei Bedarf kurzzeitig DEBUG aktivieren und erneut prüfen. Keine Zugangstokens, Kennwörter oder Schlüssel in Supportmaterial aufnehmen.</p>
+<h3 id="zertifikatsvertrauen-auf-clients-einrichten">Zertifikatsvertrauen auf Clients einrichten<a class="headerlink" href="#zertifikatsvertrauen-auf-clients-einrichten" title="Permanent link">&para;</a></h3>
+<p>Bei einer privaten Unternehmens- oder Test-CA das <strong>öffentliche CA-Zertifikat</strong> nach Prüfung des Fingerabdrucks über die vorgesehene Geräteverwaltung verteilen. Windows-Browser benötigen es im passenden vertrauenswürdigen Stammzertifikatspeicher, Android-Geräte entsprechend in ihrer verwalteten beziehungsweise Benutzer-CA-Konfiguration. Die DTCO-App berücksichtigt System- und Benutzer-CAs. Serverzertifikat und CA müssen gültig sein; der aufgerufene DNS-Name beziehungsweise die IP-Adresse muss im SAN des Serverzertifikats stehen. Der private Server- oder CA-Schlüssel wird niemals auf Clients installiert. Nach der Verteilung Browser-Health-Test und App-Verbindung erneut prüfen.</p>
+<h2 id="fleet-mira-health-im-browser">Fleet Mira Health im Browser<a class="headerlink" href="#fleet-mira-health-im-browser" title="Permanent link">&para;</a></h2>
+<p>Öffnen Sie <code>https://&lt;Server&gt;:8443/health</code>. <strong>Fleet Mira Health</strong> ist ohne Anmeldung erreichbar und zeigt API, Worker, PostgreSQL, laufende und zuletzt abgeschlossene Worker-Aufträge sowie Ressourcenwerte. Die öffentliche Ansicht ist Englisch. Das dunkle Material-3-Design ist unabhängig von der Browser-/Systemdarstellung voreingestellt; über den Darstellungsschalter ist eine ausdrücklich gewählte helle Ansicht möglich und wird in diesem Browser gespeichert.</p>
+<p><a href="../../assets/screenshots/api-service/health-public.png"><img alt="Öffentliche Fleet Mira Health im dunklen Design" src="../../assets/screenshots/api-service/health-public.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API / Worker / PostgreSQL</td>
+<td>Zustand mit Symbol, Klartext und Code; Server, Version und letzte Rückmeldung. API-Rückmeldungen über 45 Sekunden und Worker-Rückmeldungen über 60 Sekunden gelten als veraltet.</td>
+</tr>
+<tr>
+<td>Worker-Aufträge</td>
+<td>Laufender und zuletzt abgeschlossener Auftrag je Worker mit Auftragsart, Status, Beginn, Ende und Dauer; Anzahl wartender/laufender Aufträge. Keine Auftragspayloads, Benutzer- oder Dateinamen.</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>RAM gesamt/belegt, CPU-Auslastung, logische und physische Kerne. Gemeinsame Server werden zusammengefasst.</td>
+</tr>
+<tr>
+<td>Dienstprozess und Datenträger</td>
+<td>Prozess-RAM, Prozess-CPU und nutzbare Kerne; Gesamtkapazität, Belegung und freier Platz des Datenträgers am jeweiligen Dienst-Datenverzeichnis. Prozess-CPU: 100 % entspricht einem ausgelasteten logischen Kern.</td>
+</tr>
+<tr>
+<td>Datenbank</td>
+<td>Größe der tatsächlich angebundenen PostgreSQL-Datenbank. Dies ist keine Messung des freien Platzes auf einem entfernten Datenbankserver.</td>
+</tr>
+</tbody>
+</table>
+<p>API und Worker messen mit dem mitgelieferten <code>psutil</code> außerhalb von Browseranfragen, höchstens alle zehn Sekunden, und veröffentlichen die Werte über ihre Heartbeats. Jede Messung hat einen Zeitpunkt und eine Server-/Dienstzuordnung. Fehlende Werte erscheinen als nicht verfügbar; ältere Messungen sind gekennzeichnet. Betriebssystemwerte eines entfernten PostgreSQL-Servers werden ohne dortige Messquelle nicht erfasst. Es ist keine zusätzliche Firewall-Freigabe erforderlich.</p>
+<p>Die sichtbare Seite aktualisiert sich alle zehn Sekunden, ohne Fokus oder Scrollposition zurückzusetzen. Bei markiertem Text pausiert die Aktualisierung. <strong>Refresh</strong> aktualisiert manuell. Bei Datenbankausfall bleibt die öffentliche Seite erreichbar und zeigt den Ausfall sowie verfügbare lokale API-Rückmeldungen mit ihrem Alter. <strong>ERR_CONNECTION_REFUSED</strong> bedeutet dagegen, dass kein Listener antwortet: Dienst und lokale Konsole prüfen.</p>
+<p>Die Desktop-Ansicht besteht aus drei großen Spalten in der Reihenfolge <strong>FleetMiraWorker</strong>, <strong>FleetMiraApi</strong>, <strong>PostgreSQL</strong>. Jeder Dienstbereich bündelt seinen Zustand und seine zugehörigen Prozesswerte; die Datenbankgröße steht direkt bei PostgreSQL. Darunter folgen die Bereiche <strong>Serverinformationen</strong> mit Host- und Datenträgerwerten sowie <strong>Aufträge</strong> mit Warteschlange und laufendem/letztem Auftrag. Auf schmalen Bildschirmen stehen die Bereiche untereinander.</p>
+<h3 id="postgresql-leistung-und-fleet-mira-datenbestand">PostgreSQL: Leistung und Fleet-Mira-Datenbestand<a class="headerlink" href="#postgresql-leistung-und-fleet-mira-datenbestand" title="Permanent link">&para;</a></h3>
+<p>Im PostgreSQL-Bereich stehen zusätzlich Version, Antwortzeit eines <code>SELECT 1</code>, Verbindungen der aktuellen Datenbank, sichtbare aktive Verbindungen, serverweite Verbindungen, konfiguriertes Verbindungslimit, Cache-Trefferquote, Transaktionen je Sekunde und Deadlocks seit dem angezeigten Statistik-Reset. Die Antwortzeit misst die Abfrage auf einer bestehenden Verbindung; die Transaktionsrate ist der Mittelwert zwischen zwei gültigen Messungen. Nach Dienststart oder Statistik-Reset erscheint die Rate zunächst als nicht verfügbar. Die Cache-Quote beschreibt PostgreSQL-Pufferzugriffe und nicht den Betriebssystem-Cache. Details zu Aussage und Leserechten erläutert die <a href="https://www.postgresql.org/docs/17/monitoring-stats.html">PostgreSQL-Dokumentation</a>.</p>
+<p>Die eigene Karte <strong>Fleet Mira: Datensätze insgesamt</strong> steht unterhalb von <strong>Aufträge</strong> in der rechten unteren Spalte. Auf schmalen Bildschirmen folgt sie ebenfalls unmittelbar auf die Aufträge. Die PostgreSQL-Spalte enthält ausschließlich Datenbankzustand, Größe und Leistungsdaten. Die Karte zählt exakt die Zeilen der folgenden Tabellen:</p>
+<table>
+<thead>
+<tr>
+<th>Anzeige</th>
+<th>Grundlage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fahrzeuge</td>
+<td><code>fleet_vehicle</code>, einschließlich archivierter Fahrzeuge</td>
+</tr>
+<tr>
+<td>Personal</td>
+<td><code>fleet_person</code>, einschließlich archivierter Personalstammsätze; keine Benutzerkonten</td>
+</tr>
+<tr>
+<td>DDD-Archive</td>
+<td><code>ddd_archive</code>, einschließlich logisch gelöschter Archive; keine einzelnen Tachographen-Fakten</td>
+</tr>
+<tr>
+<td>Führerscheinkontrollen</td>
+<td><code>fleet_license_check</code>, gespeicherte Kontrollereignisse einschließlich negativer Ergebnisse; keine Fälligkeiten</td>
+</tr>
+<tr>
+<td>Kostenbuchungen</td>
+<td><code>fleet_vehicle_cost_entry</code>, einschließlich Entwürfen, Gutschriften, Stornos und Archivdatensätzen; Anzahl statt Geldsumme</td>
+</tr>
+</tbody>
+</table>
+<p>Leistungsdaten werden im API-Heartbeat höchstens alle 30 Sekunden, Datensatzzähler höchstens alle 60 Sekunden ermittelt. Die Browseraktualisierung löst keine zusätzlichen Messabfragen aus. Verbindungen und Abfragen sind zeitlich begrenzt und rein lesend. Fehler beeinflussen die Anzeige der Messwerte, nicht den Dienstbetrieb. Der API-Datenbankbenutzer benötigt für Zähler Leserechte auf den fünf Tabellen. Es werden keine erweiterten Monitoring-Rollen automatisch vergeben. Sind Zustände fremder Datenbanksitzungen verborgen, bleibt die Anzahl aktiver Verbindungen ausdrücklich nicht verfügbar. Sichtbar sind aggregierte Zahlen, Messzeitpunkt und Aktualität; Namen, Abfragetexte und Beträge werden nicht ausgegeben.</p>
+<h3 id="geschutzte-protokolle">Geschützte Protokolle<a class="headerlink" href="#geschutzte-protokolle" title="Permanent link">&para;</a></h3>
+<p>Der Verbindungsaufbau zum lokalen Archiv-Dienst über Named Pipe überbrückt kurzzeitig fehlende oder belegte Pipe-Instanzen innerhalb einer Gesamtfrist von fünf Sekunden. Nur das Öffnen wird wiederholt. Vertrauensprüfung und Archivauftrag werden anschließend genau einmal ausgeführt; Fehler nach dem Senden lösen keine automatische Wiederholung desselben Archivaufrufs aus. Bei dauerhaft nicht verfügbarem Dienst bleibt ein Fehler sichtbar und die begrenzte Job-Wiederholung greift. Signaturen, unabhängige Prüfpunkte und Zugriffsrechte werden dadurch nicht gelockert.</p>
+<p>Unter <strong>Aufträge</strong> zeigt die öffentliche Ansicht nur die historische Gesamtzahl endgültig fehlgeschlagener Jobs und den letzten fehlgeschlagenen Auftrag mit Art und Endzeit. Sie zeigt keine Fehlerliste, Versuche, Fehlercodes oder Fehlerursachen. Nach Admin-Anmeldung stehen die letzten zehn Fehlerfälle einschließlich wartender Wiederholungen <strong>unterhalb der Protokolle</strong>. Dort ergänzen freigegebene Codes und verständliche Hinweise die Detailfelder. Payloads, Benutzer-/Dateinamen und Rohfehler bleiben ausgeschlossen. Der Fehlerzähler wird weder bei Neustarts noch bei Warteschlangenbereinigung zurückgesetzt. „Betriebsbereit“ beschreibt weiterhin die Dienstverfügbarkeit.</p>
+<p>Automatische Zustandsprüfungen werden pro Auftragsart und exakt gleichem Parametersatz auf einen wartenden oder laufenden Auftrag zusammengefasst. Die gemeinsame Datenbanksperre schützt auch mehrere gleichzeitig planende Worker. Betroffen sind Archivprüfung, Eingangsbereinigungen, Postfach-/Benachrichtigungsprüfungen, Sicherungsbereinigung, automatische Downloadprüfungen je Aufgabe sowie freigegebene GPS-Abfragen je Verbindung. Explizite Stichtage, einzelne Fahrzeug-/Dateianforderungen, manuelle Aufträge, Sicherungserstellung und datumsgebundene Rechnungsverarbeitung bleiben eigenständig. Unterschiedliche Aufgaben oder Verbindungen werden nicht vermischt. Die normale nächste Planungsrunde holt zwischenzeitliche Änderungen nach.</p>
+<p>Die Bereinigung bewahrt alle Datensätze. Nur unversuchte, eindeutig erkannte doppelte Routine-Wake-ups können den Zustand <code>CANCELLED</code> mit <code>PERIODIC_SUPERSEDED</code> erhalten. Pro Gruppe bleibt der neueste wartende Eintrag erhalten; existiert bereits laufende oder versuchte Arbeit, wird diese geschützt. Fehler, Wiederholungsversuche, Leases und unbekannte Parameter werden nicht geändert. Ein Vorschau-Lauf schreibt keine Geschäftsdaten; die Anwendung der Bereinigung ist wiederholbar. Alle Worker, die dieselbe Datenbank planen, müssen die aktualisierte Version verwenden.</p>
+<p>Fehlende oder nicht entschlüsselbare GPS-Schlüssel erfordern eine geschützte Bereitstellung am Worker und einen erfolgreichen Verbindungstest. Die Anbindung erhält dafür <code>ACTION_REQUIRED</code>; periodische Abrufe pausieren. Fehler am Schlüsselspeicher und Archivintegritätsfehler werden nicht automatisch wiederholt. Netzwerkfehler behalten die begrenzten Wiederholungen. Bereits eingereihte geplante Downloadaufträge führen deaktivierte Aufgaben nicht mehr aus. Fehlerhistorie und Archiv-Prüfpunkte werden nicht gelöscht oder zurückgesetzt.</p>
+<p><strong>Sign in</strong> öffnet <code>/health/login</code>. Nur ein aktiver Mira-Administrator mit <code>users.manage</code>, <code>settings.manage</code>, erlaubter lokaler Anmeldung und abgeschlossenem erforderlichem Kennwortwechsel erhält Zugriff auf die letzten bis zu 30 bereinigten Protokolleinträge. Integrationstokens ersetzen die Anmeldung nicht. Danach gelten Sprache und Region seines Profils; nach 30 Minuten oder <strong>Abmelden</strong> endet die Sitzung. Benutzerstatus und Berechtigungen werden bei jedem Aufruf erneut geprüft. Bei Ausfall der Benutzerverwaltung bleibt nur die öffentliche Ansicht sichtbar.</p>
+<p><a href="../../assets/screenshots/api-service/health-login.png"><img alt="Admin-Anmeldung" src="../../assets/screenshots/api-service/health-login.png" /></a></p>
+<p><a href="../../assets/screenshots/api-service/health.png"><img alt="Fleet Mira Health mit geschützten Admin-Protokollen" src="../../assets/screenshots/api-service/health.png" /></a></p>
+<p>HTTP-Weiterleitungen wie 303 sind Weiterleitungen und keine fehlgeschlagenen Aufrufe. Fehlercodes erhalten verständliche Hinweise. Die Abbildungen stammen aus den tatsächlichen Oberflächen mit isolierten PostgreSQL-Beispieldaten.</p>
+<p>Für technische Prozessprüfungen bleibt <code>/health/live</code> ohne Anmeldung verfügbar. Nicht-HTML-Anfragen an <code>/health</code> behalten die minimale JSON-Antwort zur Kompatibilität. Der Prozessnachweis allein bestätigt weder Lizenz noch Worker-Bereitschaft. Dienststeuerung und Tokenverwaltung erfordern unverändert ihre bisherigen Berechtigungen.</p>
+<h2 id="offentlicher-erreichbarkeitstest">Öffentlicher Erreichbarkeitstest<a class="headerlink" href="#offentlicher-erreichbarkeitstest" title="Permanent link">&para;</a></h2>
+<p>Für Monitoring und einen ersten HTTPS-Test bleibt ausschließlich der kleine Prozessnachweis ohne Anmeldung zugänglich:</p>
+<div class="highlight"><pre><span></span><code>https://fleet.example.internal:8443/health/live
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="s2">&quot;FleetMiraApi&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>Diese Antwort bestätigt HTTPS und einen antwortenden Prozess. Sie bestätigt keine gültige Lizenz, aktuelle Worker-Rückmeldung oder fachliche Bereitschaft. Nicht-HTML-Anfragen an <code>/health</code> behalten diese minimale JSON-Antwort aus Kompatibilitätsgründen. Ein Zugriff auf <code>/api/devices</code> ohne Token muss bei freigegebenem Fachbetrieb HTTP 401 liefern; HTTP 503 ist kein bestandener Fachtest. Schreib-/Importtests gehören in eine freigegebene isolierte Testumgebung.</p>
+<h3 id="diagnose-ohne-laufenden-api-dienst">Diagnose ohne laufenden API-Dienst<a class="headerlink" href="#diagnose-ohne-laufenden-api-dienst" title="Permanent link">&para;</a></h3>
+<p><a href="../../assets/screenshots/api-service/local-console.png"><img alt="Lokale Material-3-Dienstkonsole mit strukturierten Statuskarten" src="../../assets/screenshots/api-service/local-console.png" /></a></p>
+<p>Auf dem Server <strong>FLEET Mira API</strong> im Startmenü beziehungsweise <code>DLTNGDownloadTool.exe --api-console</code> öffnen. Die Konsole zeigt API und Worker als getrennte Karten, lesbare Statusmeldungen, Prozess-ID, letzten Windows-Fehlercode und die letzten bereinigten API-Ereignisse. Sie aktualisiert alle fünf Sekunden. Für lokale gestoppte oder startende Dienste hat der unmittelbar abgefragte Windows-Dienstzustand Vorrang vor einem alten Datenbank-Heartbeat. Ein laufender Prozess allein wird bei fehlender Rückmeldung nicht als fachlich betriebsbereit dargestellt.</p>
+<p><strong>Dienst starten</strong> ist für den gestoppten API-Dienst verfügbar; <strong>Dienst stoppen</strong> für einen laufenden Dienst. Die Bedienung benötigt passende Windows-Rechte. Bei fehlenden Rechten erscheint ein verständlicher Hinweis. Die lokale Konsole hat keinen angemeldeten Mira-Benutzer und verwendet deshalb Englisch; die zentrale Enterprise-Administration verwendet die Sprache des angemeldeten Benutzers. Die Abbildung zeigt einen laufenden Beispieldienst, nicht das Ergebnis einer Steueraktion auf produktiven Daten.</p>
+<table>
+<thead>
+<tr>
+<th>Beobachtung</th>
+<th>Nächster Prüfschritt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verbindung abgelehnt / Windows-Dienst gestoppt</td>
+<td>Lokale Konsole öffnen, Fehlercode und Log-Einträge prüfen, Ursache beheben und API-Dienst starten.</td>
+</tr>
+<tr>
+<td>Zeitüberschreitung</td>
+<td>Route, Bind-Adresse und Firewallfreigabe prüfen.</td>
+</tr>
+<tr>
+<td>Zertifikatswarnung</td>
+<td>CA-Vertrauen, SAN/Servername, Gültigkeit und Zertifikatskette korrigieren.</td>
+</tr>
+<tr>
+<td>Nicht eingerichtet</td>
+<td>Zertifikats-/Schlüsseldateien und Leserechte des Dienstkontos, Port und gespeicherte Konfiguration prüfen.</td>
+</tr>
+<tr>
+<td>Veralteter Worker-Heartbeat</td>
+<td>FleetMiraWorker auf dem Server und dessen Datenbankverbindung prüfen.</td>
+</tr>
+<tr>
+<td>Anmeldung nicht möglich</td>
+<td>Aktiven Benutzer, lokale Anmeldung, Kennwortwechsel und Admin-Berechtigungen prüfen.</td>
+</tr>
+<tr>
+<td>Lizenz nicht verfügbar</td>
+<td>Zentrale Enterprise-Lizenz und Worker-Lizenzprüfung kontrollieren.</td>
+</tr>
+<tr>
+<td>HTTP 400</td>
+<td>Konfigurierte Serveradresse und zulässigen Hostnamen verwenden.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kontrolle-protokolle-und-fehlersuche">Kontrolle, Protokolle und Fehlersuche<a class="headerlink" href="#kontrolle-protokolle-und-fehlersuche" title="Permanent link">&para;</a></h2>
+<p><strong>API-Dienst</strong> bietet Diagnose, Pause/Fortsetzen, begrenzten Debugmodus und Neuladen. <strong>API-Zugänge</strong> verwaltet Besitzer, Freigaben, Gültigkeit und Widerruf. <strong>Protokolle</strong> bietet Suche, Schweregradfilter, automatische Aktualisierung und Export bereinigter Zeilen. Standardmäßig rotiert <code>logs/api/api.jsonl</code> täglich und bei 50 MiB; Aufbewahrung maximal 30 Tage und Gesamtbudget 1024 MiB. Der Debugmodus endet nach 15 Minuten.</p>
+<p>Wenn API oder Datenbank nicht erreichbar sind, die lokale Verknüpfung <strong>FLEET Mira API</strong> beziehungsweise <code>DLTNGDownloadTool.exe --api-console</code> verwenden. Sie prüft den Windows-Dienst und lokale geschützte Logs; Start/Stop benötigen passende Windows-Rechte. Ein entfernter, vollständig gestoppter Dienst kann sich nicht über seinen eigenen HTTP-Endpunkt starten.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/image-lightbox.js"></script>
+      
+    
+  </body>
+</html>
