@@ -2878,6 +2878,7 @@
 <h2 id="monitoring-logs-and-troubleshooting">Monitoring, logs and troubleshooting<a class="headerlink" href="#monitoring-logs-and-troubleshooting" title="Permanent link">&para;</a></h2>
 <p><strong>API service</strong> provides diagnose, pause/resume, bounded debug mode and reload. <strong>API credentials</strong> manages owners, grants, validity and revocation. <strong>Logs</strong> provides search, severity filtering, automatic refresh and sanitized row export. By default, <code>logs/api/api.jsonl</code> rotates daily and at 50 MiB; retention is at most 30 days with a 1024 MiB total budget. Debug mode ends after 15 minutes.</p>
 <p>When API or database is unavailable, use the local <strong>FLEET Mira API</strong> shortcut or <code>DLTNGDownloadTool.exe --api-console</code>. It inspects the Windows service and protected local logs; start/stop requires appropriate Windows rights. A completely stopped remote service cannot start itself through its own HTTP endpoint.</p>
+<p>The Health screenshots were captured directly from test server <strong>W25</strong> on 8 November 2026. They show its actual reported operational data, including unchanged “Nicht verfügbar” (unavailable) values. The protected view uses the existing administrator’s German profile language. Metrics are snapshots, not guarantees for other installations.</p>
 
 
 
