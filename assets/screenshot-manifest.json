@@ -2184,7 +2184,8 @@
     "capture_runtime_modules_sha256": "e914212bab7e92ef059f83d829e2fa4d4a7365a6f47f088f619a9e480b081c93",
     "references": [
       "operations/traffic-offence-administration.md"
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "de",
@@ -2202,7 +2203,8 @@
     "capture_runtime_modules_sha256": "e914212bab7e92ef059f83d829e2fa4d4a7365a6f47f088f619a9e480b081c93",
     "references": [
       "operations/traffic-offence-administration.md"
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "de",
@@ -2241,7 +2243,8 @@
     "capture_runtime_modules_sha256": "e914212bab7e92ef059f83d829e2fa4d4a7365a6f47f088f619a9e480b081c93",
     "references": [
       "operations/traffic-offence-administration.md"
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "de",
@@ -2259,7 +2262,8 @@
     "capture_runtime_modules_sha256": "e914212bab7e92ef059f83d829e2fa4d4a7365a6f47f088f619a9e480b081c93",
     "references": [
       "operations/traffic-offence-administration.md"
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "de",
@@ -2277,7 +2281,8 @@
     "capture_runtime_modules_sha256": "e914212bab7e92ef059f83d829e2fa4d4a7365a6f47f088f619a9e480b081c93",
     "references": [
       "operations/traffic-offence-administration.md"
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "de",
@@ -2296,7 +2301,8 @@
     "references": [
       "operations/traffic-offence-administration.md"
     ],
-    "widget_id": "aiConnectorAdministration"
+    "widget_id": "aiConnectorAdministration",
+    "backend": "sqlite"
   },
   {
     "language": "de",
@@ -2314,7 +2320,8 @@
     "capture_runtime_modules_sha256": "e914212bab7e92ef059f83d829e2fa4d4a7365a6f47f088f619a9e480b081c93",
     "references": [
       "operations/traffic-offence-administration.md"
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "de",
@@ -5478,7 +5485,8 @@
     "requested_locale": "en-GB",
     "known_limitations": [
       "Existing beta labels or source-data descriptions may remain German; no image text was retouched."
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "en",
@@ -5500,7 +5508,8 @@
     "requested_locale": "en-GB",
     "known_limitations": [
       "Existing beta labels or source-data descriptions may remain German; no image text was retouched."
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "en",
@@ -5547,7 +5556,8 @@
     "requested_locale": "en-GB",
     "known_limitations": [
       "Existing beta labels or source-data descriptions may remain German; no image text was retouched."
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "en",
@@ -5569,7 +5579,8 @@
     "requested_locale": "en-GB",
     "known_limitations": [
       "Existing beta labels or source-data descriptions may remain German; no image text was retouched."
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "en",
@@ -5591,7 +5602,8 @@
     "requested_locale": "en-GB",
     "known_limitations": [
       "Existing beta labels or source-data descriptions may remain German; no image text was retouched."
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "en",
@@ -5614,7 +5626,8 @@
     "requested_locale": "en-GB",
     "known_limitations": [
       "Existing beta labels or source-data descriptions may remain German; no image text was retouched."
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "en",
@@ -5636,7 +5649,8 @@
     "requested_locale": "en-GB",
     "known_limitations": [
       "Existing beta labels or source-data descriptions may remain German; no image text was retouched."
-    ]
+    ],
+    "backend": "sqlite"
   },
   {
     "language": "en",

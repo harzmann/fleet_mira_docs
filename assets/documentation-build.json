@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-08T14:38:22.151095+00:00",
-  "documentation_source_commit": "cba80f36d756eec8848511221abea1e4838d940c",
+  "generated_at_utc": "2026-11-08T14:39:47.997662+00:00",
+  "documentation_source_commit": "9033524ae965f81be8d214e826d52fdbd5c46478",
   "application_source_commit": "73464613dfad8a3f99a5d270e2afc9c95142e392",
   "application_source_dirty": true,
   "application_version": "1.1.0-beta9",
   "enterprise_build": "R3 (immutable)",
-  "screenshot_manifest_sha256": "65ad1046d9df9863231a1ca49646544fc2ea827cfdce5553980245a8d04045f0",
+  "screenshot_manifest_sha256": "93feabe000a803f3379c5a6d3f05105216985554baa077cc4cc48608157e9e08",
   "screenshots": 274,
   "health_source": "Actual W25 installation; read-only snapshot; German authenticated profile",
   "client_rename": "FleetMira.exe for builds after R3; published R3 remains unchanged"
