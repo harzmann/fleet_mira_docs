@@ -1,0 +1,2386 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+      
+      
+      
+        <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/api/mobile-fsk/">
+      
+      
+        <link rel="prev" href="../mobile-fleet/">
+      
+      
+        <link rel="next" href="../accounting-rest/">
+      
+      
+        
+          <link rel="alternate" href="../../../api/mobile-fsk/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Mobile Führerscheinkontrolle - FLEET Mira Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mobile-fuhrerscheinkontrolle" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobile Führerscheinkontrolle
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../api/mobile-fsk/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Dokumentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktübersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detaillierte Anleitungen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detaillierte Anleitungen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/material3-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material-3-Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodaten-Auswertungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrerkarten-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/deadlines-record-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fälligkeiten und Akten-Dokumente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/violation-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verstoß-Dashboard und Fahrerbelehrungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Berichts-Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schnittstellen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet-mira-api-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FleetMiraApi-Dienst
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geräte-REST-API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-fleet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobiler Fuhrpark und Historien
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Führerscheinkontrolle
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Führerscheinkontrolle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einrichtung-und-berechtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Einrichtung und Berechtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ablauf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ablauf
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schnittstellenvertrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schnittstellenvertrag
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fotos-analyse-und-aufbewahrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fotos, Analyse und Aufbewahrung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bestehende-enterprise-installation-aktualisieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bestehende Enterprise-Installation aktualisieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedienoberflache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bedienoberfläche
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnose-und-abnahme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnose und Abnahme
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrationen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrationen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographen-Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connector Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connector Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework-Übersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/developer-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entwicklerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/customer-concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktbeschreibung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connector-framework/product-flyer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktflyer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architektur
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/database-schema-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datenbankschema V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/workshop-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Architektur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/enterprise-tenants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Tenantkonzept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Betrieb
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-installation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Installationsanleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/enterprise-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Lizenzierung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/workshop-accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Werkstatt-Faktura betreiben
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einrichtung-und-berechtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Einrichtung und Berechtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ablauf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ablauf
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schnittstellenvertrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schnittstellenvertrag
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fotos-analyse-und-aufbewahrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fotos, Analyse und Aufbewahrung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bestehende-enterprise-installation-aktualisieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bestehende Enterprise-Installation aktualisieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedienoberflache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bedienoberfläche
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnose-und-abnahme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnose und Abnahme
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mobile-fuhrerscheinkontrolle">Mobile Führerscheinkontrolle<a class="headerlink" href="#mobile-fuhrerscheinkontrolle" title="Permanent link">&para;</a></h1>
+<p>Die authentifizierte Schnittstelle unter <code>/api/mobile/v1/fsk</code> verbindet die DTCO-Android-App mit der vorhandenen Führerscheinkontrolle in Fleet Mira. Pro verwendet SQLite und den Worker der laufenden Desktop-Anwendung. Enterprise verwendet FleetMiraApi, tenantgebundenes PostgreSQL und FleetMiraWorker. Basic stellt diesen Dienst nicht bereit. Eine erfolgreiche Kontrolle aktualisiert dieselben Fristen wie die bestehende Desktop-Kontrolle.</p>
+<h2 id="einrichtung-und-berechtigungen">Einrichtung und Berechtigungen<a class="headerlink" href="#einrichtung-und-berechtigungen" title="Permanent link">&para;</a></h2>
+<p>Android benötigt mindestens Android 10 sowie für Kontrollen einen kompatiblen NFC-Leser im Telefon; optionale Fotos benötigen eine verfügbare Kamera-App. Für reine Auswertungen sind NFC und Kamera nicht erforderlich. Das Windows-Setup muss API, Worker und versioniertes Datenbankschema gemeinsam aktualisieren. Die lokale OCR-Laufzeit und alle vier Sprachdateien werden im Setup gebündelt; der Dienst lädt keine externen OCR-Modelle nach. Das Dienstkonto benötigt die bestehenden geschützten Zugriffsrechte auf den Daten- und Dokumentbereich. Freien Speicher entsprechend Kontrollzahl und Aufbewahrung planen: Ein angenommenes Bildpaar kann bis zu 20 MiB Originaldaten plus temporäre Arbeits- und Sicherungskopien belegen.</p>
+<ol>
+<li>HTTPS-Listener und ein auf Android vertrauenswürdiges Serverzertifikat gemäß <a href="../fleet-mira-api-service/">API-Dienst</a> einrichten. Keine zusätzliche Netzwerkfreigabe ist erforderlich. Bei Pro muss die Anwendung mit eingerichtetem mobilem HTTPS-Listener laufen; ohne laufende Anwendung ist die Schnittstelle nicht erreichbar.</li>
+<li>Personen, Kontrollpflicht, Intervall und aktive RFID-Zuordnung weiterhin am Desktop pflegen. Der zusätzliche Reiter <strong>Mobile Führerscheinkontrolle</strong> befindet sich in der Personalakte.</li>
+<li>Für Selbstkontrollen einen Benutzer explizit genau einer Person zuordnen und die Freigabe aktivieren. Dafür sind <code>users.manage</code> und <code>fleet.manage</code> erforderlich; der zugeordnete Benutzer benötigt <code>fsk.self</code>. Eine passende E-Mail-Adresse stellt keine Zuordnung her.</li>
+<li>Im OAuth-Client <code>dtco-android</code> die benötigten Scopes zulassen. Bestehende Enterprise-Client-Konfigurationen werden nicht automatisch um Rechte erweitert. In der Android-App unter Einstellungen die mobile Führerscheinkontrolle öffnen, Fleet-Mira-Ziel auswählen und über <strong>Anmelden</strong> im Browser anmelden. Der Server reduziert die angeforderten Scopes auf die aktuellen Benutzerrechte. Frühere Tokens erhalten keine zusätzlichen Rechte.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Benutzerrecht und Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fsk.self.read</code></td>
+<td><code>fsk.self</code>: ausschließlich eigener Status und eigene Historie</td>
+</tr>
+<tr>
+<td><code>fsk.self.check</code></td>
+<td><code>fsk.self</code>: freigegebene eigene NFC-Kontrolle und eigene Bildübertragung</td>
+</tr>
+<tr>
+<td><code>fsk.read</code></td>
+<td><code>fsk.read</code>: tenantgebundene Auswertung und Kontrollhistorie</td>
+</tr>
+<tr>
+<td><code>fsk.check</code></td>
+<td><code>fsk.check</code>: Prüferkontrolle einer bekannten Person</td>
+</tr>
+<tr>
+<td><code>fsk.evidence.read</code></td>
+<td><code>fsk.evidence.read</code> und <code>fsk.read</code>: geschützte Bilder und Analyse</td>
+</tr>
+<tr>
+<td><code>fsk.evidence.review</code></td>
+<td>zusätzlich <code>fsk.check</code>, <code>fsk.read</code> und <code>fsk.evidence.read</code>: begründete Prüferentscheidung</td>
+</tr>
+</tbody>
+</table>
+<p>Die App verwendet Browser-PKCE mit einmaligem Code und automatisch erneuertem Token. Tokenwiderruf, Berechtigungsänderung oder Entzug der Selbstkontrollzuordnung sperren weitere Zugriffe. Tenant und Datenwurzel werden ausschließlich serverseitig bestimmt. Plattformadministration allein gewährt keine fachlichen Tenantrechte.</p>
+<p>Die gezielt zuweisbare Rolle <code>FSK_SELF</code> (<strong>Selbstkontrolle</strong>) enthält ausschließlich <code>fsk.self</code>; die persönliche Freigabe bleibt zusätzlich erforderlich. <code>FSK_REVIEWER</code> (<strong>Führerscheinkontrolle</strong>) enthält die fachlichen FSK-Lese-, Kontroll- und Bildprüfrechte sowie <code>fleet.read</code>, jedoch keine Benutzer-, Stammdaten- oder Archivverwaltung. Enterprise kann diese Rollen in der jeweiligen Tenant-Mitgliedschaft ergänzen. Bei Pro erfolgt die Rollenzuordnung in der Benutzerverwaltung. Bestehende Standardrollen und Mitgliedschaften erhalten die neuen Rechte nicht automatisch.</p>
+<h2 id="ablauf">Ablauf<a class="headerlink" href="#ablauf" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    participant A as DTCO Android
+    participant API as Fleet Mira API
+    participant DB as Tenantdatenbank / SQLite
+    participant W as Gemeinsamer WorkerRuntime
+    A-&gt;&gt;API: Browser-PKCE / Token
+    A-&gt;&gt;API: NFC-Anforderung für eigene oder berechtigte Person
+    API-&gt;&gt;DB: Aktuelle Rechte, Zuordnung, RFID prüfen
+    API--&gt;&gt;A: Einmalige Anforderung, 120 Sekunden
+    A-&gt;&gt;API: Gelesene UID + Idempotency-Key
+    API-&gt;&gt;DB: Kontrolle und nächste Frist atomar speichern
+    API--&gt;&gt;A: Erfolgreiche NFC-Kontrolle
+    opt Ergänzende Fotos
+        A-&gt;&gt;API: Vorderseite und Rückseite aus Kamera
+        API-&gt;&gt;DB: Vollständiges Bildpaar vormerken
+        W-&gt;&gt;DB: Auftrag übernehmen
+        W-&gt;&gt;W: Originale archivieren, lokale OCR / Vergleich
+        W-&gt;&gt;DB: Versionierte Analyse zur Prüfung
+        A-&gt;&gt;API: Geschützte Bilder und Analyse lesen
+        A-&gt;&gt;API: Berechtigte, begründete Prüferentscheidung
+    end</code></pre>
+<p>Selbstkontrollen werden als <code>MOBILE_NFC_SELF</code>, Prüferkontrollen als <code>MOBILE_NFC_INSPECTOR</code> nachvollziehbar gespeichert. Eine NFC-UID allein ist kein kryptografischer Beweis des Originaldokuments oder der Identität des Inhabers. Die Bildprüfung ergänzt die bereits wirksame NFC-Kontrolle; OCR-Fehler oder ein abweichender Bildbefund setzen sie und ihre nächste Frist nicht zurück.</p>
+<h2 id="schnittstellenvertrag">Schnittstellenvertrag<a class="headerlink" href="#schnittstellenvertrag" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Methode und Pfad relativ zu <code>/api/mobile/v1/fsk</code></th>
+<th>Funktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /self</code></td>
+<td>Eigener Status, nächste Frist, Profilregion und Sprache</td>
+</tr>
+<tr>
+<td><code>GET /self/checks</code></td>
+<td>Eigene paginierte Historie</td>
+</tr>
+<tr>
+<td><code>POST /self/challenges</code></td>
+<td>Einmalige Selbstkontrollanforderung</td>
+</tr>
+<tr>
+<td><code>POST /self/checks</code></td>
+<td>NFC-Kontrolle bestätigen</td>
+</tr>
+<tr>
+<td><code>GET /evaluation</code></td>
+<td>Auswertung mit Suche, Status, Datum, Kontrollpflicht und RFID-Filter</td>
+</tr>
+<tr>
+<td><code>GET /persons/{personId}/checks</code></td>
+<td>Berechtigte Personenhistorie</td>
+</tr>
+<tr>
+<td><code>POST /persons/{personId}/challenges</code></td>
+<td>Prüferanforderung</td>
+</tr>
+<tr>
+<td><code>POST /persons/{personId}/checks</code></td>
+<td>Prüferkontrolle bestätigen</td>
+</tr>
+</tbody>
+</table>
+<p>Für Bildpfade ist <code>{context}</code> entweder <code>self</code> oder <code>persons/{personId}</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Methode und Pfad</th>
+<th>Funktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST /{context}/checks/{checkId}/evidence</code></td>
+<td>Bildpaar anlegen, leeres JSON, <code>Idempotency-Key</code></td>
+</tr>
+<tr>
+<td><code>PUT /{context}/evidence/{id}/front</code> und <code>/back</code></td>
+<td>JPEG/PNG binär mit <code>X-Content-SHA256</code></td>
+</tr>
+<tr>
+<td><code>POST /{context}/evidence/{id}/complete</code></td>
+<td>Vollständiges Paar übergeben, leeres JSON</td>
+</tr>
+<tr>
+<td><code>GET /{context}/evidence/{id}</code></td>
+<td>Bearbeitungsstand, Analyse und Prüfhistorie</td>
+</tr>
+<tr>
+<td><code>GET /{context}/evidence/{id}/front</code> und <code>/back</code></td>
+<td>Geschützte Originalbilder</td>
+</tr>
+<tr>
+<td><code>POST /persons/{personId}/evidence/{id}/reviews</code></td>
+<td><code>analysisId</code>, <code>decision</code>, <code>reason</code> und <code>Idempotency-Key</code></td>
+</tr>
+</tbody>
+</table>
+<p>Kontrollbestätigung: <code>{"challengeId":"&lt;id&gt;","uid":"&lt;gelesene UID&gt;"}</code> mit <code>Idempotency-Key</code>. Benutzer, Kontrollzeit und Methode bestimmt der Server. Selbstkontrollpfade akzeptieren keine freie Personenkennung. Wiederholung mit demselben Schlüssel liefert dasselbe Ergebnis; eine veränderte Nutzlast wird abgewiesen. Paginierung: <code>page</code> ab 1, <code>pageSize</code> maximal 100.</p>
+<h2 id="fotos-analyse-und-aufbewahrung">Fotos, Analyse und Aufbewahrung<a class="headerlink" href="#fotos-analyse-und-aufbewahrung" title="Permanent link">&para;</a></h2>
+<p>Die App verwendet ausschließlich die Kamera und bereinigt EXIF-Daten vor der Übertragung. Beide unterschiedlichen Seiten sind erforderlich; pro Seite maximal 10 MiB und 24 Megapixel. Entwürfe und Nachreichung sind 24 Stunden möglich; maximal zwei offene Entwürfe pro Zugang. Die API begrenzt Schreibzugriffe auf 30 pro Minute und Zugang. Unvollständige Entwürfe werden vom laufenden Worker bereinigt. Bei unterbrochenem Upload lassen sich dieselben Seiten wiederholen.</p>
+<p>Der Worker archiviert die empfangenen Originale tenantgebunden mit Hash und Manifest und vergleicht lokal Nachname, Vorname, Geburtsdatum und Führerscheinnummer mit einem bei der Einreichung festgehaltenen Stammdatensatz. Erkannte Textbereiche werden in Desktop und Android hervorgehoben. Abweichungen, fehlende Referenzen und unsichere OCR bleiben sichtbar. Begründete Entscheidungen sind an die konkrete Analyseversion gebunden und werden als Historie ergänzt.</p>
+<p><strong>Freigabegrenze:</strong> Der aktuelle Parser erkennt allgemeine nummerierte EU-Felder. Eine qualifizierte automatische Länder-/Kartenmodellzuordnung ist noch nicht freigegeben; Modelle bleiben <code>UNSUPPORTED_MODEL</code> und erfordern manuelle Prüfung. UV-, Tast- und optisch variable Merkmale lassen sich aus zwei normalen Fotos nicht zuverlässig prüfen. Ein Datenabgleich bestätigt keine Echtheit. Es werden keine biometrischen Vergleiche und keine externen OCR-Dienste verwendet.</p>
+<p>Die konfigurierte Dokumentaufbewahrung wird bei Einreichung festgehalten, technisch standardmäßig acht Jahre. Das Datum ist keine automatische Löschfreigabe. Bestehende berechtigte Archivierungs-/Bereinigungsprozesse bleiben maßgeblich. Endgültige Bereinigung eines Seitenoriginals bereinigt das zugehörige Paar sowie gespeicherte OCR- und Referenzwerte; die NFC-Kontrolle und ihre Frist bleiben erhalten. Sicherungs- und gesetzliche Aufbewahrungsvorgaben sind weiterhin nach bestehendem Archivkonzept zu behandeln.</p>
+<h2 id="bestehende-enterprise-installation-aktualisieren">Bestehende Enterprise-Installation aktualisieren<a class="headerlink" href="#bestehende-enterprise-installation-aktualisieren" title="Permanent link">&para;</a></h2>
+<p>Dieser Schritt ist eine lokale Administratorwartung; W25 behält seine aktuelle Control-Datenbank und alle veröffentlichten Kundendatenbanken. Zuerst alle Clients schließen und FleetMiraApi, FleetMiraWorker, FleetMiraArchive und FleetMiraProvisioner beenden. PostgreSQL bleibt aktiv. Verifizierte Sicherungen aller Datenbanken sowie der geschützten Datenverzeichnisse, Archive, Schlüssel, Profile und Berechtigungen aufbewahren. Eine Wiederherstellungsprobe erfolgt ausschließlich in markierten Wegwerfdatenbanken.</p>
+<p>Das geschützte Sicherungsmanifest enthält <code>schema: 1</code>, den exakten Datenbanknamen in <code>database</code>, <code>restore_test_exit_code: 0</code>, eine Liste <code>files</code> mit relativen Pfaden und SHA-256 sowie <code>source_witness</code>: eine mitgehashte JSON-Datei mit Anzahl und sortiertem Zeilenhash jeder öffentlichen Tabelle. Das Control-Manifest ordnet unter <code>tenant_backups</code> jeder veröffentlichten Tenant-UUID ihr relatives Datenbankmanifest zu. Die Zeugen müssen noch mit den unveränderten Quelldaten übereinstimmen. Manifest und Datenbankkopien enthalten geschützte Informationen und gehören nicht in öffentliche Testberichte.</p>
+<p>Das serverseitige Setup erhält <code>/MIRAFSKBACKUPMANIFEST="C:\geschuetzte-Sicherung\manifest.json"</code>. Es ruft vor dem Dienststart die Owner-Migration auf. Ohne diesen Parameter verlangt es bereits aktuelle Schemata und bricht bei ausstehender Migration ab. Alternativ ist der Wartungsschritt ausdrücklich lokal aufrufbar:</p>
+<div class="highlight"><pre><span></span><code>FleetMira.exe --tenant-admin mobile-fsk-upgrade --root "C:\ProgramData\eh-systemhaus\FLEET Mira Enterprise"
+FleetMira.exe --tenant-admin mobile-fsk-upgrade --root "C:\ProgramData\eh-systemhaus\FLEET Mira Enterprise" --apply --backup-manifest "C:\geschuetzte-Sicherung\manifest.json"
+</code></pre></div>
+<p>Der erste Aufruf prüft nur. Die Änderung verwendet bestehende Owner-Rechte, ergänzt die sechs FSK-Tabellen und Rollen und stellt die eingeschränkten Dienstrechte einschließlich RLS wieder her. Sie verifiziert bestehende Geschäftsdaten; zusätzliche Rollenzuweisungen erfolgen nicht. Ein abgebrochener Schritt bleibt ein Wartungsfall: Sicherungen behalten, Ursache prüfen und Dienste erst nach erfolgreicher Prüfung starten. Ein erneuter Aufruf ist möglich, wenn aktuelle Sicherungszeugen erneut geprüft wurden. Datenbanken nach zwischenzeitlichen Schreibzugriffen niemals ungeprüft zurücksetzen. HTTPS-Profil, vertrauenswürdige Zertifikate und Netzwerkfreigaben bleiben erhalten.</p>
+<h2 id="bedienoberflache">Bedienoberfläche<a class="headerlink" href="#bedienoberflache" title="Permanent link">&para;</a></h2>
+<p>Die Personalakte zeigt die explizite Zuordnung und die Kontrollhistorie. Ein Bildnachweis öffnet einen eigenen Detail-Arbeitsreiter mit beiden Seiten, erkannten Feldern und begründeter Prüfhistorie. Die folgenden Quelltest-Aufnahmen verwenden ausschließlich synthetische Daten; sie belegen keine installierte oder länderspezifische Abnahme.</p>
+<p><img alt="Mobile FSK in der Personalakte" src="../../assets/screenshots/mobile-fsk-person-de.png" /></p>
+<p><img alt="Bildnachweis und manuelle Bewertung" src="../../assets/screenshots/mobile-fsk-evidence-de.png" /></p>
+<h2 id="diagnose-und-abnahme">Diagnose und Abnahme<a class="headerlink" href="#diagnose-und-abnahme" title="Permanent link">&para;</a></h2>
+<p><code>401</code> verlangt erneute Anmeldung, <code>403</code> weist auf fehlende aktuelle Rechte oder Zuordnung hin, <code>409</code> auf einen Zustands-/Idempotenzkonflikt, <code>413</code> auf Größenlimits und <code>429</code> auf Raten-/Entwurfslimits. <code>303</code> bei Browseranmeldung ist die erfolgreiche Weiterleitung in die App. Rohfehler, Tokens und Bildinhalte gehören nicht in allgemeine Logs. Der Health-Status ersetzt keine fachliche Bildprüfung.</p>
+<p>Vor einer Auslieferung sind zusätzlich zur SQLite-/PostgreSQL-Quellprüfung reale NFC-/Kameratests, qualifizierte Referenzbilder aller unterstützten Länder-/Modellversionen, Tenant-Isolation sowie eingefrorene und installierte Abnahme erforderlich. W25 ist das dauerhafte Enterprise-Demosystem mit eigener Demodatenbank; es wird nicht auf einen Snapshot zurückgesetzt. W25GH dient separaten Neuinstallationstests. Schreibtests verwenden ausschließlich markierte Wegwerfdatenbanken.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../javascripts/image-lightbox.js"></script>
+      
+    
+  </body>
+</html>

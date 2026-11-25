@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/de/operations/enterprise-installation-guide/">
       
       
-        <link rel="prev" href="../../enterprise/download/">
+        <link rel="prev" href="../enterprise-backup-restore/">
       
       
-        <link rel="next" href="../../enterprise/tenants/">
+        <link rel="next" href="../enterprise-licensing/">
       
       
         
@@ -27,18 +27,18 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
-        <title>Installation und Einrichtung - FLEET Mira Dokumentation</title>
+        <title>Enterprise-Installationsanleitung - FLEET Mira Dokumentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation und Einrichtung
+              Enterprise-Installationsanleitung
             
           </span>
         </div>
@@ -855,398 +855,6 @@
       
   
   
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Enterprise
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Beschreibung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/download/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Download
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation und Einrichtung
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation und Einrichtung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-topologie-und-voraussetzungen-planen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Topologie und Voraussetzungen planen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-dateien-und-vorhandene-installation-prufen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Dateien und vorhandene Installation prüfen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-postgresql-installieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. PostgreSQL installieren
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-neue-plattform-konfigurieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Neue Plattform konfigurieren
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-enterprise-komponenten-installieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Enterprise-Komponenten installieren
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-clients-verbinden-und-aktivieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Clients verbinden und aktivieren
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-inbetriebnahme-prufen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Inbetriebnahme prüfen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fehler-und-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fehler und Updates
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/tenants/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mandanten einrichten
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../enterprise-licensing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise-Lizenzierung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../enterprise-backup-restore/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise-Backup und Wiederherstellung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/services-health/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dienste und Health
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
   
   
     <li class="md-nav__item">
@@ -1290,10 +898,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1311,8 +919,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1441,6 +1049,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/mobile-fsk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Führerscheinkontrolle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/accounting-rest/" class="md-nav__link">
         
   
@@ -1489,10 +1125,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1510,8 +1146,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1632,10 +1268,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -1653,8 +1289,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1803,10 +1439,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -1824,8 +1460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2014,8 +1650,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -2026,14 +1664,14 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -2051,8 +1689,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2105,6 +1743,242 @@
     
   
     How-to Datensicherung und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Installationsanleitung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Installationsanleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-topologie-und-voraussetzungen-planen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Topologie und Voraussetzungen planen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dateien-und-vorhandene-installation-prufen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dateien und vorhandene Installation prüfen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-postgresql-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. PostgreSQL installieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-neue-plattform-konfigurieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Neue Plattform konfigurieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-enterprise-komponenten-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Enterprise-Komponenten installieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-clients-verbinden-und-aktivieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Clients verbinden und aktivieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-inbetriebnahme-prufen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Inbetriebnahme prüfen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fehler-und-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fehler und Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fehler und Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lizenzstatus-im-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lizenzstatus im Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Lizenzierung
   
 
     
@@ -2293,6 +2167,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fehler und Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lizenzstatus-im-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lizenzstatus im Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2316,6 +2207,11 @@
 <p>Diese Anleitung gilt für <a href="../../enterprise/download/">beta9 R3</a>. Enterprise verwendet PostgreSQL und eine zentrale Benutzerverwaltung. Installieren Sie auf Windows Server, RDP- und Citrix-Systemen ausschließlich das Enterprise-Paket.</p>
 <h2 id="1-topologie-und-voraussetzungen-planen">1. Topologie und Voraussetzungen planen<a class="headerlink" href="#1-topologie-und-voraussetzungen-planen" title="Permanent link">&para;</a></h2>
 <p><strong>Einzelserver:</strong> PostgreSQL, API, Worker, Archivdienst und Provisionierungsdienst liegen auf demselben Windows-Server. Der Client kann dort in einer Benutzersitzung laufen. Es entsteht kein besonderer kombinierter Laufzeitmodus.</p>
+<ul>
+<li><a href="https://github.com/harzmann/fleet_mira_docs/releases/download/v1.1.0-beta9-20261125/FLEET-Mira-Enterprise-1.1.0-beta9-Setup-x64.exe">Enterprise-Applikationssetup herunterladen</a></li>
+<li><a href="https://github.com/harzmann/fleet_mira_docs/releases/download/v1.1.0-beta9-20261125/FLEET-Mira-PostgreSQL-Server-1.1.0-beta9-Setup-x64.exe">PostgreSQL-Server-Setup herunterladen</a></li>
+<li><a href="https://github.com/harzmann/fleet_mira_docs/releases/download/v1.1.0-beta9-20261125/SHA256SUMS.txt">SHA-256-Prüfsummen herunterladen</a></li>
+</ul>
 <p><strong>Verteilte Installation:</strong> Clients laufen auf getrennten Rechnern; die Serverdienste bleiben eigenständige Komponenten. Planen Sie erreichbare Datenbank-Endpunkte und serverseitig gebundene Dateiarchive. Der Provisionierungsdienst gehört zum vertrauenswürdigen Serverkontext; ein Client erhält keine Verwaltungskennwörter.</p>
 <p>Vor Beginn festlegen:</p>
 <ul>
@@ -2364,7 +2260,7 @@
 <li>Enterprise-Setup erhöht starten. Auf dem Server Client nach Bedarf sowie <strong>Fleet Mira Worker Windows service</strong> und <strong>Fleet Mira API Windows service</strong> wählen.</li>
 <li>Für eine neue Plattform die vollständige geschützte Datei übergeben. Beispiel:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">FLEET-Mira-Enterprise</span><span class="p">-</span><span class="n">1</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">0-beta9-Setup-x64</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">TYPE</span><span class="p">=</span><span class="n">custom</span> <span class="p">/</span><span class="n">COMPONENTS</span><span class="p">=</span><span class="n">client</span><span class="p">,</span><span class="n">worker</span><span class="p">,</span><span class="n">api</span> <span class="p">/</span><span class="n">MIRACONFIG</span><span class="p">=</span><span class="s2">&quot;C:\FleetMiraSetup\enterprise.ini&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">FLEET-Mira-Enterprise</span><span class="p">-</span><span class="n">1</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">0-beta9-Setup-x64</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">TYPE</span><span class="p">=</span><span class="n">custom</span> <span class="p">/</span><span class="n">COMPONENTS</span><span class="p">=</span><span class="n">client</span><span class="p">,</span><span class="n">worker</span><span class="p">,</span><span class="n">api</span> <span class="p">/</span><span class="n">MIRACONFIG</span><span class="p">=</span><span class="s2">"C:\FleetMiraSetup\enterprise.ini"</span>
 </code></pre></div>
 <ol>
 <li>Fehlerfreien Setup-Abschluss abwarten. Die Einrichtung erzeugt eine eigene Control-Datenbank und den ersten zentralen Administrator. Kunden werden erst anschließend ausdrücklich eingerichtet.</li>
@@ -2376,7 +2272,7 @@
 <h2 id="6-clients-verbinden-und-aktivieren">6. Clients verbinden und aktivieren<a class="headerlink" href="#6-clients-verbinden-und-aktivieren" title="Permanent link">&para;</a></h2>
 <p>Auf weiteren Arbeitsplätzen nur den Enterprise-Client installieren und die Client-Konfiguration auf die HTTPS-Adresse der Plattform richten. Die Anmeldung verwendet zentrale Benutzeridentitäten; Datenbankziele und kurzlebige Zugänge kommen vom autorisierenden Server, nicht aus einer vom Benutzer eingegebenen DSN.</p>
 <p>Die öffentliche Clientdatei heißt <code>enterprise-client.json</code>. Sie enthält ausschließlich den vertrauenswürdigen Server-Ursprung und gegebenenfalls öffentliche CA-Dateipfade, keine DSN oder Datenbankkennwörter:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;public_url&quot;</span><span class="p">:</span><span class="s2">&quot;https://fleet.example.internal:8443&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"schema"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">"public_url"</span><span class="p">:</span><span class="s2">"https://fleet.example.internal:8443"</span><span class="p">}</span>
 </code></pre></div>
 <p>Das Setup stellt das Profil an der Enterprise-Installation bereit. Bei administrativer Verteilung liegen optionale <code>ca_file</code> und <code>pg_ca_file</code> relativ zur Profildatei; verwenden Sie nur öffentliche CA-Zertifikate. Entfernte PostgreSQL-Ziele erfordern <code>verify-full</code> mit passender Hostidentität. Eine lokale <code>prefer</code>-Einstellung ist keine Freigabe für ungesicherten Netzwerkbetrieb.</p>
 <p>Private Unternehmens-CAs über die vorgesehene Geräteverwaltung verteilen und Fingerabdruck prüfen. Hostname, Gültigkeit und SAN müssen stimmen; niemals Zertifikatsprüfung abschalten oder private Server-/CA-Schlüssel auf Clients kopieren.</p>
@@ -2392,6 +2288,9 @@
 <h2 id="fehler-und-updates">Fehler und Updates<a class="headerlink" href="#fehler-und-updates" title="Permanent link">&para;</a></h2>
 <p>Setup-Abbrüche anhand der geschützten Installationsprotokolle untersuchen. Bei fehlender API die lokale Konsole verwenden; bei Lizenzproblemen bleibt die zentrale Lizenzverwaltung maßgeblich. Nach Updates gemeinsame versionierte Schemawartung administrativ ausführen, bevor Clients und Worker den neuen Stand verwenden. Keine Migration mit normalen Clientrollen erzwingen.</p>
 <p>Der geprüfte R3-Einzelserverstand ersetzt keine Abnahme kundenspezifischer UNC-/gMSA-, Netzwerk-, Cloud-, Sicherheitssoftware- oder Lastkonfigurationen.</p>
+<h3 id="lizenzstatus-im-client">Lizenzstatus im Client<a class="headerlink" href="#lizenzstatus-im-client" title="Permanent link">&para;</a></h3>
+<p>Nach erfolgreicher Abfrage wird der Lizenzstatus bis zu vier Stunden angezeigt, ohne dieselbe Hintergrundabfrage zu wiederholen. Öffnen Sie die Lizenzseite erneut oder verwenden Sie „Aktualisieren“, um sofort neu abzufragen. Bekannte Ablaufzeiten werden berücksichtigt. Ausstehende Aufträge werden weiter regelmäßig geprüft; zentrale Zugriffsprüfungen bleiben aktiv. Anmeldung, Mandantenauswahl und Wartefenster verwenden rechtwinklige, vollständig deckende Fensterrahmen. Die ruhige Fortschrittsanimation gibt kein Prozentversprechen ab.</p>
+<p>Die Startfenster erscheinen zentriert auf dem aktuellen Bildschirm. Nach der Anmeldung bleiben Mandantenauswahl und Fortschrittsmeldungen bis zur Dashboard-Bereitschaft auf diesem Monitor; das Verschieben eines Startfensters wechselt den Zielmonitor. Die Taskleiste bleibt bei der Zentrierung ausgespart.</p>
 
 
 
@@ -2451,10 +2350,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../javascripts/image-lightbox.js"></script>
       

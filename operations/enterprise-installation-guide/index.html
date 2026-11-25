@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://harzmann.github.io/fleet_mira_docs/operations/enterprise-installation-guide/">
       
       
-        <link rel="prev" href="../../enterprise/download/">
+        <link rel="prev" href="../enterprise-backup-restore/">
       
       
-        <link rel="next" href="../../enterprise/tenants/">
+        <link rel="next" href="../enterprise-licensing/">
       
       
         
@@ -27,18 +27,18 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
-        <title>Installation and setup - FLEET Mira Documentation</title>
+        <title>Enterprise installation guide - FLEET Mira Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation and setup
+              Enterprise installation guide
             
           </span>
         </div>
@@ -855,398 +855,6 @@
       
   
   
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Enterprise
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Description
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/download/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Download
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation and setup
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation and setup
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-plan-topology-and-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Plan topology and requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-verify-files-and-existing-installations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Verify files and existing installations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-install-postgresql" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Install PostgreSQL
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-configure-a-new-platform" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Configure a new platform
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-install-enterprise-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Install Enterprise components
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-connect-clients-and-activate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Connect clients and activate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-verify-readiness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Verify readiness
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#errors-and-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Errors and updates
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/tenants/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Set up tenants
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../enterprise-licensing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise licensing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../enterprise-backup-restore/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise backup and restore
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../enterprise/services-health/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Services and Health
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
   
   
     <li class="md-nav__item">
@@ -1290,10 +898,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1311,8 +919,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1441,6 +1049,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/mobile-fsk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile licence checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/accounting-rest/" class="md-nav__link">
         
   
@@ -1489,10 +1125,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1510,8 +1146,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1632,10 +1268,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -1653,8 +1289,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1803,10 +1439,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -1824,8 +1460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2014,8 +1650,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -2026,14 +1664,14 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -2051,8 +1689,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2105,6 +1743,242 @@
     
   
     Backup and restore how-to
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise installation guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise installation guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-plan-topology-and-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Plan topology and requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-verify-files-and-existing-installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Verify files and existing installations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-install-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Install PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-a-new-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configure a new platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-install-enterprise-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Install Enterprise components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-connect-clients-and-activate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Connect clients and activate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-verify-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Verify readiness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors-and-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors and updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors and updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-licence-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client licence status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise licensing
   
 
     
@@ -2293,6 +2167,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Errors and updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-licence-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client licence status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2316,6 +2207,11 @@
 <p>This guide applies to <a href="../../enterprise/download/">beta9 R3</a>. Enterprise uses PostgreSQL and central identity management. Use only the Enterprise package on Windows Server, RDP and Citrix systems.</p>
 <h2 id="1-plan-topology-and-requirements">1. Plan topology and requirements<a class="headerlink" href="#1-plan-topology-and-requirements" title="Permanent link">&para;</a></h2>
 <p><strong>All-in-one server:</strong> PostgreSQL, API, worker, archive service and provisioning service run on the same Windows server. A client can run in a user session there. There is no special combined runtime mode.</p>
+<ul>
+<li><a href="https://github.com/harzmann/fleet_mira_docs/releases/download/v1.1.0-beta9-20261125/FLEET-Mira-Enterprise-1.1.0-beta9-Setup-x64.exe">Download the Enterprise application setup</a></li>
+<li><a href="https://github.com/harzmann/fleet_mira_docs/releases/download/v1.1.0-beta9-20261125/FLEET-Mira-PostgreSQL-Server-1.1.0-beta9-Setup-x64.exe">Download the PostgreSQL Server setup</a></li>
+<li><a href="https://github.com/harzmann/fleet_mira_docs/releases/download/v1.1.0-beta9-20261125/SHA256SUMS.txt">Download SHA-256 checksums</a></li>
+</ul>
 <p><strong>Distributed installation:</strong> Clients run on separate computers; server services remain independent components. Plan reachable database endpoints and server-bound file archives. The provisioning service belongs to the trusted server context; clients receive no administrative passwords.</p>
 <p>Decide before starting:</p>
 <ul>
@@ -2364,7 +2260,7 @@
 <li>Run the Enterprise installer elevated. On the server select the client if required, <strong>Fleet Mira Worker Windows service</strong> and <strong>Fleet Mira API Windows service</strong>.</li>
 <li>Supply the complete protected file for a new platform. Example:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">FLEET-Mira-Enterprise</span><span class="p">-</span><span class="n">1</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">0-beta9-Setup-x64</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">TYPE</span><span class="p">=</span><span class="n">custom</span> <span class="p">/</span><span class="n">COMPONENTS</span><span class="p">=</span><span class="n">client</span><span class="p">,</span><span class="n">worker</span><span class="p">,</span><span class="n">api</span> <span class="p">/</span><span class="n">MIRACONFIG</span><span class="p">=</span><span class="s2">&quot;C:\FleetMiraSetup\enterprise.ini&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">FLEET-Mira-Enterprise</span><span class="p">-</span><span class="n">1</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">0-beta9-Setup-x64</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">TYPE</span><span class="p">=</span><span class="n">custom</span> <span class="p">/</span><span class="n">COMPONENTS</span><span class="p">=</span><span class="n">client</span><span class="p">,</span><span class="n">worker</span><span class="p">,</span><span class="n">api</span> <span class="p">/</span><span class="n">MIRACONFIG</span><span class="p">=</span><span class="s2">"C:\FleetMiraSetup\enterprise.ini"</span>
 </code></pre></div>
 <ol>
 <li>Wait for successful completion. Setup creates a separate control database and the first central administrator. Customers are provisioned explicitly afterwards.</li>
@@ -2376,7 +2272,7 @@
 <h2 id="6-connect-clients-and-activate">6. Connect clients and activate<a class="headerlink" href="#6-connect-clients-and-activate" title="Permanent link">&para;</a></h2>
 <p>Install only the Enterprise client on additional workstations and point its client configuration to the platform HTTPS address. Sign-in uses central identities; authorized database targets and short-lived credentials come from the server, not a user-supplied DSN.</p>
 <p>The public client file is named <code>enterprise-client.json</code>. It contains only the trusted server origin and optional public CA paths, never a DSN or database passwords:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;public_url&quot;</span><span class="p">:</span><span class="s2">&quot;https://fleet.example.internal:8443&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"schema"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">"public_url"</span><span class="p">:</span><span class="s2">"https://fleet.example.internal:8443"</span><span class="p">}</span>
 </code></pre></div>
 <p>Setup supplies the profile beside the Enterprise installation. For administrative distribution, optional <code>ca_file</code> and <code>pg_ca_file</code> paths are relative to the profile; use public CA certificates only. Remote PostgreSQL targets require <code>verify-full</code> and matching host identity. Local <code>prefer</code> mode does not authorize unprotected network operation.</p>
 <p>Distribute private enterprise CAs through managed deployment and verify their fingerprints. Hostname, validity and SAN must match; never disable certificate verification or copy private server/CA keys to clients.</p>
@@ -2392,6 +2288,9 @@
 <h2 id="errors-and-updates">Errors and updates<a class="headerlink" href="#errors-and-updates" title="Permanent link">&para;</a></h2>
 <p>Investigate setup failures through protected installation logs. Use the local console if the API is unavailable; central licensing remains authoritative for license problems. Apply shared versioned schema maintenance administratively after updates, before clients and workers use the new version. Never force migrations through normal client roles.</p>
 <p>The verified R3 single-server deployment does not replace acceptance of customer-specific UNC/gMSA, network, cloud, security software or load configurations.</p>
+<h3 id="client-licence-status">Client licence status<a class="headerlink" href="#client-licence-status" title="Permanent link">&para;</a></h3>
+<p>After a successful request, the client displays the licence status for up to four hours without repeating the same background request. Reopen the licence page or choose Refresh to request it immediately. Known expiry times are respected. Pending requests continue to be checked regularly; central access checks remain active. Sign-in, tenant selection and waiting dialogs use square, fully opaque window frames. The calm progress animation does not promise percentage completion.</p>
+<p>Startup windows appear centred on the current monitor. After sign-in, tenant selection and progress messages stay on that monitor until dashboard readiness; moving a startup window changes the target monitor. Centring excludes the taskbar.</p>
 
 
 
@@ -2451,10 +2350,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../javascripts/image-lightbox.js"></script>
       
